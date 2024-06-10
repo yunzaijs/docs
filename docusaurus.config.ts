@@ -36,7 +36,7 @@ const config: Config = {
         docs: {
           sidebarPath: './sidebars.ts',
           editUrl:
-            'https://github.com/yoimiya-kokomi/Miao-Yunzai',
+            'https://github.com/ningmengchongshui/Miao-Yunzai-Docs/tree/main/',
         },
         theme: {
           customCss: './src/css/custom.css',
@@ -83,25 +83,33 @@ const config: Config = {
       style: 'dark',
       links: [
         {
-          title: 'Docs',
+          title: '教程',
           items: [
             {
-              label: 'Tutorial',
+              label: '简介',
               to: '/docs/intro',
             },
           ],
         },
         {
-          title: 'Community',
+          title: '社区',
           items: [
             {
               label: 'Stack Overflow',
               href: 'https://github.com/yoimiya-kokomi/Miao-Yunzai',
+            },
+            {
+              label: 'Yunzai-Bot 插件库',
+              href: 'https://github.com/yhArcadia/Yunzai-Bot-plugins-index',
+            },
+            {
+              label: 'Icqq 协议',
+              href: 'https://github.com/icqqjs/icqq',
             }
           ],
-        },
+        }, 
         {
-          title: 'More',
+          title: '更多',
           items: [
             // {
             //   label: '团队',
@@ -110,6 +118,10 @@ const config: Config = {
             {
               label: 'GitHub',
               href: 'https://github.com/yoimiya-kokomi/Miao-Yunzai',
+            },
+            {
+              label: 'Yunzai-Bot',
+              href: 'https://gitee.com/le-niao/Yunzai-Bot',
             },
           ],
         },

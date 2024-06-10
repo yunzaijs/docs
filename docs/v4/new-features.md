@@ -6,12 +6,14 @@ sidebar_position: 2
 
 支持TS、TSX环境，提供Miao-Yunzai完全的类型声明及其开发文档。
 
-## 消息回调
+## 回调
 
 ```ts
 // your-plugin/message.ts
 import { Messages } from '#miao/core'
-const message = new Messages();
+const message = new Messages({
+   priority: 700,
+});
 message.response(/^你好/, async e => {
     e.reply('你好')
 })
@@ -20,6 +22,32 @@ message.response(/^你好/, async e => {
 // })
 export default message
 ```
+
+## 继承
+
+```ts
+// your-plugin/message.ts
+import { plugin } from '#miao/core'
+export default class Word extends plugin {
+  constructor () {
+    super({
+      priority: 700,
+      rule: [
+        {
+          reg:/^你好/,
+          fnc: 'hello'
+        },
+      ]
+    })
+  }
+  async hello (e) {
+    await e.reply('你好')
+    return true
+  }
+}
+```
+
+## 导出
 
 ```ts
 // your-plugin/index.ts
@@ -32,7 +60,7 @@ event.use(app.ok)
 export const apps = event.ok
 ```
 
-##  图片开发
+##  图片
 
 你无需再写原生的html，React将为你进行组件和管理
 
@@ -76,13 +104,25 @@ import Hello, { type DataType } from './hello.tsx'
 // 初始化 组件渲染对象
 const Com = new Component()
 export class Image {
-  Pup = null
+  Pup:typeof Puppeteer.prototype = null 
+
+  /**
+   */
   constructor() {
     // init
     this.Pup = new Puppeteer()
     // start
     this.Pup.start()
   }
+
+  /**
+  * 注意，不设置json_dir时，
+  * html_head路径应该是../public/output.css
+  * 且html_head默认值路径也是../public/output.css
+  * 因此，不增加其他head的话，html_head和join_dir都可以省略
+  */
+  #HtmlHead = `<link rel="stylesheet" href="../../public/output.css"></link>`
+  
   /**
    * 为指定用户生成html 生成指定数据下的html文件
    * @returns
@@ -93,24 +133,16 @@ export class Image {
       // html/hello/uid.html
       join_dir: 'hello',
       html_name: `${uid}.html`,
-      /**
-       * 注意，不设置json_dir时，
-       * html_head路径应该是../public/output.css
-       * 且html_head默认值路径也是../public/output.css
-       * 因此，不增加其他head的话，html_head和join_dir都可以省略
-       * { html_name: `${uid}.html`}
-       */
-      html_head: `<link rel="stylesheet" href="../../public/output.css"></link>`,
+      html_head: this.#HtmlHead,
       // 不生成文件，返回的将是html字符串
       // file_create:false
     })
-    return Pup.render(Address)
+    return this.Pup.render(Address)
   }
 }
 // 初始化 图片生成对象
 export const imgae = new Image()
 ```
-
 ### 截图
 
 ```ts
@@ -120,7 +152,7 @@ const img = await imgae.getHelloComponent(1715713638, { name: 'word' })
 e.reply(segment.buffer(img))
 ```
 
-##  热开发图片
+##  热开发
 
 ### 启动
 
@@ -130,17 +162,21 @@ npm run image
 
 ### 配置
 
-该文件放置于插件目录下，命名为 routes.jsx或 routes.tsx。启动热开发时，将读取该配置
+该文件放置于插件目录下
+
+命名为 routes.jsx 或 routes.tsx
+
+启动热开发时，将读取该配置
 
 ```ts
-import React from 'react'
-import { type RouterType } from '#image/types'
-import Hello from './hello.tsx'
-export default [
+import React from "react"
+import { type RouterType } from "#image/types"
+import Hello from "./hello.tsx"
+const Config: RouterType = [
   {
-    url: '/',
-    element: <Hello data={{ name: 'word' }}></Hello>
+    url: "/",
+    element: <Hello data={{ name: "word" }}> </Hello>
   }
-] as RouterType
-
+]
+export default Config
 ```
