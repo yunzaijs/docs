@@ -23,7 +23,7 @@ const FeatureList: FeatureItem[] = [
     Svg: require("@site/static/img/undraw_docusaurus_tree.svg").default,
     description: (
       <>
-        提供丰富的开发文档让你参与生态开发
+        提供丰富插件扩展来机器人
       </>
     ),
   },
@@ -32,7 +32,7 @@ const FeatureList: FeatureItem[] = [
     Svg: require("@site/static/img/undraw_docusaurus_react.svg").default,
     description: (
       <>
-        可以通过重复使用 React 来扩展你的图片
+        可以通过重复使用 React 来增强图片开发
       </>
     ),
   },

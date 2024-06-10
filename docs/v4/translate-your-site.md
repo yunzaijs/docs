@@ -4,13 +4,19 @@ sidebar_position: 1
 
 # 安装
 
+:::tip My tip
+
 你应该积极使用 V3 ，它仍然是长期支持并维护的版本。
+
+:::
 
 > 必要环境 Windows/Linux + Chrome/Chromium/Edge
 
 > 必要环境 Node.js>16.14.0 + Redis>5.0.0
 
-推荐使用`18.18.2`版本，如果系统不支持，最低要求`16.14.0`,这是新版`puppeteer`的限制
+> 推荐环境 Node.js=18.18.2 + Redis>6.0.0
+
+> 推荐使用NVM对Node.js进行版本管理
 
 ## 使用教程
 
