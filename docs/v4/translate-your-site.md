@@ -55,7 +55,7 @@ npm run app
 - 重新登录
 
 ```sh
-npm run app login
+npm run login
 ```
 
 - 进程托管

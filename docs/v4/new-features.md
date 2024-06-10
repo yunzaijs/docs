@@ -32,6 +32,8 @@ tailwindcss将识别plugins目录下的tsx和jsx文件
 
 [学习 tailwindcss](https://www.tailwindcss.cn/)
 
+> 要记得 VScode 安装插件 `Tailwind CSS IntelliSense`
+
 > 插件间浏览器都将独立控制
 
 ### 组件
@@ -57,6 +59,7 @@ export default function App({ data }: PropsType) {
 import React from 'react'
 import { Component, Puppeteer } from '@Miao/utils/index.js'
 import Hello, { type DataType } from './hello.tsx'
+// 初始化 组件渲染对象
 const Com = new Component()
 export class Image {
   Pup = null
@@ -90,6 +93,7 @@ export class Image {
     return Pup.render(Address)
   }
 }
+// 初始化 图片生成对象
 export const imgae = new Image()
 ```
 
