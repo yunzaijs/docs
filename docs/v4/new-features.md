@@ -9,13 +9,27 @@ sidebar_position: 2
 ## 消息回调
 
 ```ts
-import { Messages } from '@Miao/core/index.js'
-const message = new Messages({
-  priority: 9000
-})
+// your-plugin/message.ts
+import { Messages } from '#miao/core'
+const message = new Messages();
 message.response(/^你好/, async e => {
-  e.reply('你好')
+    e.reply('你好')
 })
+// message.response(/^你好2/, async e => {
+//     e.reply('你好2')
+// })
+export default message
+```
+
+```ts
+// your-plugin/index.ts
+import { Events } from '#miao/core'
+import app from './message.js'
+// import app2 from './message2.js'
+const event = new Events()
+event.use(app.ok)
+// event.use(app2.ok)
+export const apps = event.ok
 ```
 
 ##  图片开发
@@ -57,7 +71,7 @@ export default function App({ data }: PropsType) {
 
 ```ts
 import React from 'react'
-import { Component, Puppeteer } from '@Miao/utils/index.js'
+import { Component, Puppeteer } from '#miao/utils'
 import Hello, { type DataType } from './hello.tsx'
 // 初始化 组件渲染对象
 const Com = new Component()
@@ -120,7 +134,7 @@ npm run image
 
 ```ts
 import React from 'react'
-import { type RouterType } from '../image/types.js'
+import { type RouterType } from '#image/types'
 import Hello from './hello.tsx'
 export default [
   {
