@@ -5,7 +5,7 @@ sidebar_position: 1
 # 安装
 
 
-:::danger Take care
+:::danger 开发者提示
 
 如果你是开发者，你需要阅读V3文档后继续阅读V4
 
@@ -37,7 +37,7 @@ cd Miao-Yunzai
 git clone --depth=1 https://gitee.com/yoimiya-kokomi/miao-plugin.git ./plugins/miao-plugin/
 ```
 
-## 安装[pnpm](https://pnpm.io/zh/installation)
+### 安装[pnpm](https://pnpm.io/zh/installation)
 
 > 已安装的可以跳过
 
@@ -45,7 +45,7 @@ git clone --depth=1 https://gitee.com/yoimiya-kokomi/miao-plugin.git ./plugins/m
 npm install pnpm -g
 ```
 
-##  安装依赖
+###  安装依赖
 
 > 外网环境请修改的本地npm配置.npmrc
 
@@ -54,22 +54,22 @@ npm install pnpm -g
 pnpm install -P
 ```
 
-## 运行
+### 运行
 
 > 首次运行按提示输入登录
 
 ```sh
-node app
+npm run app
 ```
 
-## 登录
+### 登录
 
 ```sh
-node login
+npm run login
 ```
 
-## 进程托管
+### 托管
 
 ```sh
-node login
+npm run start
 ```

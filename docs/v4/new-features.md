@@ -2,9 +2,14 @@
 sidebar_position: 2
 ---
 
-# 新特性
+# 特性
+
+
+:::tip 环境提示
 
 支持TS、TSX环境，提供Miao-Yunzai完全的类型声明及其开发文档。
+
+:::
 
 ## 回调
 

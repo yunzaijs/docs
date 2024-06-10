@@ -95,10 +95,6 @@ const config: Config = {
           title: '社区',
           items: [
             {
-              label: 'Stack Overflow',
-              href: 'https://github.com/yoimiya-kokomi/Miao-Yunzai',
-            },
-            {
               label: 'Yunzai-Bot 插件库',
               href: 'https://github.com/yhArcadia/Yunzai-Bot-plugins-index',
             },
