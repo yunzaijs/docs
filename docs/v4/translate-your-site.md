@@ -46,6 +46,15 @@ npm install pnpm -g
 pnpm install
 ```
 
+- 连接代码
+
+提供名为yunzai的本地环境给其他应用
+
+```sh
+npm link
+npm link yunzai
+```
+
 - 启动
 
 ```sh
