@@ -19,21 +19,21 @@ sidebar_position: 2
 
 ```ts
 // 配置相关
-import {  } from '#miao/config'
+import {  } from '#yunzai/config'
 // 核心模块
-import {  } from '#miao/core'
+import {  } from '#yunzai/core'
 // 数据操作
-import {  } from '#miao/db'
+import {  } from '#yunzai/db'
 // 米游接口
-import {  } from '#miao/mys'
+import {  } from '#yunzai/mys'
 // 工具类
-import {  } from '#miao/utils'
+import {  } from '#yunzai/utils'
 ```
 
 :::danger 危险用法
 
 ```ts
-import { redisInit } from '#miao/config/redis'
+import { redisInit } from '#yunzai/config/redis'
 ```
 
 :::
@@ -41,7 +41,7 @@ import { redisInit } from '#miao/config/redis'
 :::tip 正确用法
 
 ```ts
-import { redisInit } from '#miao/config'
+import { redisInit } from '#yunzai/config'
 ```
 
 :::
@@ -53,7 +53,7 @@ V3中`segment`和`plugin`都是全局的，
 在V4,我们更推荐你从核心模块中导出
 
 ```ts
-import { segment , plugin } from '#miao/core'
+import { segment , plugin } from '#yunzai/core'
 ```
 
 
@@ -61,7 +61,7 @@ import { segment , plugin } from '#miao/core'
 
 ```ts
 // your-plugin/message.ts
-import { Messages } from '#miao/core'
+import { Messages } from '#yunzai/core'
 const message = new Messages({
    priority: 700,
 });
@@ -76,7 +76,7 @@ export default message
 
 ```ts
 // your-plugin/index.ts
-import { Events } from '#miao/core'
+import { Events } from '#yunzai/core'
 import app from './message.js'
 // import app2 from './message2.js'
 const event = new Events()
@@ -89,7 +89,7 @@ export const apps = event.ok
 
 ```ts
 // your-plugin/message.ts
-import { plugin } from '#miao/core'
+import { plugin } from '#yunzai/core'
 export default class App extends plugin {
   constructor () {
     super({
@@ -111,7 +111,7 @@ export default class App extends plugin {
 
 ```ts
 // your-plugin/index.ts
-import { Events } from '#miao/core'
+import { Events } from '#yunzai/core'
 import App$1 from './message.js'
 const event = new Events()
 event.use(App$1)
@@ -157,7 +157,7 @@ export default function App({ data }: PropsType) {
 
 ```ts
 import React from 'react'
-import { Component, Puppeteer } from '#miao/utils'
+import { Component, Puppeteer } from '#yunzai/utils'
 import Hello, { type DataType } from './hello.tsx'
 // 初始化 组件渲染对象
 const Com = new Component()
@@ -204,7 +204,7 @@ export const imgae = new Image()
 ### 截图
 
 ```ts
-import { Messages } from '#miao/core'
+import { Messages } from '#yunzai/core'
 import { imgae } from './image.tsx'
 const message = new Messages();
 message.response(/^你好/, async e => {
