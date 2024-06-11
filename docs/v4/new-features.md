@@ -226,7 +226,7 @@ npm run image
 
 ```ts
 import React from "react"
-import { type RouterType } from "#image/types"
+import { type RouterType } from "yunzai/image/types"
 import Hello from "./hello.tsx"
 const Config: RouterType = [
   {

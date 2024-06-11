@@ -35,7 +35,6 @@ cd Miao-Yunzai
 - 安装插件(计划移除中...)
 
 ```sh
-
 git clone --depth=1 https://github.com/yoimiya-kokomi/miao-plugin.git ./plugins/miao-plugin/
 ```
 
