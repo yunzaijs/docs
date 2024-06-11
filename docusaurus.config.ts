@@ -68,7 +68,12 @@ const config: Config = {
 
         /**
          * right
-         */
+         */ 
+        {
+          href: 'https://gitee.com/yoimiya-kokomi/Miao-Yunzai',
+          label: 'Gitee',
+          position: 'right',
+        },
         {
           href: 'https://github.com/yoimiya-kokomi/Miao-Yunzai',
           label: 'GitHub',
@@ -95,6 +100,10 @@ const config: Config = {
           title: '社区',
           items: [
             {
+              label: 'Miao-Yunzai 群',
+              href: 'https://qm.qq.com/q/I2YvyU0LQI',
+            },
+            {
               label: 'Yunzai-Bot 插件库',
               href: 'https://github.com/yhArcadia/Yunzai-Bot-plugins-index',
             },
@@ -112,7 +121,7 @@ const config: Config = {
             //   to: '/team',
             // },
             {
-              label: 'GitHub',
+              label: 'Miao-Yunzai',
               href: 'https://github.com/yoimiya-kokomi/Miao-Yunzai',
             },
             {

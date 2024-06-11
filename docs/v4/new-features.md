@@ -4,6 +4,9 @@ sidebar_position: 2
 
 # 特性
 
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
 
 :::tip 环境提示
 
@@ -45,8 +48,10 @@ import { segment , plugin } from 'yunzai/core'
 ```
 
 
-## 回调
+## 开发
 
+<Tabs>
+  <TabItem value="apple" label="回调" default>
 ```ts
 // your-plugin/message.ts
 import { Messages } from 'yunzai/core'
@@ -72,9 +77,8 @@ event.use(app.ok)
 // event.use(app2.ok)
 export const apps = event.ok
 ```
-
-## 继承
-
+  </TabItem>
+  <TabItem value="orange" label="继承">
 ```ts
 // your-plugin/message.ts
 import { plugin } from 'yunzai/core'
@@ -82,13 +86,13 @@ export default class App extends plugin {
   constructor () {
     super({
       priority: 700,
-      rule: [
+    })
+    this.rule = [
         {
           reg:/^你好/,
-          fnc: 'hello'
+          fnc: this.hello.name
         },
       ]
-    })
   }
   async hello (e) {
     await e.reply('你好')
@@ -105,6 +109,10 @@ const event = new Events()
 event.use(App$1)
 export const apps = event.ok
 ```
+  </TabItem>
+</Tabs>
+
+ 
 
 ##  图片
 
@@ -127,6 +135,7 @@ tailwindcss将识别plugins目录下的tsx和jsx文件
 ### 组件
 
 ```ts
+// ./hello.tsx
 import React from 'react'
 export type DataType = {
   name: string
@@ -144,6 +153,7 @@ export default function App({ data }: PropsType) {
 ### 封装
 
 ```ts
+// ./image.tsx
 import React from 'react'
 import { Component, Puppeteer } from 'yunzai/utils'
 import Hello, { type DataType } from './hello.tsx'
@@ -192,6 +202,7 @@ export const imgae = new Image()
 ### 截图
 
 ```ts
+// ./apps.tsx
 import { Messages } from 'yunzai/core'
 import { imgae } from './image.tsx'
 const message = new Messages();
@@ -225,13 +236,14 @@ npm run image
 启动热开发时，将读取该配置
 
 ```ts
+// ./routes.tsx
 import React from "react"
 import { type RouterType } from "yunzai/image/types"
 import Hello from "./hello.tsx"
 const Config: RouterType = [
   {
     url: "/",
-    element: <Hello data={{ name: "word" }}> </Hello>
+    element: <Hello data={{ name: "word" }} />
   }
 ]
 export default Config

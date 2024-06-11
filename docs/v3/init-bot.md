@@ -4,6 +4,9 @@ sidebar_position: 1
 
 # 安装
 
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
 
 :::danger 开发者提示
 
@@ -23,19 +26,22 @@ sidebar_position: 1
 
 > 请根据网络情况选择Github安装或Gitee安装
 
+<Tabs>
+  <TabItem value="apple" label="Github" default>
 ```sh
-# 使用 Github 
 git clone --depth=1 https://github.com/yoimiya-kokomi/Miao-Yunzai.git
 cd Miao-Yunzai 
 git clone --depth=1 https://github.com/yoimiya-kokomi/miao-plugin.git ./plugins/miao-plugin/
 ```
-
+  </TabItem>
+  <TabItem value="orange" label="Gitee">
 ```sh
-# 使用Gitee
 git clone --depth=1 https://gitee.com/yoimiya-kokomi/Miao-Yunzai.git
 cd Miao-Yunzai 
 git clone --depth=1 https://gitee.com/yoimiya-kokomi/miao-plugin.git ./plugins/miao-plugin/
 ```
+  </TabItem>
+</Tabs>
 
 ### 安装[pnpm](https://pnpm.io/zh/installation)
 

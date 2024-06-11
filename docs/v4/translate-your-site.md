@@ -4,6 +4,9 @@ sidebar_position: 1
 
 # 安装
 
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
 :::tip 使用者提示
 
 你应该积极使用 V3 ，它仍然是长期支持并维护的版本。
@@ -22,9 +25,19 @@ sidebar_position: 1
 
 - 安装源码
 
+<Tabs>
+  <TabItem value="apple" label="Github" default>
 ```sh
 git clone --depth=1 -b dev https://github.com/yoimiya-kokomi/Miao-Yunzai.git
 ```
+  </TabItem>
+  <TabItem value="orange" label="Gitee">
+```sh
+git clone --depth=1 -b dev https://gitee.com/yoimiya-kokomi/Miao-Yunzai.git
+```
+  </TabItem>
+</Tabs>
+
 
 - 进入目录
 
@@ -34,9 +47,19 @@ cd Miao-Yunzai
 
 - 安装插件(计划移除中...)
 
+<Tabs>
+  <TabItem value="apple" label="Github" default>
 ```sh
 git clone --depth=1 https://github.com/yoimiya-kokomi/miao-plugin.git ./plugins/miao-plugin/
 ```
+  </TabItem>
+  <TabItem value="orange" label="Gitee">
+```sh
+git clone --depth=1 https://gitee.com/yoimiya-kokomi/miao-plugin.git ./plugins/miao-plugin/
+```
+  </TabItem>
+</Tabs>
+
 
 - 安装依赖
 
