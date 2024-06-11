@@ -11,6 +11,52 @@ sidebar_position: 2
 
 :::
 
+## 模块
+
+你的所有行为，都应该是从推荐模块中导出，这是统一的接口规范。
+
+此后，你的行为才不会因内部结构更改而造成后续不兼容状况
+
+```ts
+// 配置相关
+import {  } from '#miao/config'
+// 核心模块
+import {  } from '#miao/core'
+// 数据操作
+import {  } from '#miao/db'
+// 米游接口
+import {  } from '#miao/mys'
+// 工具类
+import {  } from '#miao/utils'
+```
+
+:::danger 危险用法
+
+```ts
+import { redisInit } from '#miao/config/redis'
+```
+
+:::
+
+:::tip 正确用法
+
+```ts
+import { redisInit } from '#miao/config'
+```
+
+:::
+
+## 差异
+
+V3中`segment`和`plugin`都是全局的，
+
+在V4,我们更推荐你从核心模块中导出
+
+```ts
+import { segment , plugin } from '#miao/core'
+```
+
+
 ## 回调
 
 ```ts
@@ -28,12 +74,23 @@ message.response(/^你好/, async e => {
 export default message
 ```
 
+```ts
+// your-plugin/index.ts
+import { Events } from '#miao/core'
+import app from './message.js'
+// import app2 from './message2.js'
+const event = new Events()
+event.use(app.ok)
+// event.use(app2.ok)
+export const apps = event.ok
+```
+
 ## 继承
 
 ```ts
 // your-plugin/message.ts
 import { plugin } from '#miao/core'
-export default class Word extends plugin {
+export default class App extends plugin {
   constructor () {
     super({
       priority: 700,
@@ -52,16 +109,12 @@ export default class Word extends plugin {
 }
 ```
 
-## 导出
-
 ```ts
 // your-plugin/index.ts
 import { Events } from '#miao/core'
-import app from './message.js'
-// import app2 from './message2.js'
+import App$1 from './message.js'
 const event = new Events()
-event.use(app.ok)
-// event.use(app2.ok)
+event.use(App$1)
 export const apps = event.ok
 ```
 
@@ -110,9 +163,9 @@ import Hello, { type DataType } from './hello.tsx'
 const Com = new Component()
 export class Image {
   Pup:typeof Puppeteer.prototype = null 
-
   /**
-   */
+  * 初始化运行Puppeteer
+  */
   constructor() {
     // init
     this.Pup = new Puppeteer()
@@ -151,10 +204,20 @@ export const imgae = new Image()
 ### 截图
 
 ```ts
+import { Messages } from '#miao/core'
 import { imgae } from './image.tsx'
-// render 是异步的，因此  此处也是异步的
-const img = await imgae.getHelloComponent(1715713638, { name: 'word' })
-e.reply(segment.buffer(img))
+const message = new Messages();
+message.response(/^你好/, async e => {
+  const UID = e.user_id
+   // render 是异步的，因此此处也是异步的
+  const img = await imgae.getHelloComponent(UID, { name: 'word' })
+  // 判断是否成功
+  if(typeof img !== 'boolean' ) {
+    e.reply(segment.buffer(img))
+  }else{
+    e.repluy('你好')
+  }
+})
 ```
 
 ##  热开发
