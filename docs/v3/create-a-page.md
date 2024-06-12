@@ -17,14 +17,14 @@ export class Word extends plugin {
       priority: 700,
       rule: [
         {
-          reg:/^你好/,
+          reg:/^(#|\/)?你好/,
           fnc: 'hello'
         },
       ]
     })
   }
-  async hello (e) {
-    await e.reply('你好')
+  async hello () {
+    await this.e.reply('你好')
     return true
   }
 }
@@ -42,16 +42,16 @@ export class Word extends plugin {
       priority: 700,
       rule: [
         {
-          reg:/^你好/,
+          reg:/^(#|\/)?你好/,
           fnc: 'hello'
         },
       ]
     })
   }
-  async hello (e) {
+  async hello () {
     // segment 是全局的
     const img: Buffer = null
-    await e.reply(segment.buffer(img))
+    await this.e.reply(segment.buffer(img))
     return true
   }
 }
