@@ -32,7 +32,7 @@ const FeatureList: FeatureItem[] = [
     Svg: require("@site/static/img/undraw_docusaurus_react.svg").default,
     description: (
       <>
-        可以通过重复使用 React 来增强图片开发
+        通过使用 React 来增强图片开发
       </>
     ),
   },

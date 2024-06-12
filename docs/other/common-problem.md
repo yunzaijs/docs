@@ -4,6 +4,13 @@ sidebar_position: 2
 
 # 常见问题
 
+
+## 无头浏览器
+
+较进版本的`puppeteer`要求最低`Node.js V16.14.0`
+
+若发现相关异常，请检查是否Node版本是否符合预期
+
 ## 依赖库 
 
 ```sh
@@ -16,7 +23,7 @@ yum install pango.x86_64 libXcomposite.x86_64 libXcursor.x86_64 libXdamage.x86_6
 yum groupinstall fonts -y
 ```
 
-## 错误 "CXXABI_1.3.8" not found 
+## "CXXABI_1.3.8" not found 
 
 下载 [libstdc++.so.6.0.29.zip](https://baiyin1314.lanzouq.com/i8Nr21ig8hyf) 将 **解压缩后** 的文件放在/usr/lib64/中
 

@@ -22,7 +22,7 @@ import TabItem from '@theme/TabItem';
 
 > 推荐使用NVM对Node.js进行版本管理
 
-## 克隆项目
+### 克隆项目
 
 > 请根据网络情况选择Github安装或Gitee安装
 

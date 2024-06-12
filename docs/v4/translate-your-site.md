@@ -21,8 +21,6 @@ import TabItem from '@theme/TabItem';
 
 > 推荐使用NVM对Node.js进行版本管理
 
-## 使用教程
-
 - 安装源码
 
 <Tabs>

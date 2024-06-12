@@ -4,21 +4,44 @@ sidebar_position: 3
 
 # 图片
 
-你无需再写原生的html，React将为你进行组件和管理
+:::tip 注意
+
+此内容专业性较高，请仔细了解相关技术文档再阅读此
+
+:::
+
+
+### 特性
+
+- 无需再写原生的html
+
+强大的现代化框架React.js将为你管理组件和代码
 
 [学习 React.js](https://react.docschina.org/)
 
-你无需再写原生的css文件 !
+- 无需再写原生的css
 
-tailwindcss将识别plugins目录下的tsx和jsx文件
+tailwindcss将自动识别jsx中的class并生成css
 
-为你自动生成css , 存放在`./public/output.css`
+> 默认设置识别plugins目录, 并存放在`./public/output.css`
 
 [学习 tailwindcss](https://www.tailwindcss.cn/)
 
+丰富的`tailwindcss`组件将节省你的开发成本
+
+- 更好的生成式
+
+统一的编写风格更容易让GPT理解，并生成美观的代码
+
 > 要记得 VScode 安装插件 `Tailwind CSS IntelliSense`
 
-> 插件间浏览器都将独立控制
+- 独立的浏览器控制
+
+机器人不再为你主动连接
+
+你可以为自己的应用创建属于自己的环境
+
+此后，不再担心崩溃后影响其他应用
 
 ### 组件
 
@@ -71,15 +94,17 @@ export class Image {
    * 为指定用户生成html 生成指定数据下的html文件
    * @returns
    */
-  getHelloComponent(uid: number, data: DataType) {
+  createHello(uid: number, data: DataType) {
     // 生成 html 地址 或 html字符串
     const Address = Com.create(<Hello data={data} />, {
       // html/hello/uid.html
       join_dir: 'hello',
       html_name: `${uid}.html`,
       html_head: this.#HtmlHead,
+      // 在底部增加其他内容
+      // html_body: `<script src=""> </script>`
       // 不生成文件，返回的将是html字符串
-      // file_create:false
+      // file_create:false,
     })
     return this.Pup.render(Address)
   }
@@ -91,20 +116,22 @@ export const imgae = new Image()
 
 ```ts
 // ./apps.tsx
-import { Messages } from 'yunzai/core'
+import { Messages , Segment } from 'yunzai/core'
 import { imgae } from './image.tsx'
 const message = new Messages();
 message.response(/^你好/, async e => {
   const UID = e.user_id
    // render 是异步的，因此此处也是异步的
-  const img = await imgae.getHelloComponent(UID, { name: 'word' })
+  const img = await imgae.createHello(UID, { name: 'word' })
   // 判断是否成功
   if(typeof img !== 'boolean' ) {
-    e.reply(segment.buffer(img))
+    // 图片
+    e.reply(Segment.buffer(img))
   }else{
     e.repluy('你好')
   }
 })
+export default message
 ```
 
 ##  热开发

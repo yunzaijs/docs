@@ -8,7 +8,7 @@ import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
 
-:::tip 环境提示
+:::tip 提示
 
 支持TS、TSX环境，提供Miao-Yunzai完全的类型声明及其开发文档。
 
@@ -50,28 +50,42 @@ export default class App extends Core.Plugin {
 
 ## 差异
 
-V3中`segment`和`plugin`都是全局的，
+- 全局变量
+
+V3中`segment`、`plugin`、`Bot`和`redis`都是全局的，
+
+请避免生产全局对象，该行为会对环境造成污染，产生不可估计的影响
 
 在V4,我们更推荐你从核心模块中导出
 
 ```ts
-import { Segment , Plugin } from 'yunzai/core'
+import { Segment , Plugin , Redis , Bot } from 'yunzai/core'
 ```
 
 V3的命名是混乱的，毫无章法的
 
 但在V4中，导出的量都尽可能的使用大写开头，而函数使用驼峰命名
 
+- 系统性常量
+
+```ts
+import { BOT_NAME } from 'yunzai/config'
+```
+
+不可更改且固定的值，将采用全`大写`加`_`符号命名
 
 ## 开发
 
 <Tabs>
   <TabItem value="apple" label="回调" default>
 
+这是新增的函数式编程，用于开发常规的匹配回调
+
 ```ts
 // your-plugin/message.ts
 import { Messages } from 'yunzai/core'
 const message = new Messages({
+  // 可省略，默认9999
    priority: 700,
 });
 message.response(/^你好/, async e => {
@@ -97,12 +111,15 @@ export const apps = event.ok
   </TabItem>
   <TabItem value="orange" label="继承">
 
+配置更丰富，且功能复杂的继承机制
+
 ```ts
 // your-plugin/message.ts
 import { Plugin } from 'yunzai/core'
 export default class App extends Plugin {
   constructor () {
     super({
+      // 可省略，默认9999
       priority: 700,
     })
     this.rule = [
@@ -130,5 +147,3 @@ export const apps = event.ok
 
   </TabItem>
 </Tabs>
-
- 
