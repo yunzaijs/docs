@@ -24,17 +24,28 @@ import TabItem from '@theme/TabItem';
 
 只要该机器人给你提供名为`yunzai`的机器人包
 
+- 导入
+
 ```ts
 // 配置相关
-import {  } from 'yunzai/config'
+import * as Config from 'yunzai/config'
 // 核心模块
-import {  } from 'yunzai/core'
+import * as Core from 'yunzai/core'
 // 数据操作
-import {  } from 'yunzai/db'
+import * as DB from 'yunzai/db'
 // 米游接口
-import {  } from 'yunzai/mys'
+import * as MYS from 'yunzai/mys'
 // 工具类
-import {  } from 'yunzai/utils'
+import * as Utils from 'yunzai/utils'
+```
+
+- 使用
+
+```ts
+import * as Core from 'yunzai/core'
+export default class App extends Core.Plugin {
+  //
+}
 ```
 
 ## 差异
@@ -44,14 +55,19 @@ V3中`segment`和`plugin`都是全局的，
 在V4,我们更推荐你从核心模块中导出
 
 ```ts
-import { segment , plugin } from 'yunzai/core'
+import { Segment , Plugin } from 'yunzai/core'
 ```
+
+V3的命名是混乱的，毫无章法的
+
+但在V4中，导出的量都尽可能的使用大写开头，而函数使用驼峰命名
 
 
 ## 开发
 
 <Tabs>
   <TabItem value="apple" label="回调" default>
+
 ```ts
 // your-plugin/message.ts
 import { Messages } from 'yunzai/core'
@@ -77,12 +93,14 @@ event.use(app.ok)
 // event.use(app2.ok)
 export const apps = event.ok
 ```
+
   </TabItem>
   <TabItem value="orange" label="继承">
+
 ```ts
 // your-plugin/message.ts
-import { plugin } from 'yunzai/core'
-export default class App extends plugin {
+import { Plugin } from 'yunzai/core'
+export default class App extends Plugin {
   constructor () {
     super({
       priority: 700,
@@ -109,6 +127,7 @@ const event = new Events()
 event.use(App$1)
 export const apps = event.ok
 ```
+
   </TabItem>
 </Tabs>
 
