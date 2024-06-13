@@ -47,14 +47,35 @@ cd Miao-Yunzai
 
 <Tabs>
   <TabItem value="apple" label="Github" default>
+
 ```sh
+# 原神插件
+git clone --depth=1 -b genshin https://github.com/yoimiya-kokomi/Miao-Yunzai.git ./plugins/genshin/
+
+
+# 系统插件
+git clone --depth=1 -b system https://github.com/yoimiya-kokomi/Miao-Yunzai.git ./plugins/system/
+
+
+# 喵喵插件
 git clone --depth=1 https://github.com/yoimiya-kokomi/miao-plugin.git ./plugins/miao-plugin/
 ```
+
   </TabItem>
   <TabItem value="orange" label="Gitee">
+
 ```sh
+# 原神插件
+git clone --depth=1 -b genshin https://gitee.com/yoimiya-kokomi/Miao-Yunzai.git ./plugins/genshin/
+
+# 系统插件
+git clone --depth=1 -b system https://gitee.com/yoimiya-kokomi/Miao-Yunzai.git ./plugins/system/
+
+
+# 喵喵插件
 git clone --depth=1 https://gitee.com/yoimiya-kokomi/miao-plugin.git ./plugins/miao-plugin/
 ```
+
   </TabItem>
 </Tabs>
 

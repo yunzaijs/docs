@@ -66,20 +66,3 @@ const Obj = {}
 // 不推荐new
 ```
 
-## 废弃
-
-lib文件夹将在未来逐渐放弃，在版本发布后，开发者需要有意识的对此变化做出调整.
-
-```ts
-// 已废弃
---lib / puppeteer
-// 无扩展性，计划废弃
---lib / renderer
-// 非机器人框架的核心处理代码
-// 消耗服务器内存，无扩展性，计划废弃
---lib / tools / web.js / test.js / log.js / ksr.js
-// 计划废弃
---renderers
-
-// 其他内容逐步优化。。。
-```

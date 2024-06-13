@@ -48,32 +48,6 @@ export default class App extends Core.Plugin {
 }
 ```
 
-## 差异
-
-- 全局变量
-
-V3中`segment`、`plugin`、`Bot`和`redis`都是全局的，
-
-请避免生产全局对象，该行为会对环境造成污染，产生不可估计的影响
-
-在V4,我们更推荐你从核心模块中导出
-
-```ts
-import { Segment , Plugin , Redis , Bot } from 'yunzai/core'
-```
-
-V3的命名是混乱的，毫无章法的
-
-但在V4中，导出的量都尽可能的使用大写开头，而函数使用驼峰命名
-
-- 系统性常量
-
-```ts
-import { BOT_NAME } from 'yunzai/config'
-```
-
-不可更改且固定的值，将采用全`大写`加`_`符号命名
-
 ## 开发
 
 <Tabs>
