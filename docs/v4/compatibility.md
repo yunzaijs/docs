@@ -6,7 +6,7 @@ sidebar_position: 8
 
 :::tip 提示
 
-如果你的插件是从V3升级到V4，该文档或许将对你有所帮助
+如果你的插件是从V3升级到V4，该文档或许对你有所帮助
 
 :::
 
@@ -36,6 +36,37 @@ import { BOT_NAME } from 'yunzai/config'
 
 不可更改且固定的值，将采用全`大写`加`_`符号命名
 
+- 调用
+
+```ts
+export default class App extends plugin {
+  constructor () {
+    super()
+  }
+  async vPassword(e){
+    // tudo  e参数废弃，其方法无法使用类型提示
+    e.reply('')
+    // 推荐使用
+    this.e.reply('')
+  }
+}
+```
+
+```ts
+export default class App extends plugin {
+  constructor (e) {
+    super()
+    // 未来将废弃，不需要自己赋值this.e
+    this.e = e
+  }
+  async vPassword(e){
+    // tudo  e参数废弃，其方法无法使用类型提示
+    e.reply('')
+    // 推荐使用
+    this.e.reply('')
+  }
+}
+```
 
 ## lib目录
 
