@@ -40,27 +40,21 @@ import { BOT_NAME } from 'yunzai/config'
 
 ```ts
 export default class App extends plugin {
-  constructor () {
-    super()
-  }
-  async vPassword(e){
-    // tudo  e参数废弃，其方法无法使用类型提示
-    e.reply('')
-    // 推荐使用
-    this.e.reply('')
-  }
-}
-```
-
-```ts
-export default class App extends plugin {
   constructor (e) {
+    // 废弃，不再通过super传参
+    // super({rule:[]})
+
+    // 使用
     super()
-    // 未来将废弃，不需要自己赋值this.e
+    this.rule = [
+      // 
+    ]
+
+    // 废弃，不需要自己赋值
     this.e = e
   }
   async vPassword(e){
-    // tudo  e参数废弃，其方法无法使用类型提示
+    // e参数废弃，其方法无法使用类型提示
     e.reply('')
     // 推荐使用
     this.e.reply('')
