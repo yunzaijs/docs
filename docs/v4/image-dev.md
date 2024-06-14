@@ -128,7 +128,7 @@ message.response(/^你好/, async e => {
     // 图片
     e.reply(Segment.buffer(img))
   }else{
-    e.repluy('你好')
+    e.reply('你好')
   }
 })
 export default message
