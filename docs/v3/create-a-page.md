@@ -51,7 +51,7 @@ export class Word extends plugin {
   async hello () {
     // segment 是全局的
     const img: Buffer = null
-    await this.e.reply(segment.buffer(img))
+    await this.e.reply(segment.image(img))
     return true
   }
 }

@@ -23,7 +23,7 @@ const callBack = (e) =>{
 
 ```ts
 const callBack = (e) =>{
-  e.reply(Segment.buffer(img))
+  e.reply(Segment.image(img))
 }
 ```
 
@@ -32,7 +32,7 @@ const callBack = (e) =>{
 
 ```ts
 const callBack = (e) =>{
-  e.reply(['这是一张图片', Segment.buffer(img)])
+  e.reply(['这是一张图片', Segment.image(img)])
 }
 ```
 
