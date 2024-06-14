@@ -126,7 +126,7 @@ message.response(/^你好/, async e => {
   // 判断是否成功
   if(typeof img !== 'boolean' ) {
     // 图片
-    e.reply(Segment.buffer(img))
+    e.reply(Segment.image(img))
   }else{
     e.reply('你好')
   }
