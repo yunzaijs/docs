@@ -40,6 +40,7 @@ import { BOT_NAME } from 'yunzai/config'
 
 ```ts
 export default class App extends plugin {
+
   constructor (e) {
     // 废弃，不再通过super传参
     // super({rule:[]})
@@ -53,11 +54,36 @@ export default class App extends plugin {
     // 废弃，不需要自己赋值
     this.e = e
   }
-  async vPassword(e){
+
+  async test(e){
     // e参数废弃，其方法无法使用类型提示
     e.reply('')
     // 推荐使用
     this.e.reply('')
+  }
+}
+```
+
+```ts
+export default class App extends plugin {
+  constructor (e) {
+    super()
+  }
+  async test(e){
+    // 警告性写法！！！ 
+    // 请勿将任何非boolean值的变量让机器人接收
+    return this.e.reply('')
+
+    // 你的函数，应该是一个只返回boolean的纯函数
+    // 用于控制机器人是否继续执行下一个函数
+    
+    // 正确写法，先执行发送，再结束
+    this.e.reply('')
+    return 
+
+    // 或者等待执行完毕，再结束
+    await this.e.reply('')
+    return 
   }
 }
 ```
