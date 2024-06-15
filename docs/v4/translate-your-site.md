@@ -25,14 +25,18 @@ import TabItem from '@theme/TabItem';
 
 <Tabs>
   <TabItem value="apple" label="Github" default>
+
 ```sh
 git clone --depth=1 -b dev https://github.com/yoimiya-kokomi/Miao-Yunzai.git
 ```
+
   </TabItem>
   <TabItem value="orange" label="Gitee">
+
 ```sh
 git clone --depth=1 -b dev https://gitee.com/yoimiya-kokomi/Miao-Yunzai.git
 ```
+
   </TabItem>
 </Tabs>
 
@@ -52,11 +56,6 @@ cd Miao-Yunzai
 # 原神插件
 git clone --depth=1 -b genshin https://github.com/yoimiya-kokomi/Miao-Yunzai.git ./plugins/genshin/
 
-
-# 系统插件
-git clone --depth=1 -b system https://github.com/yoimiya-kokomi/Miao-Yunzai.git ./plugins/system/
-
-
 # 喵喵插件
 git clone --depth=1 https://github.com/yoimiya-kokomi/miao-plugin.git ./plugins/miao-plugin/
 ```
@@ -67,10 +66,6 @@ git clone --depth=1 https://github.com/yoimiya-kokomi/miao-plugin.git ./plugins/
 ```sh
 # 原神插件
 git clone --depth=1 -b genshin https://gitee.com/yoimiya-kokomi/Miao-Yunzai.git ./plugins/genshin/
-
-# 系统插件
-git clone --depth=1 -b system https://gitee.com/yoimiya-kokomi/Miao-Yunzai.git ./plugins/system/
-
 
 # 喵喵插件
 git clone --depth=1 https://gitee.com/yoimiya-kokomi/miao-plugin.git ./plugins/miao-plugin/
