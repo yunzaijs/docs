@@ -78,6 +78,9 @@ export default function App() {
 
 ### 封装
 
+
+- 生成
+
 ```tsx
 // ./image.tsx
 import React from 'react'
@@ -106,12 +109,6 @@ export class Image {
             // html/hello/uid.html
             join_dir: 'hello',
             html_name: `${uid}.html`,
-            // 在头部插入其他内容
-            // html_head: ``,
-            // 在底部增加其他内容
-            // html_body: `<script src=""> </script>`
-            // 不生成文件，返回的将是html字符串
-            // file_create:false,
         })
         return this.Pup.render(Address)
     }
@@ -119,6 +116,57 @@ export class Image {
 // 初始化 图片生成对象
 export const imgae = new Image()
 ```
+
+- 插入
+
+```ts
+import React from "react";
+import { Component, Puppeteer, createRequire } from "yunzai/utils";
+import Hello, { PropsType } from "../system/hello.tsx";
+// 注意，引入js。jsx，tsx，tsx，node将是当代码解析，无法当组件资源
+const require = createRequire(import.meta.url);
+const Com = new Component();
+const Pup = new Puppeteer();
+//
+export function createHello(uid: number, Props: PropsType) {
+  //
+  const Link = () =>{
+    return (
+      <>
+        <link
+          rel="stylesheet"
+          href={require("../../resources/css/output.css")}
+        />
+        <link
+          rel="stylesheet"
+          href={require("../../resources/css/hello.css")}
+        />
+      </>
+    );
+  };
+  //
+  const script = `
+    <script>
+          const dom = document.getElementById("root");
+    </script>
+    `;
+  //
+  const Address = Com.create(<Hello {...Props} />, {
+    join_dir: "hello",
+    html_name: `${uid}.html`,
+    // 插入头部内容,
+    // 可直接html字符串，
+    // 也可以使用render组件
+    html_head: Com.render(<Link />),
+    // body底部 插入额外脚本
+    // 也可使用 render渲染组件
+    head_body: script,
+  });
+  return Pup.render(Address);
+}
+```
+
+
 ### 截图
 
 ```ts
