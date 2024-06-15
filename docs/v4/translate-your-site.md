@@ -9,15 +9,15 @@ import TabItem from '@theme/TabItem';
 
 :::tip 使用者提示
 
-你应该积极使用 V3 ，它仍然是长期支持并维护的版本。
+新版内容和改动较多，请仔细阅读后再进行
 
 :::
 
 > 必要环境 Windows/Linux + Chrome/Chromium/Edge
 
-> 必要环境 Node.js>16.14.0 + Redis>5.0.0
+> 必要环境 Node.js > 16.14.0 + Redis> 5.0.0
 
-> 推荐环境 Node.js=18.18.2 + Redis>6.0.0
+> 推荐环境 Node.js ~ 18.18.2 + Redis ~ 6.0.0
 
 > 推荐使用NVM对Node.js进行版本管理
 
@@ -83,8 +83,6 @@ pnpm install
 ```
 
 - 连接代码
-
-提供名为yunzai的本地环境给其他应用
 
 ```sh
 npm link

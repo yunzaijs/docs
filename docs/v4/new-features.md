@@ -16,13 +16,7 @@ import TabItem from '@theme/TabItem';
 
 ## 模块
 
-你的所有行为，都应该是从推荐模块中导出，这是统一的接口规范。
-
-此后，你的行为才不会因内部结构更改而造成后续不兼容状况,
-
-在未来，你的应用将在任何形式的机器人中得以解析
-
-只要该机器人给你提供名为`yunzai`的机器人包
+所有行为都应该是从推荐的模块中导出，这是统一的接口规范。
 
 - 导入
 
@@ -58,10 +52,7 @@ export default class App extends Core.Plugin {
 ```ts
 // your-plugin/message.ts
 import { Messages } from 'yunzai/core'
-const message = new Messages({
-  // 可省略，默认9999
-   priority: 700,
-});
+const message = new Messages();
 message.response(/^(#|\/)?你好/, async e => {
     e.reply('你好')
 })
@@ -97,10 +88,8 @@ export const apps = event.ok
 import { Plugin } from 'yunzai/core'
 export default class App extends Plugin {
   constructor () {
-    super({
-      // 可省略，默认9999
-      priority: 700,
-    })
+    super()
+    this.priority = 700
     this.rule = [
         {
           reg:/^(#|\/)?你好/,

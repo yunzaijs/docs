@@ -30,10 +30,10 @@ yum groupinstall fonts -y
 ```sh
 cd /usr/lib64/
 ```
-
+ 
 ```sh
 sudo mv libstdc++.so.6 libstdc++.so.6.bak
-``
+```
 
 ```sh
 sudo ln -s libstdc++.so.6.0.29 libstdc++.so.6

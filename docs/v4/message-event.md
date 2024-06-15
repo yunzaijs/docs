@@ -23,6 +23,7 @@ const callBack = (e) =>{
 
 ```ts
 const callBack = (e) =>{
+  const img : Buffer | null = null
   e.reply(Segment.image(img))
 }
 ```
@@ -32,6 +33,7 @@ const callBack = (e) =>{
 
 ```ts
 const callBack = (e) =>{
+  const img : Buffer | null = null
   e.reply(['这是一张图片', Segment.image(img)])
 }
 ```

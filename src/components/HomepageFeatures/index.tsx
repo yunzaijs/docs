@@ -14,7 +14,7 @@ const FeatureList: FeatureItem[] = [
     Svg: require("@site/static/img/undraw_docusaurus_mountain.svg").default,
     description: (
       <>
-        基于Node.js 环境，直接源码安装并启动
+        Node.js 环境，源码安装
       </>
     ),
   },
@@ -23,7 +23,7 @@ const FeatureList: FeatureItem[] = [
     Svg: require("@site/static/img/undraw_docusaurus_tree.svg").default,
     description: (
       <>
-        提供丰富插件扩展来机器人
+        提供插件扩展机器人
       </>
     ),
   },
@@ -32,7 +32,7 @@ const FeatureList: FeatureItem[] = [
     Svg: require("@site/static/img/undraw_docusaurus_react.svg").default,
     description: (
       <>
-        通过使用 React 来增强图片开发
+        通过使用 React 增强图片开发
       </>
     ),
   },
