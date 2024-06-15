@@ -40,7 +40,6 @@ import { BOT_NAME } from 'yunzai/config'
 
 ```ts
 export default class App extends plugin {
-
   constructor (e) {
     // 废弃，不再通过super传参
     // super({rule:[]})
@@ -84,6 +83,21 @@ export default class App extends plugin {
     // 或者等待执行完毕，再结束
     await this.e.reply('')
     return 
+  }
+}
+```
+
+```ts
+export default class App extends plugin {
+  constructor (e) {
+    super()
+  }
+  async test(e){
+    // 或者等待执行完毕，再结束
+    await this.e.reply('')
+    // 返回值，必然是 bool 值，若为true才会继续匹配其他指令！
+    // 这在V3中是不同的，V3默认贪婪模式。而V4当且仅当为true时，继续向后执行
+    return true
   }
 }
 ```

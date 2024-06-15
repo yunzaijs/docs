@@ -109,8 +109,7 @@ export default class App extends Plugin {
       ]
   }
   async hello () {
-    await this.e.reply('你好')
-    return true
+    this.e.reply('你好')
   }
 }
 ```
