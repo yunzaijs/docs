@@ -66,7 +66,7 @@ export default function App({ data }: PropsType) {
 ```ts
 // ./hello.tsx
 import React from 'react'
-import { createRequire } from 'yunzai/utils'
+import { createRequire } from 'module'
 const require = createRequire(import.meta.url)
 const url  = require('./resources/example.png')
 export default function App() {
@@ -121,7 +121,8 @@ export const imgae = new Image()
 
 ```ts
 import React from "react";
-import { Component, Puppeteer, createRequire } from "yunzai/utils";
+import { Component, Puppeteer } from "yunzai/utils";
+import { createRequire } from 'module'
 import Hello, { PropsType } from "../system/hello.tsx";
 // 注意，引入js。jsx，tsx，tsx，node将是当代码解析，无法当组件资源
 const require = createRequire(import.meta.url);
