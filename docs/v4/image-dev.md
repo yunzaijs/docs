@@ -61,25 +61,7 @@ export default function App({ data }: PropsType) {
 }
 ```
 
-支持引入本地图片
-
-```ts
-// ./hello.tsx
-import React from 'react'
-import { createRequire } from 'module'
-const require = createRequire(import.meta.url)
-const url  = require('./resources/example.png')
-export default function App() {
-  return (
-    <img src={url} />  
-  )
-}
-```
-
 ### 封装
-
-
-- 生成
 
 ```tsx
 // ./image.tsx
@@ -116,8 +98,144 @@ export class Image {
 // 初始化 图片生成对象
 export const imgae = new Image()
 ```
+  
 
-- 插入
+
+
+### 截图
+
+```ts
+// ./apps.ts
+import { Messages , Segment } from 'yunzai/core'
+import { imgae } from './image.tsx'
+const message = new Messages();
+message.response(/^你好/, async e => {
+  const UID = e.user_id
+   // render 是异步的，因此此处也是异步的
+  const img = await imgae.createHello(UID, {
+    data: { name: 'word' }
+  })
+  // 判断是否成功
+  if(typeof img !== 'boolean' ) {
+    // 图片
+    e.reply(Segment.image(img))
+  }else{
+    e.reply('你好')
+  }
+})
+export default message
+```
+
+##  热开发
+
+### 启动
+
+```sh
+npm run image
+```
+
+### 配置
+
+该文件放置于插件目录下
+
+命名为 routes.jsx 或 routes.tsx
+
+启动热开发时，每次请求都将重新访问
+
+```ts
+// ./routes.tsx
+import React from "react"
+import { type RouterType } from "yunzai/image/types"
+import Hello from "./hello.tsx"
+const Config: RouterType = [
+  {
+    url: "/hello",
+    element: <Hello data={{ name: "word" }} />
+    // options: 选项
+  }
+]
+export default Config
+```
+
+## 技巧
+
+### 动态组件
+
+```ts
+import React from "react"
+import { type RouterType } from "yunzai/image/types"
+import { createDynamic } from 'yunzai/utils'
+const require = createDynamic(import.meta.url)
+const Hello = (await require('./views/hello.tsx')).default;
+const Config: RouterType = [
+  {
+    url: "/hello",
+    element: <Hello data={{ name: "word" }} />
+  }
+]
+export default Config
+```
+
+使用`createDynamic`将创建一个动态模块,被包裹起来的组件,称之为动态组件.
+
+当前脚本再执行时,其内部关联的所有动态组件都将再次被重新执行.
+
+动态组件是危险的,请确保他仅用于包裹一个可预测的纯组件.
+
+如果组件内执行了其他代码,如连接redis等,都将触发重新连接.
+
+
+### 文件引入
+
+```ts
+// ./hello.tsx
+import React from 'react'
+import { createRequire } from 'module'
+const require = createRequire(import.meta.url)
+const url  = require('./resources/example.png')
+export default function App() {
+  return (
+    <img src={url} />  
+  )
+}
+```
+
+### 截图方块
+
+
+Puppeteer 截图是默认body
+
+你可以指定截图的元素为`section`
+
+也可以设置`section`为指定的高度
+
+```ts
+export default function App({ data }: PropsType) {
+  return (
+    <div className="text-red-500 p-2 text-xl m-80">Hello, {data.name}!
+      <section className="h-[80rem] w-[90rem]">
+        嘎嘎
+      </section>
+    </div>
+  )
+}
+```
+
+```tsx
+export class Image {
+    createHello(uid: number, Props: PropsType) {
+        const Address = Com.create(<Hello {...Props} />, {
+            join_dir: 'hello',
+            html_name: `${uid}.html`,
+        })
+        return this.Pup.render(Address,{
+          tab:'section'
+        })
+    }
+}
+```
+
+### 元素插入
 
 ```ts
 import React from "react";
@@ -167,58 +285,3 @@ export function createHello(uid: number, Props: PropsType) {
 }
 ```
 
-
-### 截图
-
-```ts
-// ./apps.ts
-import { Messages , Segment } from 'yunzai/core'
-import { imgae } from './image.tsx'
-const message = new Messages();
-message.response(/^你好/, async e => {
-  const UID = e.user_id
-   // render 是异步的，因此此处也是异步的
-  const img = await imgae.createHello(UID, {
-    data: { name: 'word' }
-  })
-  // 判断是否成功
-  if(typeof img !== 'boolean' ) {
-    // 图片
-    e.reply(Segment.image(img))
-  }else{
-    e.reply('你好')
-  }
-})
-export default message
-```
-
-##  热开发
-
-### 启动
-
-```sh
-npm run image
-```
-
-### 配置
-
-该文件放置于插件目录下
-
-命名为 routes.jsx 或 routes.tsx
-
-启动热开发时，将读取该配置
-
-```ts
-// ./routes.tsx
-import React from "react"
-import { type RouterType } from "yunzai/image/types"
-import Hello from "./hello.tsx"
-const Config: RouterType = [
-  {
-    url: "/",
-    element: <Hello data={{ name: "word" }} />
-    // options: 不需要配置HtmlHead的outpu.css
-  }
-]
-export default Config
-```
