@@ -192,6 +192,7 @@ export default Config
 import React from 'react'
 import { createRequire } from 'module'
 const require = createRequire(import.meta.url)
+// 相对路径
 const url  = require('./resources/example.png')
 export default function App() {
   return (
@@ -238,50 +239,36 @@ export class Image {
 ### 元素插入
 
 ```ts
-import React from "react";
-import { Component, Puppeteer } from "yunzai/utils";
-import { createRequire } from 'module'
-import Hello, { PropsType } from "../system/hello.tsx";
-// 注意，引入js。jsx，tsx，tsx，node将是当代码解析，无法当组件资源
-const require = createRequire(import.meta.url);
-const Com = new Component();
-const Pup = new Puppeteer();
-//
-export function createHello(uid: number, Props: PropsType) {
-  //
-  const Link = () =>{
+const Link = () => {
     return (
-      <>
-        <link
-          rel="stylesheet"
-          href={require("../../resources/css/output.css")}
-        />
-        <link
-          rel="stylesheet"
-          href={require("../../resources/css/hello.css")}
-        />
-      </>
+        <>
+            <link
+                rel="stylesheet"
+                href={require("../../resources/css/output.css")}
+            />
+            <link
+                rel="stylesheet"
+                href={require("../../resources/css/hello.css")}
+            />
+        </>
     );
-  };
-  //
-  const script = `
-    <script>
-          const dom = document.getElementById("root");
-    </script>
-    `;
-  //
-  const Address = Com.create(<Hello {...Props} />, {
-    join_dir: "hello",
-    html_name: `${uid}.html`,
-    // 插入头部内容,
-    // 可直接html字符串，
-    // 也可以使用render组件
-    html_head: Com.render(<Link />),
-    // body底部 插入额外脚本
-    // 也可使用 render渲染组件
-    head_body: script,
-  });
-  return Pup.render(Address);
+};
+const script = `<script> const dom = document.getElementById("root"); </script>`;
+export class Image {
+    createHello(uid: number, Props: PropsType) {
+        const Address = this.Com.create(<Hello {...Props} />, {
+            join_dir: "hello",
+            html_name: `${uid}.html`,
+            // 插入头部内容,
+            // 可直接html字符串，
+            // 也可以使用render组件
+            html_head: this.Com.render(<Link />),
+            // body底部 插入额外脚本
+            // 也可使用 render渲染组件
+            head_body: script,
+        });
+        return this.Pup.render(Address);
+    }
 }
 ```
 
