@@ -9,13 +9,13 @@ import TabItem from '@theme/TabItem';
 
 :::tip 使用者提示
 
-新版内容和改动较多，请仔细阅读后再进行
+V3 即将迎来停更，新版内容和改动较多，请仔细阅读后再进行.
 
 :::
 
 > 必要环境 Windows/Linux + Chrome/Chromium/Edge
 
-> 必要环境 Node.js > 16.14.0 + Redis> 5.0.0
+> 必要环境 Node.js > 16.14.0 + Redis > 4.0.0
 
 > 推荐环境 Node.js ~ 18.18.2 + Redis ~ 6.0.0
 
