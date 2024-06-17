@@ -56,24 +56,19 @@ const message = new Messages();
 message.response(/^(#|\/)?你好/, async e => {
     e.reply('你好')
 })
-// message.response(/^你好2/, async e => {
-//     e.reply('你好2')
-// })
 export default message
 ```
 
-在上面的代码中，机器人会接收消息时，若消息匹配到开头为`你好`将执行对应的回调函数。
+在上面的代码中，机器人接收消息时，将到开头为`你好`将执行对应的回调函数。
 
 函数从当前事件`e`(Event)中，执行回复函数，并发送你好。
 
 ```ts
 // your-plugin/index.ts
 import { Events } from 'yunzai/core'
-import app from './message.js'
-// import app2 from './message2.js'
+import App$1 from './message.js'
 const event = new Events()
-event.use(app.ok)
-// event.use(app2.ok)
+event.use(App$1.ok)
 export const apps = event.ok
 ```
 通过Events收集回调事件，并导出名为`apps`的变量，此变量机器人将识别后加载。
@@ -103,7 +98,7 @@ export default class App extends Plugin {
 }
 ```
 
-在上面的代码中，机器人会接收消息时，若消息匹配到开头为`你好`将执行对应的函数。
+在上面的代码中，机器人接收消息时，将匹配到开头为`你好`将执行对应的函数。
 
 函数从当前事件`this.e`(Event)中，执行回复函数，并发送你好。
 

@@ -17,7 +17,10 @@ sidebar_position: 3
 
 强大的现代化框架React.js将为你管理组件和代码
 
-[学习 React.js](https://react.docschina.org/)
+[点击 学习 React.js](https://react.docschina.org/)
+
+
+> VScode 安装插件 `ES7+ React/Redux/React-Native snippets`
 
 - 无需再写原生的css
 
@@ -25,15 +28,11 @@ tailwindcss将自动识别jsx中的class并生成css
 
 > 默认设置识别plugins目录, 并存放在`./public/output.css`
 
-[学习 tailwindcss](https://www.tailwindcss.cn/)
+[点击 学习 tailwindcss](https://www.tailwindcss.cn/)
 
 丰富的`tailwindcss`组件将节省你的开发成本
 
-- 更好的生成式
-
-统一的编写风格更容易让GPT理解，并生成美观的代码
-
-> 要记得 VScode 安装插件 `Tailwind CSS IntelliSense`
+> VScode 安装插件 `Tailwind CSS IntelliSense`
 
 - 独立的浏览器控制
 
@@ -67,7 +66,7 @@ export default function App({ data }: PropsType) {
 // ./image.tsx
 import React from 'react'
 import { Picture } from 'yunzai/utils'
-import Hello, { PropsType } from '../system/hello.tsx'
+import Hello, { PropsType } from './hello.tsx'
 export class Image extends Picture {
     constructor() {
         // 继承实例
@@ -92,9 +91,6 @@ export class Image extends Picture {
 // 初始化 图片生成对象
 export const imgae = new Image()
 ```
-  
-
-
 
 ### 截图
 
@@ -139,8 +135,10 @@ npm run image
 ```ts
 // ./routes.tsx
 import React from "react"
-import { type RouterType } from "yunzai/image/types"
-import Hello from "./hello.tsx"
+import { type RouterType } from "yunzai/image"
+import { createDynamic } from 'yunzai/utils'
+const require = createDynamic(import.meta.url)
+const Hello = (await require('./hello.tsx')).default;
 const Config: RouterType = [
   {
     url: "/hello",
@@ -153,15 +151,17 @@ export default Config
 
 ## 技巧
 
+> VScode 安装插件 `Path Intellisense`
+
 ### 动态组件
 
 ```ts
 import React from "react"
-import { type RouterType } from "yunzai/image/types"
+import { type RouterType } from "yunzai/image"
 import { createDynamic } from 'yunzai/utils'
-const require = createDynamic(import.meta.url)
+const dynamic = createDynamic(import.meta.url)
 // Hello 动态组件
-const Hello = (await require('./views/hello.tsx')).default;
+const Hello = (await dynamic('./hello.tsx')).default;
 const Config: RouterType = [
   {
     url: "/hello",
@@ -175,18 +175,6 @@ export default Config
 
 当前脚本再执行时,其内部关联的所有动态组件都将再次被重新执行.
 
-```ts
-// 修改全局环境变量，暂时取消动态效果
-// 或者使用new Proxy()，做更加复杂的效果
-const require = createDynamic(import.meta.url, process.env.DYNAMIC_MODULE_$1 )
-const Hello = (await require('./views/hello.tsx')).default;
-```
-
-```ts
-// 也可以仅控制这一块的动态组件
-const Hello = (await require('./views/hello.tsx', process.env.DYNAMIC_MODULE_$2)).default;
-```
-
 :::danger 警告
 
 动态组件是危险的,请确保他仅用于包裹一个可预测的纯组件.
@@ -194,6 +182,19 @@ const Hello = (await require('./views/hello.tsx', process.env.DYNAMIC_MODULE_$2)
 推荐仅在开发模式下使用，防止出现意外状况
 
 :::
+
+```ts
+// 修改全局环境变量，暂时取消动态效果
+// 或者使用new Proxy()，做更加复杂的效果
+const dynamic = createDynamic(import.meta.url, process.env.DYNAMIC_MODULE_$1 )
+```
+
+```ts
+// 也可以仅控制这一块的动态组件
+const Hello = (await dynamic('./views/hello.tsx', process.env.DYNAMIC_MODULE_$2)).default;
+```
+
+
 
 ### 文件引入
 
