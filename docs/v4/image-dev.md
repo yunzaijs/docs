@@ -66,19 +66,13 @@ export default function App({ data }: PropsType) {
 ```tsx
 // ./image.tsx
 import React from 'react'
-import { Component, Puppeteer } from 'yunzai/utils'
+import { Picture } from 'yunzai/utils'
 import Hello, { PropsType } from '../system/hello.tsx'
-// 初始化 组件渲染对象
-const Com = new Component()
-export class Image {
-    Pup: typeof Puppeteer.prototype = null
-    /**
-    * 初始化运行Puppeteer
-    */
+export class Image extends Picture {
     constructor() {
-        // init
-        this.Pup = new Puppeteer()
-        // start
+        // 继承实例
+        super()
+        // 启动
         this.Pup.start()
     }
     /**
@@ -87,7 +81,7 @@ export class Image {
      */
     createHello(uid: number, Props: PropsType) {
         // 生成 html 地址 或 html字符串
-        const Address = Com.create(<Hello {...Props} />, {
+        const Address = this.Com.create(<Hello {...Props} />, {
             // html/hello/uid.html
             join_dir: 'hello',
             html_name: `${uid}.html`,
@@ -166,6 +160,7 @@ import React from "react"
 import { type RouterType } from "yunzai/image/types"
 import { createDynamic } from 'yunzai/utils'
 const require = createDynamic(import.meta.url)
+// Hello 动态组件
 const Hello = (await require('./views/hello.tsx')).default;
 const Config: RouterType = [
   {
@@ -180,10 +175,25 @@ export default Config
 
 当前脚本再执行时,其内部关联的所有动态组件都将再次被重新执行.
 
+```ts
+// 修改全局环境变量，暂时取消动态效果
+// 或者使用new Proxy()，做更加复杂的效果
+const require = createDynamic(import.meta.url, process.env.DYNAMIC_MODULE_$1 )
+const Hello = (await require('./views/hello.tsx')).default;
+```
+
+```ts
+// 也可以仅控制这一块的动态组件
+const Hello = (await require('./views/hello.tsx', process.env.DYNAMIC_MODULE_$2)).default;
+```
+
+:::danger 警告
+
 动态组件是危险的,请确保他仅用于包裹一个可预测的纯组件.
-
 如果组件内执行了其他代码,如连接redis等,都将触发重新连接.
+推荐仅在开发模式下使用，防止出现意外状况
 
+:::
 
 ### 文件引入
 
@@ -223,9 +233,9 @@ export default function App({ data }: PropsType) {
 ```
 
 ```tsx
-export class Image {
+export class Image extends Picture {
     createHello(uid: number, Props: PropsType) {
-        const Address = Com.create(<Hello {...Props} />, {
+        const Address = this.Com.create(<Hello {...Props} />, {
             join_dir: 'hello',
             html_name: `${uid}.html`,
         })
@@ -254,7 +264,7 @@ const Link = () => {
     );
 };
 const script = `<script> const dom = document.getElementById("root"); </script>`;
-export class Image {
+export class Image extends Picture {
     createHello(uid: number, Props: PropsType) {
         const Address = this.Com.create(<Hello {...Props} />, {
             join_dir: "hello",
