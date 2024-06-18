@@ -28,5 +28,10 @@ jobs:
     - name: Grant execute permission for deploy script
       run: chmod +x ./deploy.sh
 
+    - name: Configure Git
+      run: |
+        git config --global user.name "ningmengchongshui"
+        git config --global user.email "916415899@qq.com"
+
     - name: Run build script
       run: ./deploy.sh
