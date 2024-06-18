@@ -136,9 +136,9 @@ npm run image
 // ./routes.tsx
 import React from "react"
 import { type RouterType } from "yunzai/image"
-import { createDynamic } from 'yunzai/utils'
-const require = createDynamic(import.meta.url)
-const Hello = (await require('./hello.tsx')).default;
+import { createDynamicComponent } from 'yunzai/utils'
+const dynamic = createDynamicComponent(import.meta.url)
+const Hello = (await dynamic('./hello.tsx')).default;
 const Config: RouterType = [
   {
     url: "/hello",
@@ -156,13 +156,14 @@ export default Config
 ### 动态组件
 
 ```ts
-import { createDynamic } from 'yunzai/utils'
-const dynamic = createDynamic(import.meta.url)
-// Hello 动态组件
-const Hello = (await dynamic('./hello.tsx')).default;
+import { createDynamicComponent } from 'yunzai/utils'
+import { type PropsType } from './views/hello.tsx'
+const dynamic = createDynamicComponent(import.meta.url)
+// Hello 动态组件 - 注入类型为 <默认导出名,组件参数>
+const Hello = (await dynamic<'default',PropsType>('./hello.tsx')).default;
 ```
 
-使用`createDynamic`将创建一个动态模块,被包裹起来的组件,称之为动态组件.
+使用`createDynamicComponent`将创建一个动态组件.
 
 当前脚本再执行时,其内部关联的所有动态组件都将再次被重新执行.
 
