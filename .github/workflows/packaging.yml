@@ -25,5 +25,8 @@ jobs:
       with:
         node-version: '18'
 
+    - name: Grant execute permission for deploy script
+      run: chmod +x ./deploy.sh
+
     - name: Run build script
       run: ./deploy.sh
