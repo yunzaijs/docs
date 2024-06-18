@@ -18,17 +18,17 @@ jobs:
       with:
         node-version: '18'
 
-    - name: 先设置时区并获取东八区当前时间
+    - name: 设置时区并获取东八区当前时间
       id: beijing_time
       run: echo "BEIJING_TIME=$(TZ=Asia/Shanghai date +'%Y-%m-%d %H:%M:%S')" >> $GITHUB_ENV
         
     - name: 安装项目依赖
       run: npm install
 
-    - name: 打包项目
+    - name: 开始打包项目
       run: npm run build
 
-    - name: 推送构建结果到github的 build 分支
+    - name: 推送构建结果到 docs 分支
       run: |
         cd build/
         git init
