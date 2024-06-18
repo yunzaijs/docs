@@ -8,30 +8,33 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
-    
+
     steps:
     - name: Checkout repository
       uses: actions/checkout@v2
 
-    - name: Set up SSH
-      run: |
-        mkdir -p ~/.ssh
-        echo "${{ secrets.SSH_PRIVATE_KEY }}" > ~/.ssh/916415899
-        chmod 600 ~/.ssh/916415899
-        ssh-keyscan github.com >> ~/.ssh/known_hosts
-
-    - name: Set up Node.js environment
+    - name: 设置环境
       uses: actions/setup-node@v2
       with:
         node-version: '18'
 
-    - name: Grant execute permission for deploy script
-      run: chmod +x ./deploy.sh
+    - name: 先设置时区并获取东八区当前时间
+      id: beijing_time
+      run: echo "BEIJING_TIME=$(TZ=Asia/Shanghai date +'%Y-%m-%d %H:%M:%S')" >> $GITHUB_ENV
+        
+    - name: 安装项目依赖
+      run: npm install
 
-    - name: Configure Git
+    - name: 执行构建脚本
+      run: npm run build
+
+    - name: 推送构建结果到github的 build 分支
       run: |
-        git config --global user.name "ningmengchongshui"
-        git config --global user.email "916415899@qq.com"
-
-    - name: Run build script
-      run: ./deploy.sh
+        cd build/
+        git init
+        git config --local user.email "916415899@qq.com"
+        git config --local user.name "ningmengchongshui"
+        git add -A
+        git commit -m "GitHub Actions自动打包 - ${{ env.BEIJING_TIME }}"
+        git remote add github https://ningmengchongshui:${{ secrets.GH_TOKEN }}@github.com/ningmengchongshui/Miao-Yunzai-Docs.git
+        git push github HEAD:build -f
