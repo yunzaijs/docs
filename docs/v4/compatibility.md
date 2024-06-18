@@ -21,7 +21,8 @@ V3中`segment`、`plugin`、`Bot`和`redis`都是全局的，
 在V4,我们更推荐你从核心模块中导出
 
 ```ts
-import { Segment , Plugin , Redis , Bot } from 'yunzai/core'
+import { Segment , Plugin , Bot } from 'yunzai/core'
+import { Redis } from 'yunzai/db'
 ```
 
 V3的命名是混乱的，毫无章法的
@@ -93,8 +94,6 @@ export default class App extends plugin {
     super()
   }
   async test(e){
-    // 或者等待执行完毕，再结束
-    await this.e.reply('')
     // 返回值，必然是 bool 值，若为true才会继续匹配其他指令！
     // 这在V3中是不同的，V3默认贪婪模式。而V4当且仅当为true时，继续向后执行
     return true

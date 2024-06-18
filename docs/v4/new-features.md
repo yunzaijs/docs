@@ -47,7 +47,7 @@ export default class App extends Core.Plugin {
 <Tabs>
   <TabItem value="apple" label="回调" default>
 
-这是新增的函数式编程，用于开发常规的匹配回调
+这是新增的函数式编程，其简洁的写法更容易阅读和理解
 
 ```ts
 // your-plugin/message.ts
@@ -59,7 +59,7 @@ message.response(/^(#|\/)?你好/, async e => {
 export default message
 ```
 
-在上面的代码中，机器人接收消息时，将到开头为`你好`将执行对应的回调函数。
+机器人接收消息时进行正则匹配，若成功将执行对应的回调函数
 
 函数从当前事件`e`(Event)中，执行回复函数，并发送你好。
 
@@ -98,7 +98,7 @@ export default class App extends Plugin {
 }
 ```
 
-在上面的代码中，机器人接收消息时，将匹配到开头为`你好`将执行对应的函数。
+机器人接收消息时，将执行正则，若命中则根据函数名执行对应函数
 
 函数从当前事件`this.e`(Event)中，执行回复函数，并发送你好。
 
