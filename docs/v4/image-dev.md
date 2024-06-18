@@ -156,19 +156,10 @@ export default Config
 ### 动态组件
 
 ```ts
-import React from "react"
-import { type RouterType } from "yunzai/image"
 import { createDynamic } from 'yunzai/utils'
 const dynamic = createDynamic(import.meta.url)
 // Hello 动态组件
 const Hello = (await dynamic('./hello.tsx')).default;
-const Config: RouterType = [
-  {
-    url: "/hello",
-    element: <Hello data={{ name: "word" }} />
-  }
-]
-export default Config
 ```
 
 使用`createDynamic`将创建一个动态模块,被包裹起来的组件,称之为动态组件.
@@ -179,36 +170,30 @@ export default Config
 
 动态组件是危险的,请确保他仅用于包裹一个可预测的纯组件.
 如果组件内执行了其他代码,如连接redis等,都将触发重新连接.
-推荐仅在开发模式下使用，防止出现意外状况
+生产环境下，即env='production'下，禁用动态模块。
 
 :::
-
-```ts
-// 修改全局环境变量，暂时取消动态效果
-// 或者使用new Proxy()，做更加复杂的效果
-const dynamic = createDynamic(import.meta.url, process.env.DYNAMIC_MODULE_$1 )
-```
-
-```ts
-// 也可以仅控制这一块的动态组件
-const Hello = (await dynamic('./views/hello.tsx', process.env.DYNAMIC_MODULE_$2)).default;
-```
-
-
 
 ### 文件引入
 
 ```ts
-// ./hello.tsx
-import React from 'react'
-import { createRequire } from 'module'
-const require = createRequire(import.meta.url)
+import React from "react";
+import { createRequire } from "module";
+const require = createRequire(import.meta.url);
 // 相对路径
-const url  = require('./resources/example.png')
+const url = require("./resources/example.png");
+// 样式内引入
+const styles = {
+  background: `url(${url})`,
+  backgroundSize: "100% 100%",
+};
 export default function App() {
   return (
-    <img src={url} />  
-  )
+    <>
+      <div style={styles}></div>
+      <img src={url} />
+    </>
+  );
 }
 ```
 
