@@ -136,9 +136,10 @@ npm run image
 // ./routes.tsx
 import React from "react"
 import { type RouterType } from "yunzai/image"
+import * as hellos from './hello.tsx'
 import { createDynamicComponent } from 'yunzai/utils'
 const dynamic = createDynamicComponent(import.meta.url)
-const Hello = (await dynamic('./hello.tsx')).default;
+const Hello = (await dynamic<typeof hellos>('./hello.tsx')).default;
 const Config: RouterType = [
   {
     url: "/hello",
@@ -156,11 +157,20 @@ export default Config
 ### 动态组件
 
 ```ts
+import * as hellos from './hello.tsx'
 import { createDynamicComponent } from 'yunzai/utils'
-import { type PropsType } from './views/hello.tsx'
 const dynamic = createDynamicComponent(import.meta.url)
-// Hello 动态组件 - 注入类型为 <默认导出名,组件参数>
-const Hello = (await dynamic<'default',PropsType>('./hello.tsx')).default;
+/**
+ * 
+ * 该方法可被重复执行
+ * 并触发dynamic重新加载
+ * @param Props 
+ * @returns 
+ */
+async function DynamicHello(Props: Parameters<typeof hellos.default>[0]) {
+  const Hello = (await dynamic<typeof hellos>('./hello.tsx')).default
+  return <Hello {...Props} />
+}
 ```
 
 使用`createDynamicComponent`将创建一个动态组件.
@@ -170,8 +180,8 @@ const Hello = (await dynamic<'default',PropsType>('./hello.tsx')).default;
 :::danger 警告
 
 动态组件是危险的,请确保他仅用于包裹一个可预测的纯组件.
-如果组件内执行了其他代码,如连接redis等,都将触发重新连接.
-生产环境下，即env='production'下，禁用动态模块。
+如果组件内额外的执行代码，都将触发重复执行.
+生产环境下，即env.NODE_ENV=='production'下，禁用动态模块。
 
 :::
 
