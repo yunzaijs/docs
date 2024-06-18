@@ -25,7 +25,7 @@ jobs:
     - name: 安装项目依赖
       run: npm install
 
-    - name: 执行构建脚本
+    - name: 打包项目
       run: npm run build
 
     - name: 推送构建结果到github的 build 分支
@@ -35,6 +35,6 @@ jobs:
         git config --local user.email "916415899@qq.com"
         git config --local user.name "ningmengchongshui"
         git add -A
-        git commit -m "GitHub Actions自动打包 - ${{ env.BEIJING_TIME }}"
+        git commit -m "自动打包 - ${{ env.BEIJING_TIME }}"
         git remote add github https://ningmengchongshui:${{ secrets.GH_TOKEN }}@github.com/ningmengchongshui/Miao-Yunzai-Docs.git
-        git push github HEAD:build -f
+        git push github HEAD:docs -f
