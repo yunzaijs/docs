@@ -97,7 +97,7 @@ export const imgae = new Image()
 ```ts
 // ./apps.ts
 import { Messages , Segment } from 'yunzai/core'
-import { imgae } from './image.tsx'
+import { imgae } from './image.ts'
 const message = new Messages();
 message.response(/^你好/, async e => {
   const UID = e.user_id
