@@ -21,3 +21,37 @@ sidebar_position: 1
 |      [西风驿站](https://bbs.mihoyo.com/ys/collection/839181)      | 角色攻略图来源          |
 |     [米游社友人A](https://bbs.mihoyo.com/ys/collection/428421)     | 角色突破素材图来源        |
 | [icqq](https://github.com/icqqjs/icqq) | ICQQ             |
+
+## 友情链接
+
+[JavaScript](https://developer.mozilla.org/zh-CN/)
+
+[npmjs](https://www.npmjs.com/)
+
+[husky](typicode.github.io/husky)
+
+[commitlint.js](https://commitlint.js.org/)
+
+[eslint](https://eslint.nodejs.cn/)
+
+[babeljs](https://www.babeljs.cn/)
+
+[React.js](https://react.docschina.org/)
+
+[koa](https://koa.bootcss.com/)
+
+[lodashjs](https://www.lodashjs.com/)
+
+[momentjs](https://momentjs.devjs.cn/)
+
+[tailwindcss](https://www.tailwindcss.cn/)
+
+[preline](https://preline.co/)
+
+[prettier](https://www.prettier.cn/)
+
+[sequelize](https://www.sequelize.cn/)
+
+[pm2](https://pm2.keymetrics.io/)
+
+[rollupjs](https://www.rollupjs.com/command-line-interface/)
