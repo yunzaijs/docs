@@ -100,15 +100,15 @@ const config: Config = {
           title: '社区',
           items: [
             {
-              label: 'Yunzai 群',
+              label: 'Yunzai Group',
               href: 'https://qm.qq.com/q/I2YvyU0LQI',
             },
             {
-              label: 'Yunzai-Bot 插件库',
+              label: 'Yunzai-Bot V3 Plugins',
               href: 'https://github.com/yhArcadia/Yunzai-Bot-plugins-index',
             },
             {
-              label: 'Icqq 协议',
+              label: 'Icqq Agreement',
               href: 'https://github.com/icqqjs/icqq',
             }
           ],
@@ -121,12 +121,16 @@ const config: Config = {
             //   to: '/team',
             // },
             {
-              label: 'Yunzai',
-              href: 'https://github.com/yoimiya-kokomi/Miao-Yunzai',
+              label: 'Miao-Yunzai V3',
+              href: 'https://github.com/yoimiya-kokomi/Miao-Yunzai/tree/master',
             },
             {
-              label: 'Yunzai-Bot',
-              href: 'https://gitee.com/le-niao/Yunzai-Bot',
+              label: 'Yunzai-Bot V3',
+              href: 'https://gitee.com/Le-niao/Yunzai-Bot/tree/main',
+            },
+            {
+              label: 'Yunzai-Bot V2',
+              href: 'https://gitee.com/Le-niao/Yunzai-Bot/tree/master',
             },
           ],
         },

@@ -18,7 +18,7 @@ V3中`segment`、`plugin`、`Bot`和`redis`都是全局的，
 
 请避免生产全局对象，该行为会对环境造成污染，产生不可估计的影响
 
-在V4,我们更推荐你从核心模块中导出
+在V4,我们更推荐你从核心模块中导出。
 
 ```ts
 import { Segment , Plugin , Bot } from 'yunzai/core'
@@ -27,7 +27,7 @@ import { Redis } from 'yunzai/db'
 
 V3的命名是混乱的，毫无章法的
 
-但在V4中，导出的量都尽可能的使用大写开头，而函数使用驼峰命名
+但在V4中，导出的量都尽可能的使用大写开头，而函数使用驼峰命名。
 
 - 系统性常量
 
@@ -99,6 +99,33 @@ export default class App extends plugin {
     return true
   }
 }
+```
+
+- 单例应用
+
+创建文件`plugins/example/index.js`
+
+并写入以下代码后，把单例插件放置在`plugins/example/apps`目录
+
+```ts
+import fs from 'node:fs'
+const files = fs.readdirSync('./plugins/example/apps').filter(file => file.endsWith('.js'))
+const arr = []
+files.forEach((file) => {
+  arr.push(import(`./apps/${file}`))
+})
+const ret = await Promise.allSettled(arr)
+const apps = {}
+for (const i in files) {
+  const name = files[i].replace('.js', '')
+  if (ret[i].status !== 'fulfilled') {
+    logger.error(`载入插件错误：${logger.red(name)}`)
+    logger.error(ret[i].reason)
+    continue
+  }
+  apps[name] = ret[i].value[Object.keys(ret[i].value)[0]]
+}
+export { apps }
 ```
 
 ## lib目录
