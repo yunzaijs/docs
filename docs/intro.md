@@ -28,7 +28,7 @@ sidebar_position: 1
 
 [npmjs](https://www.npmjs.com/)
 
-[husky](typicode.github.io/husky)
+[husky](https://typicode.github.io/husky)
 
 [commitlint.js](https://commitlint.js.org/)
 
