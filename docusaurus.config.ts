@@ -3,7 +3,7 @@ import type { Config } from '@docusaurus/types';
 import type * as Preset from '@docusaurus/preset-classic';
 
 const config: Config = {
-  title: 'Miao-Yunzai',
+  title: 'Yunzai',
   tagline: '基于ICQQ构建的机器人',
   // favicon: 'img/favicon.ico',
 
@@ -49,7 +49,7 @@ const config: Config = {
     // Replace with your project's social card
     image: 'img/docusaurus-social-card.jpg',
     navbar: {
-      title: 'Miao-Yunzai',
+      title: 'Yunzai',
       // logo: {
       //   alt: 'Miao-Yunzai Logo',
       //   src: 'img/logo.svg',
@@ -100,7 +100,7 @@ const config: Config = {
           title: '社区',
           items: [
             {
-              label: 'Miao-Yunzai 群',
+              label: 'Yunzai 群',
               href: 'https://qm.qq.com/q/I2YvyU0LQI',
             },
             {
@@ -121,7 +121,7 @@ const config: Config = {
             //   to: '/team',
             // },
             {
-              label: 'Miao-Yunzai',
+              label: 'Yunzai',
               href: 'https://github.com/yoimiya-kokomi/Miao-Yunzai',
             },
             {
@@ -131,7 +131,7 @@ const config: Config = {
           ],
         },
       ],
-      copyright: `Copyright © ${new Date().getFullYear()} Miao-Yunzai.`,
+      copyright: `Copyright © ${new Date().getFullYear()} Yunzai.`,
     },
     prism: {
       theme: prismThemes.github,

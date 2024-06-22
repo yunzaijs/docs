@@ -10,7 +10,7 @@ import TabItem from '@theme/TabItem';
 
 :::tip 提示
 
-支持TS、TSX环境，提供Miao-Yunzai完全的类型声明及其开发文档。
+支持TS、TSX环境，提供Yunzai完全的类型声明及其开发文档。
 
 :::
 

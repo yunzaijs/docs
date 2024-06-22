@@ -47,34 +47,6 @@ git clone --depth=1 -b dev https://gitee.com/yoimiya-kokomi/Miao-Yunzai.git
 cd Miao-Yunzai
 ```
 
-- 安装插件(计划移除中...)
-
-<Tabs>
-  <TabItem value="apple" label="Github" default>
-
-```sh
-# 原神插件
-git clone --depth=1 -b genshin https://github.com/yoimiya-kokomi/Miao-Yunzai.git ./plugins/genshin/
-
-# 喵喵插件
-git clone --depth=1 https://github.com/yoimiya-kokomi/miao-plugin.git ./plugins/miao-plugin/
-```
-
-  </TabItem>
-  <TabItem value="orange" label="Gitee">
-
-```sh
-# 原神插件
-git clone --depth=1 -b genshin https://gitee.com/yoimiya-kokomi/Miao-Yunzai.git ./plugins/genshin/
-
-# 喵喵插件
-git clone --depth=1 https://gitee.com/yoimiya-kokomi/miao-plugin.git ./plugins/miao-plugin/
-```
-
-  </TabItem>
-</Tabs>
-
-
 - 安装依赖
 
 ```sh
