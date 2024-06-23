@@ -54,13 +54,6 @@ npm install pnpm -g
 pnpm install
 ```
 
-- 连接代码
-
-```sh
-npm link
-npm link yunzai
-```
-
 - 启动
 
 ```sh
