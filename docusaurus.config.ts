@@ -136,7 +136,7 @@ const config: Config = {
     },
   } satisfies Preset.ThemeConfig,
 
-  themes: ['@docusaurus/theme-live-codeblock'],
+  // themes: ['@docusaurus/theme-live-codeblock'],
 };
 
 export default config;
