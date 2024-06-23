@@ -20,7 +20,7 @@ import TabItem from '@theme/TabItem';
 
 - 导入
 
-```ts
+```ts 
 // 配置相关
 import * as Config from 'yunzai/config'
 // 核心模块
@@ -49,8 +49,7 @@ export default class App extends Core.Plugin {
 
 这是新增的函数式编程，其简洁的写法更容易阅读和理解
 
-```ts
-// your-plugin/message.ts
+```ts title="./message.ts"
 import { Messages } from 'yunzai/core'
 const message = new Messages();
 message.response(/^(#|\/)?你好/, async e => {
@@ -63,8 +62,7 @@ export default message
 
 函数从当前事件`e`(Event)中，执行回复函数，并发送你好。
 
-```ts
-// your-plugin/index.ts
+```ts title="./index.ts"
 import { Events } from 'yunzai/core'
 import App$1 from './message.js'
 const event = new Events()
@@ -78,8 +76,7 @@ export const apps = event.ok
 
 配置更丰富，且功能复杂的继承机制
 
-```ts
-// your-plugin/message.ts
+```ts title="./message.ts"
 import { Plugin } from 'yunzai/core'
 export default class App extends Plugin {
   constructor () {
@@ -102,8 +99,7 @@ export default class App extends Plugin {
 
 函数从当前事件`this.e`(Event)中，执行回复函数，并发送你好。
 
-```ts
-// your-plugin/index.ts
+```ts title="./index.ts"
 import { Events } from 'yunzai/core'
 import App$1 from './message.js'
 const event = new Events()

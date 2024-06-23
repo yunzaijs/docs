@@ -15,15 +15,12 @@ const config: Config = {
 
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
-  organizationName: 'facebook', // Usually your GitHub org/user name.
-  projectName: 'docusaurus', // Usually your repo name.
+  organizationName: 'yunzai', // Usually your GitHub org/user name.
+  projectName: 'Miao-Yunzai-Docs', // Usually your repo name.
 
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
 
-  // Even if you don't use internationalization, you can use this field to set
-  // useful metadata like html lang. For example, if your site is Chinese, you
-  // may want to replace "en" with "zh-Hans".
   i18n: {
     defaultLocale: 'en',
     locales: ['en'],
@@ -56,28 +53,20 @@ const config: Config = {
       // },
       items: [
         {
+          position: 'left',
           label: '教程',
           type: 'docSidebar',
           sidebarId: 'tutorialSidebar',
-          position: 'left',
         },
-        /**
-         * 
-         */
-        // { to: '/team', label: '团队', position: 'left' },
-
-        /**
-         * right
-         */ 
         {
+          position: 'right',
           href: 'https://gitee.com/yoimiya-kokomi/Miao-Yunzai',
           label: 'Gitee',
-          position: 'right',
         },
         {
+          position: 'right',
           href: 'https://github.com/yoimiya-kokomi/Miao-Yunzai',
           label: 'GitHub',
-          position: 'right',
         },
       ],
     },
@@ -93,6 +82,10 @@ const config: Config = {
             {
               label: '简介',
               to: '/docs/intro',
+            },
+            {
+              label: '插件',
+              to: '/docs/category/plugins-shop',
             },
           ],
         },
@@ -112,7 +105,7 @@ const config: Config = {
               href: 'https://github.com/icqqjs/icqq',
             }
           ],
-        }, 
+        },
         {
           title: '更多',
           items: [
@@ -142,6 +135,8 @@ const config: Config = {
       darkTheme: prismThemes.dracula,
     },
   } satisfies Preset.ThemeConfig,
+
+  themes: ['@docusaurus/theme-live-codeblock'],
 };
 
 export default config;

@@ -44,8 +44,7 @@ tailwindcss将自动识别jsx中的class并生成css
 
 ### 组件
 
-```ts
-// ./hello.tsx
+```ts title="./hello.tsx"
 import React from 'react'
 export type DataType = {
   name: string
@@ -55,6 +54,7 @@ export type PropsType = {
 }
 export default function App({ data }: PropsType) {
   return (
+    // highlight-next-line
     <div className="text-red-500 p-2 text-xl m-80">Hello, {data.name}!</div>
   )
 }
@@ -62,8 +62,7 @@ export default function App({ data }: PropsType) {
 
 ### 封装
 
-```tsx
-// ./image.tsx
+```tsx title="./image.ts"
 import React from 'react'
 import { Picture } from 'yunzai/utils'
 import Hello, { PropsType } from './hello.tsx'
@@ -72,19 +71,24 @@ export class Image extends Picture {
         // 继承实例
         super()
         // 启动
+        // highlight-next-line
         this.Pup.start()
     }
     /**
-     * 为指定用户生成html 生成指定数据下的html文件
-     * @returns
+     * 
+     * @param uid 
+     * @param Props 
+     * @returns 
      */
     createHello(uid: number, Props: PropsType) {
         // 生成 html 地址 或 html字符串
+        // highlight-start
         const Address = this.Com.create(<Hello {...Props} />, {
             // html/hello/uid.html
             join_dir: 'hello',
             html_name: `${uid}.html`,
         })
+        // highlight-end
         return this.Pup.render(Address)
     }
 }
@@ -94,17 +98,18 @@ export const imgae = new Image()
 
 ### 截图
 
-```ts
-// ./apps.ts
+```ts title="./apps.ts"
 import { Messages , Segment } from 'yunzai/core'
 import { imgae } from './image.tsx'
 const message = new Messages();
 message.response(/^你好/, async e => {
   const UID = e.user_id
    // render 是异步的，因此此处也是异步的
+        // highlight-start
   const img = await imgae.createHello(UID, {
     data: { name: 'word' }
   })
+        // highlight-end
   // 判断是否成功
   if(typeof img !== 'boolean' ) {
     // 图片
@@ -132,8 +137,7 @@ npm run image
 
 启动热开发时，每次请求都将重新访问
 
-```ts
-// ./routes.tsx
+```ts title="./routes.ts"
 import React from "react"
 import { type RouterType } from "yunzai/image"
 import * as hellos from './hello.tsx'
@@ -189,10 +193,11 @@ async function DynamicHello(Props: Parameters<typeof hellos.default>[0]) {
 
 ```ts
 import React from "react";
+// highlight-start
 import { createRequire } from "module";
 const require = createRequire(import.meta.url);
-// 相对路径
 const url = require("./resources/example.png");
+// highlight-end
 // 样式内引入
 const styles = {
   background: `url(${url})`,
@@ -269,9 +274,11 @@ export class Image extends Picture {
             // 插入头部内容,
             // 可直接html字符串，
             // 也可以使用render组件
+    // highlight-next-line
             html_head: this.Com.render(<Link />),
             // body底部 插入额外脚本
             // 也可使用 render渲染组件
+    // highlight-next-line
             head_body: script,
         });
         return this.Pup.render(Address);

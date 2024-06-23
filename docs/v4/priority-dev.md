@@ -20,7 +20,7 @@ V3中的优先级是靠手动控制数字后，机器人进行排序。
 
 - 推送顺序决定
 
-```ts
+```ts title="./index.js"
 import { Events } from 'yunzai/core'
 import App$1 from './message1.js'
 import App$2 from './message2.js'
@@ -40,7 +40,7 @@ export const apps = event.ok
 
 以下更改了顺序
 
-```ts
+```ts title="./index.js"
 import { Events } from 'yunzai/core'
 import App$1 from './message1.js'
 import App$2 from './message2.js'
@@ -56,8 +56,7 @@ export const apps = event.ok
 
 - 定义顺序决定
 
-```ts
-// your-plugin/message.ts
+```ts title="./message.ts"
 import { Messages } from 'yunzai/core'
 const message = new Messages();
 message.response(/^(#|\/)?你好/, async e => {
@@ -79,7 +78,7 @@ export default message
 
 - 元素顺序决定
 
-```ts
+```ts title="./message.ts"
 export default class App extends plugin {
   constructor () {
     // super是必须的

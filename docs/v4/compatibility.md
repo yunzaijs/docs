@@ -39,7 +39,7 @@ import { BOT_NAME } from 'yunzai/config'
 
 - 调用
 
-```ts
+```ts title="./message.ts"
 export default class App extends plugin {
   constructor (e) {
     // 废弃，不再通过super传参
@@ -59,17 +59,18 @@ export default class App extends plugin {
     // e参数废弃，其方法无法使用类型提示
     e.reply('')
     // 推荐使用
+    // highlight-next-line
     this.e.reply('')
   }
 }
 ```
 
-```ts
+```ts title="./message.ts"
 export default class App extends plugin {
-  constructor (e) {
+  constructor () {
     super()
   }
-  async test(e){
+  async test(){
     // 警告性写法！！！ 
     // 请勿将任何非boolean值的变量让机器人接收
     return this.e.reply('')
@@ -78,6 +79,7 @@ export default class App extends plugin {
     // 用于控制机器人是否继续执行下一个函数
     
     // 正确写法，先执行发送，再结束
+    // highlight-next-line
     this.e.reply('')
     return 
 
@@ -88,14 +90,15 @@ export default class App extends plugin {
 }
 ```
 
-```ts
+```ts title="./message.ts"
 export default class App extends plugin {
-  constructor (e) {
+  constructor () {
     super()
   }
-  async test(e){
+  async test(){
     // 返回值，必然是 bool 值，若为true才会继续匹配其他指令！
     // 这在V3中是不同的，V3默认贪婪模式。而V4当且仅当为true时，继续向后执行
+    // highlight-next-line
     return true
   }
 }
@@ -107,7 +110,7 @@ export default class App extends plugin {
 
 并写入以下代码后，把单例插件放置在`plugins/example/apps`目录
 
-```ts
+```js title="./index.js"
 import fs from 'node:fs'
 const files = fs.readdirSync('./plugins/example/apps').filter(file => file.endsWith('.js'))
 const arr = []
