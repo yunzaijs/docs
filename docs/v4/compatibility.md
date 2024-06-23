@@ -104,33 +104,6 @@ export default class App extends plugin {
 }
 ```
 
-- 单例应用
-
-创建文件`plugins/example/index.js`
-
-并写入以下代码后，把单例插件放置在`plugins/example/apps`目录
-
-```js title="./index.js"
-import fs from 'node:fs'
-const files = fs.readdirSync('./plugins/example/apps').filter(file => file.endsWith('.js'))
-const arr = []
-files.forEach((file) => {
-  arr.push(import(`./apps/${file}`))
-})
-const ret = await Promise.allSettled(arr)
-const apps = {}
-for (const i in files) {
-  const name = files[i].replace('.js', '')
-  if (ret[i].status !== 'fulfilled') {
-    logger.error(`载入插件错误：${logger.red(name)}`)
-    logger.error(ret[i].reason)
-    continue
-  }
-  apps[name] = ret[i].value[Object.keys(ret[i].value)[0]]
-}
-export { apps }
-```
-
 ## lib目录
 
 ## 废弃
