@@ -226,6 +226,7 @@ Puppeteer 截图是默认body
 export default function App({ data }: PropsType) {
   return (
     <div className="text-red-500 p-2 text-xl m-80">Hello, {data.name}!
+// highlight-next-line
       <section className="h-[80rem] w-[90rem]">
         嘎嘎
       </section>
@@ -242,6 +243,7 @@ export class Image extends Picture {
             html_name: `${uid}.html`,
         })
         return this.Pup.render(Address,{
+// highlight-next-line
           tab:'section'
         })
     }
@@ -250,36 +252,49 @@ export class Image extends Picture {
 
 ### 元素插入
 
-```ts
-const Link = () => {
+
+```html title="./script.html"
+<script>
+    // 利用html的语法提示，撰写插入的脚本
+// highlight-next-line
+    const dom = document.getElementById("root");
+    
+</script>
+```
+
+```tsx  title="./link.tsx"
+export const Link = () => {
     return (
         <>
             <link
                 rel="stylesheet"
+// highlight-next-line
                 href={require("../../resources/css/output.css")}
             />
             <link
                 rel="stylesheet"
+// highlight-next-line
                 href={require("../../resources/css/hello.css")}
             />
         </>
     );
 };
-const script = `<script> const dom = document.getElementById("root"); </script>`;
+```
+
+```ts title="./image.tsx"
+import { readFileSync } from "fs";
+import { Link } from "./link.tsx";
 export class Image extends Picture {
     createHello(uid: number, Props: PropsType) {
         const Address = this.Com.create(<Hello {...Props} />, {
             join_dir: "hello",
             html_name: `${uid}.html`,
-            // 插入头部内容,
-            // 可直接html字符串，
-            // 也可以使用render组件
-    // highlight-next-line
+            // head里插入额外的元素
+// highlight-next-line
             html_head: this.Com.render(<Link />),
-            // body底部 插入额外脚本
-            // 也可使用 render渲染组件
-    // highlight-next-line
-            head_body: script,
+            // body里插入额外的元素
+// highlight-next-line
+            head_body: readFileSync('./script.html'),
         });
         return this.Pup.render(Address);
     }
