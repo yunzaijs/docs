@@ -7,3 +7,4 @@ sidebar_position: 1
 | 名称  |  作者  | 备注  |
 |-------| ----- |------ |
 | [系统 (system-plugin)](https://github.com/yoimiya-kokomi/Miao-Yunzai/tree/system) | [@柠檬冲水](https://github.com/ningmengchongshui) | 用于更友好的控制机器人的插件 |
+| [锅巴插件 (guoba-plugin)](https://github.com/guoba-yunzai/guoba-plugin) | [@牧星长](https://github.com/sjlei) | 主要提供云崽的网页端后台管理界面以及提供给其他插件便捷的图形化配置能力 |
