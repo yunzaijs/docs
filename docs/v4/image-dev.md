@@ -154,7 +154,7 @@ const Config: RouterType = [
 export default Config
 ```
 
-## 技巧
+## 扩展功能
 
 > VScode 安装插件 `Path Intellisense`
 
@@ -301,3 +301,74 @@ export class Image extends Picture {
 }
 ```
 
+
+### 引用别名
+
+定义一个显示图片的组件
+
+```tsx title="./views/image.tsx"
+import React from 'react'
+export default () => <div className='show-image'></div>
+```
+
+创建一个css文件
+
+> 图片位置./resources/exp.png
+
+```css  title="./resources/css/example.main.css"
+.show-image {
+    // 引入上级目录的图片资源
+    background-image: url("../resources/exp.png");
+}
+```
+
+正常情况下，截图工具是无法识别css内部引用的其他资源的
+
+- 资源的位置随便可能会因为插件位置的改变而改变
+
+- 框架的设计变更也可能发生改变
+
+- 生产的html文件随时会变化
+
+此时，开发者需要借助别名系统，确保资源能正常被识别出来
+
+```tsx
+import { dirname, join } from 'path'
+import ImageComponent from './views/image.tsx'
+// 别名路径
+export const paths = {
+  // 定位自身的 md文件，并获取目录地址
+  "@example": dirname(require("./README.md")),
+  // 或设置其他别名
+  "@resources": join(dirname(require("./README.md")), "resources"),
+}
+
+// 携带了别名的资源
+export const files = {
+  // ... require ..
+  'hello': [require("./resources/css/example.main.css")]
+}
+
+export class Image extends Picture {
+  async createHello() {
+    const Address = this.Com.create(
+      // 引入组件
+      <ImageComponent {...Props} />,
+      {
+      // 设置带有别名的资源
+      html_files: files.hello,
+      // 设置别名
+      file_paths: paths,
+      // ... 其他参数
+    })
+    // return ...
+  }
+}
+```
+
+```css  title="./resources/css/example.main.css"
+.show-image {
+    // 在外部资源中使用别名引用
+    background-image: url("@example/resources/exp.png");
+}
+```
