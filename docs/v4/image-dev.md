@@ -294,7 +294,7 @@ export class Image extends Picture {
             html_head: this.Com.render(<Link />),
             // body里插入额外的元素
 // highlight-next-line
-            head_body: readFileSync('./script.html'),
+            head_body: readFileSync('./script.html','utf-8'),
         });
         return this.Pup.render(Address);
     }
