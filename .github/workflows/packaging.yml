@@ -13,22 +13,26 @@ jobs:
     - name: Checkout repository
       uses: actions/checkout@v2
 
-    - name: 设置环境
+    - name: version 18
       uses: actions/setup-node@v2
       with:
         node-version: '18'
 
-    - name: 设置时区并获取东八区当前时间
+    - name: set system time
       id: beijing_time
       run: echo "BEIJING_TIME=$(TZ=Asia/Shanghai date +'%Y-%m-%d %H:%M:%S')" >> $GITHUB_ENV
-        
-    - name: 安装项目依赖
+
+    - name: delete .npmrc
+      run: |
+        rm -rf .npmrc
+
+    - name: install
       run: npm install
 
-    - name: 开始打包项目
+    - name: build
       run: npm run build
 
-    - name: 推送构建结果到 docs 分支
+    - name: push docs
       run: |
         cd build/
         git init
