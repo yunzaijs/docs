@@ -76,11 +76,11 @@ const config: Config = {
           items: [
             {
               label: '简介',
-              to: '/docs/intro',
+              to: '/docs/docs/intro',
             },
             {
               label: '插件',
-              to: '/docs/category/plugins-shop',
+              to: '/docs/docs/category/plugins-shop',
             },
           ],
         },
