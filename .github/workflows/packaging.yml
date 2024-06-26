@@ -36,5 +36,5 @@ jobs:
         git config --local user.name "ningmengchongshui"
         git add -A
         git commit -m "自动打包 - ${{ env.BEIJING_TIME }}"
-        git remote add github https://ningmengchongshui:${{ secrets.GH_TOKEN }}@github.com/ningmengchongshui/Miao-Yunzai-Docs.git
+        git remote add github https://yunzai-org:${{ secrets.GH_TOKEN }}@github.com/yunzai-org/docs.git
         git push github HEAD:docs -f

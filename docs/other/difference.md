@@ -7,10 +7,6 @@ sidebar_position: 1
 ## 注意
 
 全新仓库！不推荐迁移！！！！
-
-* **一些新特性：** Miao-Yunzai会逐步重构，增加新特性与功能，可能会有功能与形态上的变化。
-* **移除了签到功能：** 与原Yunzai独立的仓库，去除了较为敏感的签到功能，以尝试恢复[Github](https://github.com/yoimiya-kokomi/Miao-Yunzai.git)
-  环境。附加[Gitee](https://gitee.com/yoimiya-kokomi/Miao-Yunzai.git)
   
 项目仅供学习交流使用，严禁用于任何商业用途和非法行为
 

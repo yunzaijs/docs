@@ -23,28 +23,14 @@ V3 即将迎来停更，新版内容和改动较多，请仔细阅读后再进�
 
 - 安装源码
 
-<Tabs>
-  <TabItem value="apple" label="Github" default>
-
 ```sh
-git clone --depth=1 -b dev https://github.com/yoimiya-kokomi/Miao-Yunzai.git
+git clone --depth=1 https://github.com/yunzai-org/yunzaijs.git
 ```
-
-  </TabItem>
-  <TabItem value="orange" label="Gitee">
-
-```sh
-git clone --depth=1 -b dev https://gitee.com/yoimiya-kokomi/Miao-Yunzai.git
-```
-
-  </TabItem>
-</Tabs>
-
 
 - 进入目录
 
 ```sh
-cd Miao-Yunzai
+cd yunzaijs
 ```
 
 - 安装依赖

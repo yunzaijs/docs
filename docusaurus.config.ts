@@ -8,15 +8,15 @@ const config: Config = {
   // favicon: 'img/favicon.ico',
 
   // Set the production url of your site here
-  url: 'https://ningmengchongshui.github.io',
+  url: 'https://yunzai-org.github.io',
   // Set the /<baseUrl>/ pathname under which your site is served
   // For GitHub pages deployment, it is often '/<projectName>/'
-  baseUrl: '/Miao-Yunzai-Docs/',
+  baseUrl: '/docs/',
 
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
-  organizationName: 'yunzai', // Usually your GitHub org/user name.
-  projectName: 'Miao-Yunzai-Docs', // Usually your repo name.
+  organizationName: 'yunzai-org', // Usually your GitHub org/user name.
+  projectName: 'docs', // Usually your repo name.
 
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
@@ -33,7 +33,7 @@ const config: Config = {
         docs: {
           sidebarPath: './sidebars.ts',
           editUrl:
-            'https://github.com/ningmengchongshui/Miao-Yunzai-Docs/tree/main/',
+            'https://github.com/yunzai-org/docs/tree/main/',
         },
         theme: {
           customCss: './src/css/custom.css',
@@ -60,12 +60,7 @@ const config: Config = {
         },
         {
           position: 'right',
-          href: 'https://gitee.com/yoimiya-kokomi/Miao-Yunzai',
-          label: 'Gitee',
-        },
-        {
-          position: 'right',
-          href: 'https://github.com/yoimiya-kokomi/Miao-Yunzai',
+          href: 'https://github.com/yunzai-org/yunzaijs',
           label: 'GitHub',
         },
       ],
