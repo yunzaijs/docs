@@ -10,39 +10,20 @@ import TabItem from '@theme/TabItem';
 
 :::tip 提示
 
-支持TS、TSX环境，提供Yunzai完全的类型声明及其开发文档。
+所有行为都应该是从推荐的模块中导出，这是统一的接口规范。
 
 :::
 
-## 模块
 
-所有行为都应该是从推荐的模块中导出，这是统一的接口规范。
+## 核心
 
-- 导入
-
-```ts 
-// 配置相关
-import * as Config from 'yunzai/config'
-// 核心模块
-import * as Core from 'yunzai/core'
-// 数据操作
-import * as DB from 'yunzai/db'
-// 米游接口
-import * as MYS from 'yunzai/mys'
-// 工具类
-import * as Utils from 'yunzai/utils'
-```
-
-- 使用
+### 导入
 
 ```ts
 import * as Core from 'yunzai/core'
-export default class App extends Core.Plugin {
-  //
-}
 ```
 
-## 开发
+### 开发
 
 <Tabs>
   <TabItem value="apple" label="回调" default>
@@ -111,3 +92,55 @@ export const apps = event.ok
 
   </TabItem>
 </Tabs>
+
+## 配置
+
+```ts 
+import * as Config from 'yunzai/config'
+```
+
+配置模块主要分为`系统性常量`和`系统配置器`
+
+- 系统性常量
+
+```ts
+import { BOT_NAME } from 'yunzai/config'
+```
+
+这是无法修改的,存在于内容,且运行后不变的
+
+- 系统配置器
+
+```ts
+import { ConfigController } from 'yunzai/config'
+```
+
+配置器包含了配置文件内的所有参数.
+
+## 工具
+
+```ts 
+import * as Utils from 'yunzai/utils'
+```
+
+该模块是与机器人运行无关的,但与config系统有关的.
+
+主要辅助开发者更快的实现业务,而不再需要关注方法的实现
+
+
+## 数据
+
+```ts 
+import * as DB from 'yunzai/db'
+```
+
+当前数据分为`Redis`和`Sqlite`数据库
+
+## 原神
+
+
+```ts 
+import * as MYS from 'yunzai/mys'
+```
+
+米游接口 -- 非原神插件禁止使用,未来版本将废弃

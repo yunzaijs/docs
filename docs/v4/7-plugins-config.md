@@ -29,6 +29,8 @@ sidebar_position: 7
   "devDependencies": {},
   // yunzai配置
   "yunzai":{
+    // 在这里标注插件支持yunzai的版本
+    "versoin":"4.0.2"
     // 此处将放置其插件内部在未来可能需要的参数
   }
 }

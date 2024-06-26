@@ -6,7 +6,7 @@ sidebar_position: 8
 
 :::tip 提示
 
-如果你的插件是从V3升级到V4，该文档或许对你有所帮助
+如果插件需要升级到V4，该文档或许有所帮助
 
 :::
 
@@ -64,7 +64,7 @@ export const apps = { xiaoyao }
 
 ## V3升级为V4
 
-## 差异
+### 差异
 
 - 全局变量
 
@@ -82,14 +82,6 @@ import { Redis } from 'yunzai/db'
 V3的命名是混乱的，毫无章法的
 
 但在V4中，导出的量都尽可能的使用大写开头，而函数使用驼峰命名。
-
-- 系统性常量
-
-```ts
-import { BOT_NAME } from 'yunzai/config'
-```
-
-不可更改且固定的值，将采用全`大写`加`_`符号命名
 
 - 调用
 
@@ -158,13 +150,15 @@ export default class App extends plugin {
 }
 ```
 
-## lib目录
+### lib目录
 
-## 废弃
 
-lib文件夹已全部废弃。
+:::danger 警告
 
-你需要从对应的模块中使用原功能
+lib文件夹已全部废弃。你需要从对应的模块中使用原功能。模块内部标注废弃的方法都计划在未来中移除。
+
+:::
+
 
 - lib/common/common.js
 
