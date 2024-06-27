@@ -1,11 +1,17 @@
-# Yunzai 
+# YunzaiJS 
 
-如果文档中发现错误，或提交文档修改，或丰富本站文档，可点击编辑按钮
 
-## 致谢
+## 编辑
+这里是yunzaijs框架内容编辑源码，
 
-|                           Nickname                            | Contribution     |
-|:-------------------------------------------------------------:|------------------|
-|      [Yunzai v3.0](https://gitee.com/le-niao/Yunzai-Bot)      | 乐神的Yunzai-Bot V3 |
-|      [Miao-Yunzai v3.0](https://github.com/yoimiya-kokomi/Miao-Yunzai)      | 喵版Yunzai |
-| [icqq](https://github.com/icqqjs/icqq) | ICQQ             |
+该文档任何人可编辑，提交后会进入自动部署，并更新网页。
+
+> 如果文档中发现错误，或提交文档修改，或丰富本站文档，可点击编辑按钮
+
+[阅读文档 https://yunzai-org.github.io/docs/](https://yunzai-org.github.io/docs/)
+
+## 注意
+
+请勿提交任何非法内容，
+
+该文档的内容仅用于学习~
