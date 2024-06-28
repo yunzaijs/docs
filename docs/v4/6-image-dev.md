@@ -1,5 +1,5 @@
 ---
-sidebar_position: 3
+sidebar_position: 6
 ---
 
 # 图片
@@ -42,7 +42,7 @@ tailwindcss将自动识别jsx中的class并生成css
 
 此后，不再担心崩溃后影响其他应用
 
-### 组件
+### 如何编写组件
 
 ```ts title="./hello.tsx"
 import React from 'react'
@@ -60,7 +60,7 @@ export default function App({ data }: PropsType) {
 }
 ```
 
-### 封装
+### 实例化截图类
 
 ```tsx title="./image.ts"
 import React from 'react'
@@ -96,7 +96,7 @@ export class Image extends Picture {
 export const imgae = new Image()
 ```
 
-### 截图
+### 如何进行截图
 
 ```ts title="./apps.ts"
 import { Messages , Segment } from 'yunzai/core'
@@ -121,15 +121,15 @@ message.response(/^你好/, async e => {
 export default message
 ```
 
-##  热开发
+##  热开发模式
 
-### 启动
+### 启动独立的服务
 
 ```sh
 npm run image
 ```
 
-### 配置
+### 配置图片页路由
 
 该文件放置于插件目录下
 

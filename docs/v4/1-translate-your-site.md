@@ -9,7 +9,7 @@ import TabItem from '@theme/TabItem';
 
 :::tip 使用者提示
 
-V3 即将迎来停更，新版内容和改动较多，请仔细阅读后再进行.
+V4会保持对V3的支持，但不保留对V2的支持，因此，V3内的所有V2写法都将在新版中失效。
 
 :::
 
@@ -63,3 +63,5 @@ npm run start
 ```sh
 npm run kill
 ```
+
+> 更多内容，请阅读 [pm2](https://pm2.keymetrics.io/) 使用文档

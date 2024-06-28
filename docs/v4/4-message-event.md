@@ -6,41 +6,71 @@ sidebar_position: 4
 
 :::tip 提示
 
-此处内容需要阅读前置章节
+该章节内容需要阅读ICQQ相关接口
 
 :::
 
 ## 调用
 
+### 群聊
+
+
+```ts
+import { Messages } from 'yunzai/core'
+const message = new Messages({
+  event: 'message.group'
+})
+```
 
 - 回复
 
 ```ts
-const callBack = (e) =>{
-  e.reply('你好')
-}
+message.response(/^(#|\/)?你好/, async e => {
+    e.reply('你好')
+})
 ```
 
 - 图片
 
 ```ts
-const callBack = (e) =>{
+message.response(/^(#|\/)?你好/, async e => {
   const img : Buffer | null = null
   e.reply(Segment.image(img))
-}
+})
 ```
 
 - 复合
 
 
 ```ts
-const callBack = (e) =>{
+message.response(/^(#|\/)?你好/, async e => {
   const img : Buffer | null = null
   e.reply(['这是一张图片', Segment.image(img)])
-}
+})
 ```
 
-## 字段
+
+### 私聊
+
+
+```ts
+import { Messages } from 'yunzai/core'
+const message = new Messages({
+  event: 'message.private'
+})
+```
+
+- 回复
+
+```ts
+message.response(/^(#|\/)?你好/, async e => {
+    e.reply('你好')
+})
+```
+
+## 属性
+
+### 群聊
 
 ```ts
 export interface EventType {
@@ -90,3 +120,5 @@ export interface EventType {
   group_avatar: string 
 }
 ```
+
+### 私聊
