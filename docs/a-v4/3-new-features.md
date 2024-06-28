@@ -25,12 +25,9 @@ import * as Core from 'yunzai/core'
 <Tabs>
   <TabItem value="apple" label="函数应用" default>
 
-这是新增的函数式编程，其简洁的写法更容易阅读和理解
-
 ```ts title="./message.ts"
 import { Messages } from 'yunzai/core'
 const message = new Messages({
-  // 必须标注正确的事件才能推导出类型
   event: 'message.group'
 })
 message.response(/^(#|\/)?你好/, async e => {
@@ -41,8 +38,6 @@ export default message
 
   </TabItem>
   <TabItem value="orange" label="类应用">
-
-配置更丰富，且功能复杂的继承机制
 
 ```ts title="./message.ts"
 import { Plugin } from 'yunzai/core'

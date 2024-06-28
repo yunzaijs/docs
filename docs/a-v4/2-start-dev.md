@@ -34,7 +34,7 @@ export const apps = {
 
 回调函数从 事件对象 里执行回复方法。
 
-将一个`apps`进行导出，让`AlemonJS`进行识别
+将一个`apps`进行导出，让`YunzaiJS`进行识别
 
 ### 响应集成
 
