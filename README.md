@@ -15,3 +15,9 @@
 请勿提交任何非法内容，
 
 该文档的内容仅用于学习~
+
+## 贡献
+
+<a href="https://github.com/yunzai-org/docs/graphs/contributors">
+  <img src="https://contrib.rocks/image?repo=yunzai-org/docs" />
+</a>
