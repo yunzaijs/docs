@@ -59,6 +59,76 @@ export default class App extends Plugin {
 ```
 
   </TabItem>
+  <TabItem value="banana" label="动态函数应用(基本)">
+
+```ts title="./message.ts"
+import { Messages } from 'yunzai/core'
+
+// 表 YourFuncs 可以预定义，也可运行时动态构建
+const YourFuncs = new Map([
+    [/^(#|\/)?你好呀/, async (e) => {
+        e.reply('你好呀');
+    }],
+    [/^(#|\/)?你好哇/, async (e) => {
+        e.reply('你好哇');
+    }],
+    [/^(#|\/)?嘎嘎/, async (e) => {
+        e.reply('嘎嘎');
+    }]
+]);
+
+const message = new Messages({
+  event: 'message.group'
+});
+
+for (const [pattern, callback] of YourFuncs) {
+  message.response(pattern, callback)
+}
+
+export default message
+```
+
+  </TabItem>
+  <TabItem value="banana" label="动态函数应用(复杂)">
+
+```ts title="./message.ts"
+import { Messages } from 'yunzai/core'
+
+// 对象 YourApps 可以预定义，也可运行时动态构建
+const YourApps = {
+  YourFuncs1: new Map([
+    [/^(#|\/)?你好呀/, async (e) => {
+        e.reply('你好呀');
+    }],
+    [/^(#|\/)?你好哇/, async (e) => {
+        e.reply('你好哇');
+    }],
+]),
+  YourFuncs2: new Map([
+    [/^(#|\/)?你好/, async (e) => {
+        e.reply('你好');
+    }],
+    [/^(#|\/)?Hello/, async (e) => {
+        e.reply('Hello');
+    }],
+]),
+};
+
+const apps = {};
+
+for (const name in YourApps) {
+  const message = new Messages({
+    event: 'message.group'
+  });
+  for (const [pattern, callback] of YourFuncs[name]) {
+    message.response(pattern, callback)
+  }
+  apps[name] = message.ok
+}
+export apps
+```
+
+  </TabItem>
 </Tabs>
 
 ## 配置
