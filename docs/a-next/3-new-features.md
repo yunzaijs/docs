@@ -94,25 +94,3 @@ import * as Utils from 'yunzai/utils'
 该模块是与机器人运行无关的,但与config系统有关的.
 
 主要辅助开发者更快的实现业务,而不再需要关注方法的实现
-
-
-## 数据
-
->不推荐使用， Redis ，Sqlite 未来不再主动连接
-
-```ts 
-import * as DB from 'yunzai/db'
-```
-
-当前数据分为`Redis`和`Sqlite`数据库
-
-## 原神
-
-
-> 不推荐使用，未来版本将废弃
-
-```ts 
-import * as MYS from 'yunzai/mys'
-```
-
-米游接口 -- 非米游插件禁止使用

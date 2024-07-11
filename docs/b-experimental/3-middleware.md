@@ -1,12 +1,11 @@
 ---
-sidebar_position: 9
+sidebar_position: 3
 ---
 
 # 中间件
 
 :::tip 提示
 中间件是实验性的，正在测试中...
-
 :::
 
 

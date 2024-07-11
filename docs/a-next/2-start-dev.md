@@ -49,7 +49,7 @@ message.response(/^(#|\/)?你好呀/, async e => {
 message.response(/^(#|\/)?你好哇/, async e => {
     e.reply('你好哇')
 })
-export default message
+export default message.ok
 ```
 
 ```ts title="./plugins/your-plugin/apps/dark.ts"
@@ -60,7 +60,7 @@ const message = new Messages({
 message.response(/^(#|\/)?嘎嘎/, async e => {
     e.reply('嘎嘎')
 })
-export default message
+export default message.ok
 ```
 
 ```ts title="./plugins/your-plugin/apps/index.ts"
