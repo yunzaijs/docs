@@ -9,7 +9,7 @@ import TabItem from '@theme/TabItem';
 
 :::tip 使用者提示
 
-V4会保持对V3的支持，但不保留对V2的支持，因此，V3内的所有V2写法都将在新版中失效。
+Next会保持对V3的支持，但不保留对V2的支持，因此，V3内的所有V2写法都将在新版中失效。
 
 :::
 
@@ -133,7 +133,7 @@ npm -v
   </TabItem>
 </Tabs>
 
-出现意外？阅读[常见问题](../b-other//3-common-problem.md)
+出现意外？阅读[常见问题](../x-other/3-common-problem.md)
 
 - 安装源码
 
@@ -173,7 +173,7 @@ npm config set registry https://registry.npmmirror.com
 ```
 
 ```sh
-# yarn必须是1.12.1版本，最新版无法使用link
+# yarn 不能使用2.x版本，它无法使用link
 npm install yarn@1.12.1 -g
 # 加载
 yarn

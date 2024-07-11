@@ -6,15 +6,15 @@ sidebar_position: 2
 
 :::tip 提示
 
-如果插件需要升级到V4，该文档或许有所帮助。
+如果插件需要升级到Next，该文档或许有所帮助。
 
 :::
 
-## V2升级为V4
+## V2升级为Next
 
 xiaoyao-cvs 是经典v2集成插件
 
-接下来以此为例，讲述如何从v2升级为v4
+接下来以此为例，讲述如何从v2升级为Next
 
 ```ts title="./index.ts"
 import { Plugin } from 'yunzai/core'
@@ -62,7 +62,7 @@ const xiaoyao = assignPropertiesAndMethods(application['rule'], application)
 export const apps = { xiaoyao }
 ```
 
-## V3升级为V4
+## V3升级为Next
 
 ### 差异
 
@@ -72,7 +72,7 @@ V3中`segment`、`plugin`、`Bot`和`redis`都是全局的，
 
 请避免生产全局对象，该行为会对环境造成污染，产生不可估计的影响
 
-在V4,我们更推荐你从核心模块中导出。
+在Next,我们更推荐你从核心模块中导出。
 
 ```ts
 import { Segment , Plugin , Bot } from 'yunzai/core'
@@ -81,7 +81,7 @@ import { Redis } from 'yunzai/db'
 
 V3的命名是混乱的，毫无章法的
 
-但在V4中，导出的量都尽可能的使用大写开头，而函数使用驼峰命名。
+但在Next中，导出的量都尽可能的使用大写开头，而函数使用驼峰命名。
 
 - 调用
 
@@ -143,7 +143,7 @@ export default class App extends plugin {
   }
   async test(){
     // 返回值，必然是 bool 值，若为true才会继续匹配其他指令！
-    // 这在V3中是不同的，V3默认贪婪模式。而V4当且仅当为true时，继续向后执行
+    // 这在V3中是不同的，V3默认贪婪模式。而Next当且仅当为true时，继续向后执行
     // highlight-next-line
     return true
   }
