@@ -10,6 +10,7 @@ sidebar_position: 1
 
 :::
 
+
 V3中的优先级是靠手动控制数字后，机器人进行排序。
 
 在Next中，应用间不再彼此影响，其执行速度，取决于功能处理时间最长的功能。
@@ -21,7 +22,7 @@ V3中的优先级是靠手动控制数字后，机器人进行排序。
 - 推送顺序决定
 
 ```ts title="./index.js"
-import { Events } from 'yunzai/core'
+import { Events } from 'yunzai'
 import App$1 from './message1.js'
 import App$2 from './message2.js'
 import App$3 from './message3.js'
@@ -41,7 +42,7 @@ export const apps = event.ok
 以下更改了顺序
 
 ```ts title="./index.js"
-import { Events } from 'yunzai/core'
+import { Events } from 'yunzai'
 import App$1 from './message1.js'
 import App$2 from './message2.js'
 import App$3 from './message3.js'
@@ -57,7 +58,7 @@ export const apps = event.ok
 - 定义顺序决定
 
 ```ts title="./message.ts"
-import { Messages } from 'yunzai/core'
+import { Messages } from 'yunzai'
 const message = new Messages();
 message.response(/^(#|\/)?你好/, async e => {
     e.reply('你好')
@@ -79,7 +80,8 @@ export default message
 - 元素顺序决定
 
 ```ts title="./message.ts"
-export default class App extends plugin {
+import { Plugin } from 'yunzai'
+export default class App extends Plugin {
   constructor () {
     // super是必须的
     super()

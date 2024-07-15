@@ -1,17 +1,19 @@
 ---
-sidebar_position: 2
+sidebar_position: 10
 ---
 
-# 插件配置
+# 开发
 
-:::danger 警告
+> 安装应用开发模板
 
-该文档是实验性的，未上线
+```sh
+npm create yunzai@latest -y
+cd yunzai
+npm install yarn@1.2.1 -y
+yarn
+```
 
-:::
-
-
-配置一个`package.json`
+- package.json
 
 ```json5
 {
