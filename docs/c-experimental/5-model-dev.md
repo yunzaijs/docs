@@ -19,14 +19,6 @@ sidebar_position: 5
 import { Sqlite } from 'yunzai'
 ```
 
-> Redis 废弃，将更改为ioRedis，以支持更多特性
-
-> 当且仅当被调用时，进行连接
-
-```ts 
-import { Redis } from 'yunzai'
-```
-
 ## 原神
 
 

@@ -8,9 +8,10 @@ sidebar_position: 9
 
 ```ts  title="./middleware/message/star-rail.ts"
 import { type EventType } from 'yunzai'
+type Typing = 'message' | 'event'
 export default (config) => {
     return class StarRail {
-        static typing: 'message' | 'event' = 'message'
+        static typing: Typing = 'message'
         static name = 'StarRail'
         // 其元素顺序即执行顺序
         static names = ['msg']
@@ -39,8 +40,11 @@ export default (config) => {
 - 配置
 
 ```ts title="yunzai.config.js"
-import StarRail from 'yz-md-star-rail'
-export default {
-    middleware:[StarRail()]
-}
+import { defineConfig } from 'yunzai'
+import starRail from 'yz-mw-star-rail'
+//
+export default defineConfig({
+  // 中间件
+  middlewares: [starRail()]
+})
 ```
