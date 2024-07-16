@@ -17,7 +17,7 @@ xiaoyao-cvs 是经典v2集成插件
 接下来以此为例，讲述如何从v2升级为Next
 
 ```ts title="./index.ts"
-import { Plugin } from 'yunzai/core'
+import { Plugin } from 'yunzai'
 // v2 的插件集
 import * as application from './apps/index.js'
 // 扩展 fun(e,....) 的方法
@@ -75,8 +75,8 @@ V3中`segment`、`plugin`、`Bot`和`redis`都是全局的，
 在Next,我们更推荐你从核心模块中导出。
 
 ```ts
-import { Segment , Plugin , Bot } from 'yunzai/core'
-import { Redis } from 'yunzai/db'
+import { Segment , Plugin , Bot } from 'yunzai'
+import { Redis } from 'yunzai'
 ```
 
 V3的命名是混乱的，毫无章法的
@@ -164,49 +164,49 @@ lib文件夹已全部废弃。你需要从对应的模块中使用原功能。�
 
 ```ts
 // bot类方法
-import * as common from 'yunzai/core'
+import * as common from 'yunzai'
 // 工具类方法
-import { sleep } from 'yunzai/utils'
+import { sleep } from 'yunzai'
 ```
 
 - lib/puppeteer/puppeteer.js
 
 ```ts
-import { puppeteer } from 'yunzai/utils'
+import { puppeteer } from 'yunzai'
 ```
 
 - lib/plugin/plugin.js
 
 ```ts
-import { Plugin as plugin } from 'yunzai/core'
+import { Plugin as plugin } from 'yunzai'
 ```
 
 - renderers/puppeteer/index.js
 
 ```ts
-import { renderers } from 'yunzai/utils'
+import { renderers } from 'yunzai'
 ```
 - renderers/puppeteer/lib/puppeteer.js
 
 ```ts
-import { Renderers } from 'yunzai/utils'
+import { Renderers } from 'yunzai'
 ```
 
 - lib/config/config.js
 
 ```ts
-import { ConfigController as cfg } from 'yunzai/config'
+import { ConfigController as cfg } from 'yunzai'
 ```
 
 
 - lib/renderer/renderer.js
 
 ```ts
-import { Renderer } from 'yunzai/utils'
+import { Renderer } from 'yunzai'
 ```
 
 - lib/renderer/loader.js
 
 ```ts
-import { renderer } from 'yunzai/utils'
+import { renderer } from 'yunzai'
 ```

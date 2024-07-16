@@ -64,7 +64,7 @@ export default function App({ data }: PropsType) {
 
 ```tsx title="./image.ts"
 import React from 'react'
-import { Picture } from 'yunzai/utils'
+import { Picture } from 'yunzai'
 import Hello, { PropsType } from './hello.tsx'
 export class Image extends Picture {
     constructor() {
@@ -99,7 +99,7 @@ export const imgae = new Image()
 ### 如何进行截图
 
 ```ts title="./apps.ts"
-import { Messages , Segment } from 'yunzai/core'
+import { Messages , Segment } from 'yunzai'
 import { imgae } from './image.tsx'
 const message = new Messages();
 message.response(/^你好/, async e => {
@@ -139,9 +139,9 @@ npm run image
 
 ```ts title="./routes.ts"
 import React from "react"
-import { type RouterType } from "yunzai/image"
+import { type RouterType } from "yunzai"
 import * as hellos from './hello.tsx'
-import { createDynamicComponent } from 'yunzai/utils'
+import { createDynamicComponent } from 'yunzai'
 const dynamic = createDynamicComponent(import.meta.url)
 const Hello = (await dynamic<typeof hellos>('./hello.tsx')).default;
 const Config: RouterType = [
@@ -162,7 +162,7 @@ export default Config
 
 ```ts
 import * as hellos from './hello.tsx'
-import { createDynamicComponent } from 'yunzai/utils'
+import { createDynamicComponent } from 'yunzai'
 const dynamic = createDynamicComponent(import.meta.url)
 /**
  * 
@@ -195,19 +195,17 @@ async function DynamicHello(Props: Parameters<typeof hellos.default>[0]) {
 import React from "react";
 // highlight-start
 import { createRequire } from "module";
+import { BackgroundImage } from 'yunzai'
 const require = createRequire(import.meta.url);
-const url = require("./resources/example.png");
 // highlight-end
-// 样式内引入
-const styles = {
-  background: `url(${url})`,
-  backgroundSize: "100% 100%",
-};
 export default function App() {
   return (
     <>
-      <div style={styles}></div>
-      <img src={url} />
+      <BackgroundImage url={require("./resources/example.png")} style={backgroundSize: "100% 100%"}>
+       我有了一个背景图
+      </BackgroundImage>
+      <img src={require("./resources/example.svg")} />
+      <img src={require("./resources/example.png")} />
     </>
   );
 }

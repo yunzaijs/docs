@@ -19,14 +19,14 @@ import TabItem from '@theme/TabItem';
 
 
 ```ts
-import * as Core from 'yunzai/core'
+import * as Core from 'yunzai'
 ```
 
 <Tabs>
   <TabItem value="apple" label="函数应用" default>
 
 ```ts title="./message.ts"
-import { Messages } from 'yunzai/core'
+import { Messages } from 'yunzai'
 const message = new Messages({
   event: 'message.group'
 })
@@ -64,7 +64,7 @@ export default class App extends Plugin {
 ## 配置
 
 ```ts 
-import * as Config from 'yunzai/config'
+import * as Config from 'yunzai'
 ```
 
 配置模块主要分为`系统性常量`和`系统配置器`
@@ -72,7 +72,7 @@ import * as Config from 'yunzai/config'
 - 系统性常量
 
 ```ts
-import { BOT_NAME } from 'yunzai/config'
+import { BOT_NAME } from 'yunzai'
 ```
 
 这是无法修改的,存在于内容,且运行后不变的
@@ -80,7 +80,7 @@ import { BOT_NAME } from 'yunzai/config'
 - 系统配置器
 
 ```ts
-import { ConfigController } from 'yunzai/config'
+import { ConfigController } from 'yunzai'
 ```
 
 配置器包含了配置文件内的所有参数.
@@ -88,7 +88,7 @@ import { ConfigController } from 'yunzai/config'
 ## 工具
 
 ```ts 
-import * as Utils from 'yunzai/utils'
+import * as Utils from 'yunzai'
 ```
 
 该模块是与机器人运行无关的,但与config系统有关的.

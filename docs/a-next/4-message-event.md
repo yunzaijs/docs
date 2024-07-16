@@ -16,7 +16,7 @@ sidebar_position: 4
 
 
 ```ts
-import { Messages } from 'yunzai/core'
+import { Messages } from 'yunzai'
 const message = new Messages({
   event: 'message.group'
 })
@@ -54,7 +54,7 @@ message.response(/^(#|\/)?你好/, async e => {
 
 
 ```ts
-import { Messages } from 'yunzai/core'
+import { Messages } from 'yunzai'
 const message = new Messages({
   event: 'message.private'
 })
