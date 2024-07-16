@@ -194,19 +194,17 @@ async function DynamicHello(Props: Parameters<typeof hellos.default>[0]) {
 import React from "react";
 // highlight-start
 import { createRequire } from "module";
+import { BackgroundImage } from 'yunzai'
 const require = createRequire(import.meta.url);
-const url = require("./resources/example.png");
 // highlight-end
-// 样式内引入
-const styles = {
-  background: `url(${url})`,
-  backgroundSize: "100% 100%",
-};
 export default function App() {
   return (
     <>
-      <div style={styles}></div>
-      <img src={url} />
+      <BackgroundImage url={require("./resources/example.png")} style={backgroundSize: "100% 100%"}>
+       我有了一个背景图
+      </BackgroundImage>
+      <img src={require("./resources/example.svg")} />
+      <img src={require("./resources/example.png")} />
     </>
   );
 }
