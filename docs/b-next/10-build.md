@@ -78,9 +78,9 @@ export default () => {
 
 ```js
 import { defineConfig } from 'yunzai'
-import Expo from './src/index.js'
+import Example from './src/index.js'
 export default defineConfig({
-  apps: [Expo()]
+  applications:[ Example() ]
 })
 ```
 
