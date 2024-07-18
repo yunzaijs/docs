@@ -40,7 +40,7 @@ export default message
   <TabItem value="orange" label="类应用">
 
 ```ts title="./message.ts"
-import { Plugin } from 'yunzai/core'
+import { Plugin } from 'yunzai'
 export default class App extends Plugin {
   constructor () {
     super()

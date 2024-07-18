@@ -16,7 +16,7 @@ sidebar_position: 2
 创建文件`./plugins/your-plugin/index.ts`并编写示例代码
 
 ```ts title="./plugins/your-plugin/index.ts"
-import { Messages } from 'yunzai/core'
+import { Messages } from 'yunzai'
 const message = new Messages({
   event: 'message.group'
 })
@@ -39,7 +39,7 @@ export const apps = {
 ### 响应集成
 
 ```ts title="./plugins/your-plugin/apps/hello.ts"
-import { Messages } from 'yunzai/core'
+import { Messages } from 'yunzai'
 const message = new Messages({
   event: 'message.group'
 })
@@ -53,7 +53,7 @@ export default message.ok
 ```
 
 ```ts title="./plugins/your-plugin/apps/dark.ts"
-import { Messages } from 'yunzai/core'
+import { Messages } from 'yunzai'
 const message = new Messages({
   event: 'message.group'
 })
