@@ -26,11 +26,14 @@ jobs:
       run: |
         rm -rf .npmrc
 
-    - name: install
-      run: npm install
+    - name: yarn
+      run: npm install yarn@1.12.1 -g
+
+    - name: yarn install
+      run: yarn install --ignore-engines
 
     - name: build
-      run: npm run build
+      run: yarn build
 
     - name: push docs
       run: |
