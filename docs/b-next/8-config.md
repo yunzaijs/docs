@@ -4,8 +4,6 @@ sidebar_position: 8
 
 # 配置
 
-新版将支持 npm 应用
-
 ```ts title="yunzai.config.js"
 import { defineConfig } from 'yunzai'
 import runtime from 'yz-mw-runtime'
