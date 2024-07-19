@@ -26,7 +26,7 @@ yarn
 - 初始化package
 
 ```bash
-npm inin -y
+npm init -y
 ```
 
 - 安装开发框架
