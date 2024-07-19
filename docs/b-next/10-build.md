@@ -55,7 +55,20 @@ yarn add typescript -D
 
 - 创建基础文件
 
+> src/global.d.ts
+
+```ts
+/// <reference types="yunzai/global" />
+```
+
+> src/react-puppeteer.d.ts
+
+```ts
+/// <reference types="react-puppeteer/env" />
+```
+
 > src/index.ts
+
 
 ```ts
 import { applicationOptions } from 'yunzai'
@@ -290,3 +303,8 @@ npm login
 ```bash
 npm publish
 ```
+
+### 源码
+
+[create-yunzai](https://github.com/yunzai-org/create-yunzai/tree/main/bin/template)
+
