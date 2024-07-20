@@ -167,7 +167,7 @@ yarn
 - 编译
 
 ```sh
-npm run app
+npm run build
 ```
 
 - 启动

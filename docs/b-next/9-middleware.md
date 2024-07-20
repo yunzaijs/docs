@@ -9,9 +9,7 @@ sidebar_position: 9
 ```ts  title="./middleware/message/star-rail.ts"
 import { middlewareOptions, useEvent } from 'yunzai'
 const srReg = /^#?(\*|星铁|星轨|穹轨|星穹|崩铁|星穹铁道|崩坏星穹铁道|铁道)+/
-
 type options = { name: string }
-
 export default (config?: options) => {
   // 返回中间件
   return middlewareOptions({

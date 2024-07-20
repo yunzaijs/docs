@@ -36,8 +36,7 @@ export default message
 import { Application } from 'yunzai'
 export default class App extends Application<'message.group'> {
   constructor () {
-    super('message.group')
-    this.priority = 700
+    super('message.group') 
     this.rule = [
         {
           reg:/^(#|\/)?你好/,

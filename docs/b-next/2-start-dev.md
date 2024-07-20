@@ -50,7 +50,7 @@ export default message.ok
 
 ```ts title="./plugins/your-plugin/apps/dark.ts"
 import { Messages } from 'yunzai'
-const message = new Messages('message.group'))
+const message = new Messages('message.group')
 message.use( async e => {
     e.reply('嘎嘎')
 },[/^(#|\/)?嘎嘎/])

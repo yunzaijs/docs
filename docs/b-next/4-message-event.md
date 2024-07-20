@@ -23,7 +23,7 @@ const message = new Messages('message.group')
 - 回复
 
 ```ts
-message.use(  async e => {
+message.use(async e => {
     e.reply('你好')
 },[/^(#|\/)?你好/])
 ```
@@ -31,7 +31,7 @@ message.use(  async e => {
 - 图片
 
 ```ts
-message.use( async e => {
+message.use(async e => {
   const img : Buffer | null = null
   e.reply(Segment.image(img))
 },[/^(#|\/)?你好/])
@@ -41,10 +41,10 @@ message.use( async e => {
 
 
 ```ts
-message.use(/^(#|\/)?你好/, async e => {
+message.use( async e => {
   const img : Buffer | null = null
   e.reply(['这是一张图片', Segment.image(img)])
-})
+},[/^(#|\/)?你好/])
 ```
 
 
@@ -59,7 +59,7 @@ const message = new Messages('message.private')
 - 回复
 
 ```ts
-message.response( async e => {
+message.response(async e => {
     e.reply('你好')
 },[/^(#|\/)?你好/])
 ```
