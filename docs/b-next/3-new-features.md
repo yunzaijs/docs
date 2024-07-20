@@ -22,12 +22,10 @@ import TabItem from '@theme/TabItem';
 
 ```ts title="./message.ts"
 import { Messages } from 'yunzai'
-const message = new Messages({
-  event: 'message.group'
-})
-message.response(/^(#|\/)?你好/, async e => {
+const message = new Messages('message.group')
+message.use( async e => {
     e.reply('你好')
-})
+},[/^(#|\/)?你好/])
 export default message
 ```
 
@@ -35,10 +33,10 @@ export default message
   <TabItem value="orange" label="类应用">
 
 ```ts title="./message.ts"
-import { Plugin } from 'yunzai'
-export default class App extends Plugin {
+import { Application } from 'yunzai'
+export default class App extends Application<'message.group'> {
   constructor () {
-    super()
+    super('message.group')
     this.priority = 700
     this.rule = [
         {

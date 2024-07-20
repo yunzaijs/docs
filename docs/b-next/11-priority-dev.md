@@ -8,8 +8,8 @@ sidebar_position: 11
 ##  create
 
 ```ts
-import { applicationOptions } from 'yunzai'
-const Data = []
+import { applicationOptions , useAppStorage } from 'yunzai'
+const Data = useAppStorage()
 export default () => {
   return applicationOptions({
     // 插件创建时

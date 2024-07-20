@@ -135,12 +135,10 @@ yarn app
 
 ```ts
 import { Messages } from 'yunzai'
-const message = new Messages({
-  event: 'message.group'
-})
-message.response(/^(#|\/)?你好/, async e => {
+const message = new Messages('message.group')
+message.response(  async e => {
     e.reply('你好')
-})
+},[/^(#|\/)?你好/])
 export const Test = message.ok
 ```
 

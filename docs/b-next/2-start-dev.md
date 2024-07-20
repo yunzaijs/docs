@@ -17,12 +17,10 @@ sidebar_position: 2
 
 ```ts title="./plugins/your-plugin/index.ts"
 import { Messages } from 'yunzai'
-const message = new Messages({
-  event: 'message.group'
-})
-message.response(/^(#|\/)?你好/, async e => {
+const message = new Messages('message.group')
+message.use(async e => {
     e.reply('你好')
-})
+},[/^(#|\/)?你好/])
 export const apps = {
   App$1: message.ok
 }
@@ -40,26 +38,22 @@ export const apps = {
 
 ```ts title="./plugins/your-plugin/apps/hello.ts"
 import { Messages } from 'yunzai'
-const message = new Messages({
-  event: 'message.group'
-})
-message.response(/^(#|\/)?你好呀/, async e => {
+const message = new Messages('message.group')
+message.use( async e => {
     e.reply('你好呀')
-})
-message.response(/^(#|\/)?你好哇/, async e => {
+},[/^(#|\/)?你好呀/])
+message.use( async e => {
     e.reply('你好哇')
-})
+},[/^(#|\/)?你好哇/])
 export default message.ok
 ```
 
 ```ts title="./plugins/your-plugin/apps/dark.ts"
 import { Messages } from 'yunzai'
-const message = new Messages({
-  event: 'message.group'
-})
-message.response(/^(#|\/)?嘎嘎/, async e => {
+const message = new Messages('message.group'))
+message.use( async e => {
     e.reply('嘎嘎')
-})
+},[/^(#|\/)?嘎嘎/])
 export default message.ok
 ```
 

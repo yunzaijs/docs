@@ -12,36 +12,39 @@ sidebar_position: 5
 
 ## 消息
 
-- 上下文
+- 观察者
 
 ```ts title="./message.ts"
-import { Plugin } from 'yunzai'
-export default class App extends Plugin {
-  constructor () {
-    // super是必须的
-    super()
-    // 定义匹配
-    this.rule = [
-        {
-          reg:/^(#|\/)?登录账号$/,
-          fnc: this.userLogin.name
-        },
-      ]
-  }
-  async userLogin () {
-    this.e.reply('请输入密码')
-    // highlight-next-line
-    this.setContext(this.vPassword.name)
-    return true
-  }
-  async vPassword(){
+import {Observer,Messages} from 'yunzai'
+
+const Word = new Messages('message.private')
+
+Word.use((e) => {
+  
+  e.reply('请输入密码')
+  // 创建
+  const O = new Observer('message.private')
+
+  // 推送 询问
+  O.use((e, next, close) => {
+
+    if (e.msg == '/close') {
+      e.reply('取消输入')
+      close()
+    }
+
     if(/^123456$/.test(this.e.msg)){
     // highlight-next-line
       this.finish(this.vPassword.name)
     }else{
       this.e.reply('请输入密码')
     }
-    return true
-  }
-}
+
+    // 继续 如果 Observer use还有的话
+    next()
+
+     // 条件，仅支持  账号和群号
+  }, [e.user_id])
+
+}, [/^(#|\/)?登录账号$/])
 ```

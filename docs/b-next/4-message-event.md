@@ -17,33 +17,31 @@ sidebar_position: 4
 
 ```ts
 import { Messages } from 'yunzai'
-const message = new Messages({
-  event: 'message.group'
-})
+const message = new Messages('message.group')
 ```
 
 - 回复
 
 ```ts
-message.response(/^(#|\/)?你好/, async e => {
+message.use(  async e => {
     e.reply('你好')
-})
+},[/^(#|\/)?你好/])
 ```
 
 - 图片
 
 ```ts
-message.response(/^(#|\/)?你好/, async e => {
+message.use( async e => {
   const img : Buffer | null = null
   e.reply(Segment.image(img))
-})
+},[/^(#|\/)?你好/])
 ```
 
 - 复合
 
 
 ```ts
-message.response(/^(#|\/)?你好/, async e => {
+message.use(/^(#|\/)?你好/, async e => {
   const img : Buffer | null = null
   e.reply(['这是一张图片', Segment.image(img)])
 })
@@ -55,17 +53,15 @@ message.response(/^(#|\/)?你好/, async e => {
 
 ```ts
 import { Messages } from 'yunzai'
-const message = new Messages({
-  event: 'message.private'
-})
+const message = new Messages('message.private')
 ```
 
 - 回复
 
 ```ts
-message.response(/^(#|\/)?你好/, async e => {
+message.response( async e => {
     e.reply('你好')
-})
+},[/^(#|\/)?你好/])
 ```
 
 ## 属性

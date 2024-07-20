@@ -164,10 +164,21 @@ npm install yarn@1.12.1 -g
 yarn
 ```
 
+- 编译
+
+```sh
+npm run app
+```
+
 - 启动
 
 ```sh
 npm run app
+```
+
+如果不编译，请使用
+```sh
+npm run test
 ```
 
 - 重新登录
