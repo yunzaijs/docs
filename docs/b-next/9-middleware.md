@@ -39,9 +39,7 @@ export default (config?: options) => {
             // 重置消息 -- 这是喵喵插件内 正确的匹配规则 即可  #星铁绑定uid
             e.msg = e.msg.replace(srReg, '#星铁')
           }
-        },
-
-        // 输入 
+        }, // 输入 并选择 执行的类型
         [event, 'message.group', 'message.private']
       )
 

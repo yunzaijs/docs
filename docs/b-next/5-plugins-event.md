@@ -14,8 +14,8 @@ sidebar_position: 5
 
 - 观察者
 
-```ts title="./message.ts"
-import {Observer,Messages} from 'yunzai'
+```ts 
+import { Observer, Messages } from 'yunzai'
 
 const Word = new Messages('message.private')
 
@@ -33,11 +33,11 @@ Word.use((e) => {
       close()
     }
 
-    if(/^123456$/.test(this.e.msg)){
-    // highlight-next-line
-      this.finish(this.vPassword.name)
+    if(/^123456$/.test(e.msg)){
+      e.reply('校验成功')
+      close()
     }else{
-      this.e.reply('请输入密码')
+      e.reply('请输入密码')
     }
 
     // 继续 如果 Observer use还有的话
@@ -47,4 +47,30 @@ Word.use((e) => {
   }, [e.user_id])
 
 }, [/^(#|\/)?登录账号$/])
+```
+
+## 定时
+
+
+```ts
+import { setBotInterVal, Observer, Messages , clearBotInterVal } from "yunzai";
+
+let uids = []
+
+const ID = setBotInterVal((Bot) => {
+  // 定时图送主动消息
+  for(const uid of uids){
+    Bot.pickFriend(uid).sendMsg("消息嘎嘎");
+  }
+}, 60 * 1000);
+
+const Word = new Messages("message.private");
+
+Word.use(
+  (e) => {
+    clearBotInterVal(ID);
+  },
+  [/^(#|\/)?取消订阅$/]
+);
+
 ```
