@@ -14,7 +14,6 @@ sidebar_position: 4
 
 ### 群聊
 
-
 ```ts
 import { Messages } from 'yunzai'
 const message = new Messages({
@@ -26,7 +25,7 @@ const message = new Messages({
 
 ```ts
 message.response(/^(#|\/)?你好/, async e => {
-    e.reply('你好')
+  e.reply('你好')
 })
 ```
 
@@ -34,24 +33,21 @@ message.response(/^(#|\/)?你好/, async e => {
 
 ```ts
 message.response(/^(#|\/)?你好/, async e => {
-  const img : Buffer | null = null
+  const img: Buffer | null = null
   e.reply(Segment.image(img))
 })
 ```
 
 - 复合
 
-
 ```ts
 message.response(/^(#|\/)?你好/, async e => {
-  const img : Buffer | null = null
+  const img: Buffer | null = null
   e.reply(['这是一张图片', Segment.image(img)])
 })
 ```
 
-
 ### 私聊
-
 
 ```ts
 import { Messages } from 'yunzai'
@@ -64,7 +60,7 @@ const message = new Messages({
 
 ```ts
 message.response(/^(#|\/)?你好/, async e => {
-    e.reply('你好')
+  e.reply('你好')
 })
 ```
 
@@ -97,7 +93,7 @@ export interface EventType {
   /**
    * 用户编号
    */
-  user_id:string
+  user_id: string
   /**
    * 用户名
    */
@@ -105,19 +101,19 @@ export interface EventType {
   /**
    * 用户头像
    */
-  user_avatar: string 
+  user_avatar: string
   /**
    * 群号
    */
-  group_id: number;
+  group_id: number
   /**
    * 群名
    */
-  group_name: string;
+  group_name: string
   /**
    *  群头像
    */
-  group_avatar: string 
+  group_avatar: string
 }
 ```
 

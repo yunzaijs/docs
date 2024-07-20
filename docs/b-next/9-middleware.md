@@ -6,7 +6,7 @@ sidebar_position: 9
 
 - 编写
 
-```ts  title="./middleware/message/star-rail.ts"
+```ts title="./middleware/message/star-rail.ts"
 import { middlewareOptions, useEvent } from 'yunzai'
 const srReg = /^#?(\*|星铁|星轨|穹轨|星穹|崩铁|星穹铁道|崩坏星穹铁道|铁道)+/
 type options = { name: string }
@@ -19,9 +19,9 @@ export default (config?: options) => {
     name: config?.name ?? 'StarRail',
     //
     on: event => {
-
       // 要使用一个复杂类型的 event 需要 使用 useEvent
-      useEvent( e => {
+      useEvent(
+        e => {
           Object.defineProperty(e, 'isSr', {
             get: () => e.game === 'sr',
             set: v => (e.game = v ? 'sr' : 'gs')

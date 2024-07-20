@@ -2,14 +2,13 @@
 sidebar_position: 1
 ---
 
-# 存储  
+# 存储
 
 :::danger 警告
 
 该文档是实验性的，未上线
 
 :::
-
 
 ### Redis
 
@@ -19,11 +18,11 @@ sidebar_position: 1
 import { Redis } from 'yunzai'
 ```
 
-##  Sqlite
+## Sqlite
 
 > 不推荐使用 Sqlite 已计划移除
 
-```ts 
+```ts
 import { Sqlite } from 'yunzai'
 ```
 

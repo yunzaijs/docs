@@ -18,7 +18,6 @@ Yunzai的消息类型经过扩展
 
 ### 群聊
 
-
 ```ts
 import { Messages } from 'yunzai'
 const message = new Messages('message.group')
@@ -27,33 +26,39 @@ const message = new Messages('message.group')
 - 回复
 
 ```ts
-message.use(async e => {
+message.use(
+  e => {
     e.reply('你好')
-},[/^(#|\/)?你好/])
+  },
+  [/^(#|\/)?你好/]
+)
 ```
 
 - 图片
 
 ```ts
-message.use(async e => {
-  const img : Buffer | null = null
-  e.reply(Segment.image(img))
-},[/^(#|\/)?你好/])
+message.use(
+  e => {
+    const img: Buffer | null = null
+    e.reply(Segment.image(img))
+  },
+  [/^(#|\/)?你好/]
+)
 ```
 
 - 复合
 
-
 ```ts
-message.use( async e => {
-  const img : Buffer | null = null
-  e.reply(['这是一张图片', Segment.image(img)])
-},[/^(#|\/)?你好/])
+message.use(
+  e => {
+    const img: Buffer | null = null
+    e.reply(['这是一张图片', Segment.image(img)])
+  },
+  [/^(#|\/)?你好/]
+)
 ```
 
-
 ### 私聊
-
 
 ```ts
 import { Messages } from 'yunzai'
@@ -63,9 +68,12 @@ const message = new Messages('message.private')
 - 回复
 
 ```ts
-message.response(async e => {
+message.response(
+  e => {
     e.reply('你好')
-},[/^(#|\/)?你好/])
+  },
+  [/^(#|\/)?你好/]
+)
 ```
 
 ## 属性
@@ -97,7 +105,7 @@ export interface EventType {
   /**
    * 用户编号
    */
-  user_id:string
+  user_id: string
   /**
    * 用户名
    */
@@ -105,19 +113,19 @@ export interface EventType {
   /**
    * 用户头像
    */
-  user_avatar: string 
+  user_avatar: string
   /**
    * 群号
    */
-  group_id: number;
+  group_id: number
   /**
    * 群名
    */
-  group_name: string;
+  group_name: string
   /**
    *  群头像
    */
-  group_avatar: string 
+  group_avatar: string
 }
 ```
 

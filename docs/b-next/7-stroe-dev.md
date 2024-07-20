@@ -2,7 +2,7 @@
 sidebar_position: 7
 ---
 
-# 存储  
+# 存储
 
 ### localStorage
 
@@ -16,8 +16,6 @@ import { localStorage } from 'yunzai'
 
 基于`levelup`和`leveldown`
 
-
 ```ts
 import { levelStorage } from 'yunzai'
 ```
-

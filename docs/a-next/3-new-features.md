@@ -7,16 +7,13 @@ sidebar_position: 3
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-
 :::tip 提示
 
 所有行为都应该是从推荐的模块中导出，这是统一的接口规范。
 
 :::
 
-
 ## 核心
-
 
 ```ts
 import * as Core from 'yunzai'
@@ -31,7 +28,7 @@ const message = new Messages({
   event: 'message.group'
 })
 message.response(/^(#|\/)?你好/, async e => {
-    e.reply('你好')
+  e.reply('你好')
 })
 export default message
 ```
@@ -42,17 +39,17 @@ export default message
 ```ts title="./message.ts"
 import { Plugin } from 'yunzai'
 export default class App extends Plugin {
-  constructor () {
+  constructor() {
     super()
     this.priority = 700
     this.rule = [
-        {
-          reg:/^(#|\/)?你好/,
-          fnc: this.hello.name
-        },
-      ]
+      {
+        reg: /^(#|\/)?你好/,
+        fnc: this.hello.name
+      }
+    ]
   }
-  async hello () {
+  async hello() {
     this.e.reply('你好')
   }
 }
@@ -63,7 +60,7 @@ export default class App extends Plugin {
 
 ## 配置
 
-```ts 
+```ts
 import * as Config from 'yunzai'
 ```
 
@@ -87,7 +84,7 @@ import { ConfigController } from 'yunzai'
 
 ## 工具
 
-```ts 
+```ts
 import * as Utils from 'yunzai'
 ```
 

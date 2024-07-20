@@ -69,16 +69,13 @@ yarn add typescript -D
 
 > src/index.ts
 
-
 ```ts
 import { applicationOptions } from 'yunzai'
 const Data = []
 export default () => {
   return applicationOptions({
     // 插件创建时
-    create() {
-    
-    },
+    create() {},
     // 被执行时
     mounted() {
       return Data
@@ -93,12 +90,11 @@ export default () => {
 import { defineConfig } from 'yunzai'
 import Example from './src/index.js'
 export default defineConfig({
-  applications:[ Example() ]
+  applications: [Example()]
 })
 ```
 
 > src/main.ts
-
 
 ```ts
 import { Client, Loader, createLogin, Processor } from 'yunzai'
@@ -112,7 +108,6 @@ setTimeout(async () => {
   })
 }, 0)
 ```
-
 
 > package.json
 
@@ -136,9 +131,12 @@ yarn app
 ```ts
 import { Messages } from 'yunzai'
 const message = new Messages('message.group')
-message.response(  async e => {
+message.response(
+  e => {
     e.reply('你好')
-},[/^(#|\/)?你好/])
+  },
+  [/^(#|\/)?你好/]
+)
 export const Test = message.ok
 ```
 
@@ -152,13 +150,12 @@ export default () => {
   return applicationOptions({
     // 插件创建时
     create() {
-      for(const key in Apps){
+      for (const key in Apps) {
         Data.push(new Apps[key]())
       }
     },
     // 被执行时
     mounted() {
-
       // useEvent
 
       return Data
@@ -203,7 +200,6 @@ yarn add nodemon -W
 ```bash
 yarn dev
 ```
-
 
 ### 打包
 
@@ -279,10 +275,7 @@ npm login
 
 ```json
 {
-  "files": [
-    "index.js",
-    "types"
-  ],
+  "files": ["index.js", "types"],
   "types": "types",
   "exports": {
     ".": {
@@ -290,9 +283,7 @@ npm login
       "types": "./types/index.d.ts"
     }
   },
-  "keywords": [
-    "yunzai"
-  ],
+  "keywords": ["yunzai"],
   "publishConfig": {
     "registry": "https://registry.npmjs.org"
   }
@@ -308,4 +299,3 @@ npm publish
 ### 源码
 
 [create-yunzai](https://github.com/yunzai-org/create-yunzai/tree/main/bin/template)
-

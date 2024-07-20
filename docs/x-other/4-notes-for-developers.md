@@ -4,7 +4,7 @@ sidebar_position: 4
 
 # 维护需知
 
-##  提交
+## 提交
 
 ```ts
 /**
@@ -19,7 +19,7 @@ sidebar_position: 4
  */
 ```
 
-##   注释风格
+## 注释风格
 
 ```ts
 /**
@@ -32,7 +32,7 @@ function getTest(T: string) {
 }
 ```
 
-##  命名风格
+## 命名风格
 
 ```ts
 // 获得test值
@@ -65,4 +65,3 @@ const Obj = {}
 
 // 不推荐new
 ```
-

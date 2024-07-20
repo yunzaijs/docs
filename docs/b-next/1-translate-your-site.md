@@ -13,11 +13,10 @@ Next会保持对V3的支持，但不保留对V2的支持，因此，V3内的所�
 
 :::
 
-
 <Tabs>
   <TabItem value="q" label="Windows" default>
   
-推荐系统 Windows10 | Windows11 
+推荐系统 Windows10 | Windows11
 
 > 其他windows版本请安装 [Google Chrome](https://www.google.cn/intl/zh-CN/chrome/) / [Edge](https://www.microsoft.com/zh-cn/edge)
 
@@ -61,6 +60,7 @@ git --version # 校验git版本，未安装会提示下载常用工具包
 # 添加环境环境
 echo 'export PATH="/opt/homebrew/bin:$PATH"' >> ~/.bash_profile
 ```
+
 ```bash
 # 添加环境环境
 echo 'export PATH="/opt/homebrew/bin:$PATH"' >> ~/.zshrc
@@ -102,6 +102,7 @@ source ~/.bash_profile && source ~/.zshrc
 ```
 
 必要环境 Node.js@18.20.3
+
 ```bash
 # 安装
 nvm install 18.20.3
@@ -115,7 +116,7 @@ npm -v
   </TabItem>
   <TabItem value="3" label="Centos X86">
 
-> 必要环境  Chromium
+> 必要环境 Chromium
 
 > 推荐环境 Node.js ~ 18.18.2 + Redis ~ 6.0.0
 
@@ -124,7 +125,7 @@ npm -v
   </TabItem>
   <TabItem value="4" label="Ubuntu X86">
 
-> 必要环境  Chromium
+> 必要环境 Chromium
 
 > 推荐环境 Node.js ~ 18.18.2 + Redis ~ 6.0.0
 
@@ -137,7 +138,7 @@ npm -v
 
 - 安装源码
 
-```sh 
+```sh
 git clone --depth=1 https://github.com/yunzai-org/yunzaijs.git
 ```
 
@@ -148,7 +149,6 @@ cd yunzaijs
 ```
 
 - 安装依赖
-
 
 ```sh
 # 国内镜像，已安装可忽视
@@ -177,6 +177,7 @@ npm run app
 ```
 
 如果不编译，请使用
+
 ```sh
 npm run test
 ```

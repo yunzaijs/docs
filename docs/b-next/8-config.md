@@ -16,5 +16,4 @@ export default defineConfig({
   // 中间件
   middlewares: [runtime(), starRail()]
 })
-
 ```

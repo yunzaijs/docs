@@ -10,21 +10,19 @@ sidebar_position: 2
 
 :::
 
-
 ## 数据
 
 > 不推荐使用 Sqlite 已计划移除
 
-```ts 
+```ts
 import { Sqlite } from 'yunzai'
 ```
 
 ## 原神
 
-
 > 不推荐使用，未来版本将废弃
 
-```ts 
+```ts
 import { GSCfg } from 'yunzai'
 ```
 

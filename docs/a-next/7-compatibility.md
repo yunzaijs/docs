@@ -29,34 +29,34 @@ import { render } from './adapter/render.js'
  * @returns calss
  */
 const assignPropertiesAndMethods = (rules, sourceObject) => {
-    // 制作一个 rule
-    const rule = Object.keys(rules).map(item => ({
-        // 其他参数
-        ...rules[item],
-        // 确保拥有func
-        fnc: item
-    }))
-    // 制作一个class
-    class APP extends Plugin {
-        // 初始化
-        constructor() {
-            // 继承
-            super()
-            // 绑定 rule
-            this.rule = rule
-            // 绑定func
-            for (const key in sourceObject) {
-                // 接纳函数
-                if (sourceObject[key] instanceof Function) {
-                    // 以无this指向函数来确保可以改变this指向为class，并按规则扩展函数参数
-                    this[key] = () => sourceObject[key].call(this, this.e, { render });
-                }
-            }
+  // 制作一个 rule
+  const rule = Object.keys(rules).map(item => ({
+    // 其他参数
+    ...rules[item],
+    // 确保拥有func
+    fnc: item
+  }))
+  // 制作一个class
+  class APP extends Plugin {
+    // 初始化
+    constructor() {
+      // 继承
+      super()
+      // 绑定 rule
+      this.rule = rule
+      // 绑定func
+      for (const key in sourceObject) {
+        // 接纳函数
+        if (sourceObject[key] instanceof Function) {
+          // 以无this指向函数来确保可以改变this指向为class，并按规则扩展函数参数
+          this[key] = () => sourceObject[key].call(this, this.e, { render })
         }
+      }
     }
-    return APP
+  }
+  return APP
 }
-// 变成一个 class 
+// 变成一个 class
 const xiaoyao = assignPropertiesAndMethods(application['rule'], application)
 // 把class 作为 apps的属性并导出
 export const apps = { xiaoyao }
@@ -75,7 +75,7 @@ V3中`segment`、`plugin`、`Bot`和`redis`都是全局的，
 在Next,我们更推荐你从核心模块中导出。
 
 ```ts
-import { Segment , Plugin , Bot } from 'yunzai'
+import { Segment, Plugin, Bot } from 'yunzai'
 import { Redis } from 'yunzai'
 ```
 
@@ -87,21 +87,21 @@ V3的命名是混乱的，毫无章法的
 
 ```ts title="./message.ts"
 export default class App extends plugin {
-  constructor (e) {
+  constructor(e) {
     // 废弃，不再通过super传参
     // super({rule:[]})
 
     // 使用
     super()
     this.rule = [
-      // 
+      //
     ]
 
     // 废弃，不需要自己赋值
     this.e = e
   }
 
-  async test(e){
+  async test(e) {
     // e参数废弃，其方法无法使用类型提示
     e.reply('')
     // 推荐使用
@@ -113,35 +113,35 @@ export default class App extends plugin {
 
 ```ts title="./message.ts"
 export default class App extends plugin {
-  constructor () {
+  constructor() {
     super()
   }
-  async test(){
-    // 警告性写法！！！ 
+  async test() {
+    // 警告性写法！！！
     // 请勿将任何非boolean值的变量让机器人接收
     return this.e.reply('')
 
     // 你的函数，应该是一个只返回boolean的纯函数
     // 用于控制机器人是否继续执行下一个函数
-    
+
     // 正确写法，先执行发送，再结束
     // highlight-next-line
     this.e.reply('')
-    return 
+    return
 
     // 或者等待执行完毕，再结束
     await this.e.reply('')
-    return 
+    return
   }
 }
 ```
 
 ```ts title="./message.ts"
 export default class App extends plugin {
-  constructor () {
+  constructor() {
     super()
   }
-  async test(){
+  async test() {
     // 返回值，必然是 bool 值，若为true才会继续匹配其他指令！
     // 这在V3中是不同的，V3默认贪婪模式。而Next当且仅当为true时，继续向后执行
     // highlight-next-line
@@ -152,13 +152,11 @@ export default class App extends plugin {
 
 ### lib目录
 
-
 :::danger 警告
 
 lib文件夹已全部废弃。你需要从对应的模块中使用原功能。模块内部标注废弃的方法都计划在未来中移除。
 
 :::
-
 
 - lib/common/common.js
 
@@ -186,6 +184,7 @@ import { Plugin as plugin } from 'yunzai'
 ```ts
 import { renderers } from 'yunzai'
 ```
+
 - renderers/puppeteer/lib/puppeteer.js
 
 ```ts
@@ -197,7 +196,6 @@ import { Renderers } from 'yunzai'
 ```ts
 import { ConfigController as cfg } from 'yunzai'
 ```
-
 
 - lib/renderer/renderer.js
 

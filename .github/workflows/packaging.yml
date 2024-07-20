@@ -10,38 +10,38 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Checkout repository
-      uses: actions/checkout@v2
+      - name: Checkout repository
+        uses: actions/checkout@v2
 
-    - name: version 18
-      uses: actions/setup-node@v2
-      with:
-        node-version: '18'
+      - name: version 18
+        uses: actions/setup-node@v2
+        with:
+          node-version: '18'
 
-    - name: set system time
-      id: beijing_time
-      run: echo "BEIJING_TIME=$(TZ=Asia/Shanghai date +'%Y-%m-%d %H:%M:%S')" >> $GITHUB_ENV
+      - name: set system time
+        id: beijing_time
+        run: echo "BEIJING_TIME=$(TZ=Asia/Shanghai date +'%Y-%m-%d %H:%M:%S')" >> $GITHUB_ENV
 
-    - name: delete .npmrc
-      run: |
-        rm -rf .npmrc
+      - name: delete .npmrc
+        run: |
+          rm -rf .npmrc
 
-    - name: yarn
-      run: npm install yarn@1.12.1 -g
+      - name: yarn
+        run: npm install yarn@1.12.1 -g
 
-    - name: yarn install
-      run: yarn install --ignore-engines
+      - name: yarn install
+        run: yarn install --ignore-engines
 
-    - name: build
-      run: yarn build
+      - name: build
+        run: yarn build
 
-    - name: push docs
-      run: |
-        cd build/
-        git init
-        git config --local user.email "916415899@qq.com"
-        git config --local user.name "ningmengchongshui"
-        git add -A
-        git commit -m "自动打包 - ${{ env.BEIJING_TIME }}"
-        git remote add github https://yunzai-org:${{ secrets.GH_TOKEN }}@github.com/yunzai-org/docs.git
-        git push github HEAD:docs -f
+      - name: push docs
+        run: |
+          cd build/
+          git init
+          git config --local user.email "916415899@qq.com"
+          git config --local user.name "ningmengchongshui"
+          git add -A
+          git commit -m "自动打包 - ${{ env.BEIJING_TIME }}"
+          git remote add github https://yunzai-org:${{ secrets.GH_TOKEN }}@github.com/yunzai-org/docs.git
+          git push github HEAD:docs -f

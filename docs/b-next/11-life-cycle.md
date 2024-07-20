@@ -4,11 +4,10 @@ sidebar_position: 11
 
 # 生命周期
 
-
-##  create
+## create
 
 ```ts
-import { applicationOptions , useAppStorage } from 'yunzai'
+import { applicationOptions, useAppStorage } from 'yunzai'
 const Data = useAppStorage()
 export default () => {
   return applicationOptions({
@@ -19,7 +18,7 @@ export default () => {
       // Apps 是所有class集
       // Apps 即 V3中的  export const apps = {}
 
-      for(const key in Apps){
+      for (const key in Apps) {
         Data.push(new Apps[key]())
         // 可以发现，机器人不会再反复示例化
         // 而是 进行初始化
@@ -38,7 +37,7 @@ export default () => {
 }
 ```
 
-##  mounted
+## mounted
 
 ```ts
 import { applicationOptions } from 'yunzai'

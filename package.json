@@ -11,7 +11,10 @@
     "serve": "docusaurus serve",
     "write-translations": "docusaurus write-translations",
     "write-heading-ids": "docusaurus write-heading-ids",
-    "typecheck": "tsc"
+    "typecheck": "tsc",
+    "format": "prettier --write .",
+    "check-format": "git diff --exit-code",
+    "prepare": "husky"
   },
   "dependencies": {
     "@docusaurus/core": "3.4.0",
@@ -26,7 +29,9 @@
     "@docusaurus/module-type-aliases": "3.4.0",
     "@docusaurus/tsconfig": "3.4.0",
     "@docusaurus/types": "3.4.0",
-    "typescript": "~5.2.2"
+    "typescript": "~5.2.2",
+    "husky": "^9.0.11",
+    "prettier": "^3.0.3"
   },
   "browserslist": {
     "production": [

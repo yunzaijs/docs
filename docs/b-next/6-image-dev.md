@@ -12,5 +12,3 @@ sidebar_position: 6
 [react-puppeteer](https://github.com/lemonade-lab/react-puppeteer)
 
 :::
-
- 

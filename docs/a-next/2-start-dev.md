@@ -10,7 +10,6 @@ sidebar_position: 2
 
 :::
 
-
 ### 匹配响应
 
 创建文件`./plugins/your-plugin/index.ts`并编写示例代码
@@ -21,7 +20,7 @@ const message = new Messages({
   event: 'message.group'
 })
 message.response(/^(#|\/)?你好/, async e => {
-    e.reply('你好')
+  e.reply('你好')
 })
 export const apps = {
   App$1: message.ok
@@ -44,10 +43,10 @@ const message = new Messages({
   event: 'message.group'
 })
 message.response(/^(#|\/)?你好呀/, async e => {
-    e.reply('你好呀')
+  e.reply('你好呀')
 })
 message.response(/^(#|\/)?你好哇/, async e => {
-    e.reply('你好哇')
+  e.reply('你好哇')
 })
 export default message.ok
 ```
@@ -58,7 +57,7 @@ const message = new Messages({
   event: 'message.group'
 })
 message.response(/^(#|\/)?嘎嘎/, async e => {
-    e.reply('嘎嘎')
+  e.reply('嘎嘎')
 })
 export default message.ok
 ```
@@ -66,7 +65,7 @@ export default message.ok
 ```ts title="./plugins/your-plugin/apps/index.ts"
 import App$1 from './hello.js'
 import App$2 from './dark.js'
-export { App$1 , App$2 }
+export { App$1, App$2 }
 ```
 
 ```ts title="./plugins/your-plugin/index.ts"
