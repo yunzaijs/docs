@@ -33,7 +33,7 @@ npm init -y
 
 ```bash
 npm install yarn@1.12.1 -y
-yarn add react-puppeteer -W
+yarn add react puppeteer react-puppeteer -W
 yarn add yunzai  -D
 ```
 
@@ -215,29 +215,31 @@ yarn add @rollup/plugin-typescript -D
 
 ```js
 import typescript from '@rollup/plugin-typescript'
-// import { terser } from '@rollup/plugin-terser'
+import terser from '@rollup/plugin-terser'
 /**
  * @type {import("rollup").RollupOptions[]}
  */
 export default [
   {
-    // 输入
+    // src 目录
     input: './src/index.ts',
     output: {
-      // 输出
-      file: 'index.js',
+      // lib 目录
+      dir: 'lib',
       format: 'es',
-      sourcemap: false
+      sourcemap: false,
+      // 保持结构
+      preserveModules: true
     },
     plugins: [
       typescript({
         compilerOptions: {
           declaration: true,
-          declarationDir: 'types'
+          declarationDir: 'lib/types'
         }
-      })
+      }),
       // 开启代码压缩
-      // terser()
+      terser()
     ],
     onwarn: (warning, warn) => {
       // 忽略与无法解析the导入相关the警告信息
@@ -275,16 +277,21 @@ npm login
 
 ```json
 {
-  "files": ["index.js", "types"],
-  "types": "types",
+  // 要上传的文件夹
+  "files": ["public", "assets", "lib"],
+  // 类型文件夹
+  "types": "lib/types",
   "exports": {
+    // 默认导出
     ".": {
-      "import": "./index.js",
-      "types": "./types/index.d.ts"
+      "import": "./lib/index.js",
+      "types": "./lib/types/index.d.ts"
     }
   },
+  // 关联yunzai
   "keywords": ["yunzai"],
   "publishConfig": {
+    // publish地址为官方 npm
     "registry": "https://registry.npmjs.org"
   }
 }
