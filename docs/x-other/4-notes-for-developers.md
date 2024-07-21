@@ -65,3 +65,41 @@ const Obj = {}
 
 // 不推荐new
 ```
+
+## 模块风格
+
+- 依赖于yunzai的
+
+```ts
+import {} from 'yunzai-mys'
+```
+
+```ts
+import {} from '@yunzai/mys'
+```
+
+- 依赖于yunzai而开发的应用
+
+```ts
+import {} from 'yz-app-mys'
+```
+
+```ts
+import {} from '@yunzai/app/mys'
+```
+
+> 应用默认省略
+
+```ts
+import {} from 'yz-mys'
+```
+
+- 依赖于yunzai而开发的中间件
+
+```ts
+import {} from 'yz-mw-mys'
+```
+
+```ts
+import {} from '@yunzai/middleware/mys'
+```

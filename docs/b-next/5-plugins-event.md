@@ -59,7 +59,7 @@ Word.use(
 ## 定时
 
 ```ts
-import { setBotInterVal, Observer, Messages, clearBotInterVal } from 'yunzai'
+import { setBotInterVal, Messages, clearBotInterVal } from 'yunzai'
 
 let uids = []
 
@@ -79,3 +79,11 @@ Word.use(
   [/^(#|\/)?取消订阅$/]
 )
 ```
+
+## 订阅
+
+> 即V3中的Task任务机制
+
+> Next 中，将使用订阅替代
+
+> 待更新

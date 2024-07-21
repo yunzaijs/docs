@@ -75,12 +75,13 @@ import { ConfigController } from 'yunzai'
 
 配置器包含了配置文件内的所有参数.
 
-## 原神
+## 图片
 
-> 不推荐使用原神相关接口，未来版本将进行转移
+:::tip 注意
 
-```ts
-import { GSCfg } from 'yunzai'
-```
+该模块设计已独立成库，
+任何版本都可以采用此设计进行开发
 
-米游接口 -- 非米游插件禁止使用
+[react-puppeteer](https://github.com/lemonade-lab/react-puppeteer)
+
+:::

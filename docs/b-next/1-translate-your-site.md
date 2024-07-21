@@ -164,6 +164,9 @@ npm install yarn@1.12.1 -g
 yarn
 ```
 
+<Tabs>
+  <TabItem value="正式环境" label="正式环境">
+
 - 编译
 
 ```sh
@@ -174,12 +177,6 @@ npm run build
 
 ```sh
 npm run app
-```
-
-如果不编译，请使用
-
-```sh
-npm run test
 ```
 
 - 重新登录
@@ -201,3 +198,21 @@ npm run kill
 ```
 
 > 更多内容，请阅读 [PM2](https://pm2.keymetrics.io/) 使用文档
+
+</TabItem>
+<TabItem value="测试环境" label="测试环境">
+
+- 启动
+
+```sh
+npm run test
+```
+
+- 重新登录
+
+```sh
+npm run test login
+```
+
+  </TabItem>
+</Tabs>
