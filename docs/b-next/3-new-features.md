@@ -75,12 +75,12 @@ import { ConfigController } from 'yunzai'
 
 配置器包含了配置文件内的所有参数.
 
-## 工具
+## 原神
+
+> 不推荐使用原神相关接口，未来版本将进行转移
 
 ```ts
-import { sleep } from 'yunzai'
+import { GSCfg } from 'yunzai'
 ```
 
-该模块是与机器人运行无关的,但与config系统有关的.
-
-主要辅助开发者更快的实现业务,而不再需要关注方法的实现
+米游接口 -- 非米游插件禁止使用

@@ -8,7 +8,9 @@ sidebar_position: 9
 
 ```ts title="./middleware/message/star-rail.ts"
 import { middlewareOptions, useEvent } from 'yunzai'
+// 常量
 const srReg = /^#?(\*|星铁|星轨|穹轨|星穹|崩铁|星穹铁道|崩坏星穹铁道|铁道)+/
+// 用户可个性化的配置
 type options = { name: string }
 export default (config?: options) => {
   // 返回中间件
@@ -39,10 +41,9 @@ export default (config?: options) => {
             // 重置消息 -- 这是喵喵插件内 正确的匹配规则 即可  #星铁绑定uid
             e.msg = e.msg.replace(srReg, '#星铁')
           }
-        }, // 输入 并选择 执行的类型
+        }, // 输入事件 并选择 执行的类型
         [event, 'message.group', 'message.private']
       )
-
       //
     }
   })
@@ -54,7 +55,6 @@ export default (config?: options) => {
 ```ts title="yunzai.config.js"
 import { defineConfig } from 'yunzai'
 import starRail from 'yz-mw-star-rail'
-//
 export default defineConfig({
   // 中间件
   middlewares: [starRail()]

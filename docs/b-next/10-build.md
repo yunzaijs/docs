@@ -55,13 +55,13 @@ yarn add typescript -D
 
 - 创建基础文件
 
-> src/global.d.ts
+> src/global.env.d.ts
 
 ```ts
 /// <reference types="yunzai/global" />
 ```
 
-> src/react-puppeteer.d.ts
+> src/react-puppeteer.env.d.ts
 
 ```ts
 /// <reference types="react-puppeteer/env" />
@@ -70,8 +70,8 @@ yarn add typescript -D
 > src/index.ts
 
 ```ts
-import { applicationOptions } from 'yunzai'
-const Data = []
+import { applicationOptions, useAppStorage } from 'yunzai'
+const Data = useAppStorage()
 export default () => {
   return applicationOptions({
     // 插件创建时
@@ -94,9 +94,9 @@ export default defineConfig({
 })
 ```
 
-> src/main.ts
+> src/main.js
 
-```ts
+```js
 import { Client, Loader, createLogin, Processor } from 'yunzai'
 setTimeout(async () => {
   // 输入login配置
@@ -115,7 +115,7 @@ setTimeout(async () => {
 {
   "type": "module",
   "scripts": {
-    "app": "node --no-warnings=ExperimentalWarning --loader ts-node/esm src/main.ts"
+    "app": "node --no-warnings=ExperimentalWarning --loader ts-node/esm src/main.js"
   }
 }
 ```
@@ -131,7 +131,7 @@ yarn app
 ```ts
 import { Messages } from 'yunzai'
 const message = new Messages('message.group')
-message.response(
+message.use(
   e => {
     e.reply('你好')
   },
@@ -175,7 +175,7 @@ yarn add nodemon -W
 ```json
 {
   "scripts": {
-    "app": "node --no-warnings=ExperimentalWarning --loader ts-node/esm src/main.ts",
+    "app": "node --no-warnings=ExperimentalWarning --loader ts-node/esm src/main.js",
     "dev": "nodemon"
   }
 }

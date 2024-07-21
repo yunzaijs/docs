@@ -6,11 +6,7 @@ sidebar_position: 4
 
 :::tip 提示
 
-该章节内容需要阅读ICQQ相关接口
-
-Yunzai的消息类型经过扩展
-
-部分类型可能未及时补充
+Yunzai 基于 Icqq的事件进行扩展，部分类型可能未进行补充，会有类型爆红
 
 :::
 
@@ -37,6 +33,7 @@ message.use(
 - 图片
 
 ```ts
+import { Segment } from 'yunzai'
 message.use(
   e => {
     const img: Buffer | null = null
@@ -49,6 +46,7 @@ message.use(
 - 复合
 
 ```ts
+import { Segment } from 'yunzai'
 message.use(
   e => {
     const img: Buffer | null = null
@@ -130,3 +128,40 @@ export interface EventType {
 ```
 
 ### 私聊
+
+```ts
+export interface EventType {
+  /**
+   * 是否是主人
+   */
+  isMaster: boolean
+  /**
+   * 是否是群里
+   */
+  isGroup: boolean
+  /**
+   * 是私聊
+   */
+  isPrivate?: any
+  /**
+   * 是频道
+   */
+  isGuild?: any
+  /**
+   * 用户消息
+   */
+  msg: string
+  /**
+   * 用户编号
+   */
+  user_id: string
+  /**
+   * 用户名
+   */
+  user_name: string
+  /**
+   * 用户头像
+   */
+  user_avatar: string
+}
+```

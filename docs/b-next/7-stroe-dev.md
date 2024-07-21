@@ -12,10 +12,24 @@ sidebar_position: 7
 import { localStorage } from 'yunzai'
 ```
 
-### levelStroe
+### Redis
 
-基于`levelup`和`leveldown`
+> Redis长期保留，但会改成被动连接
 
 ```ts
-import { levelStorage } from 'yunzai'
+import { Redis } from 'yunzai'
+```
+
+> 更推荐具有高版本redis的ioRedis
+
+```ts
+yarn add ioRedis -W
+```
+
+## Sqlite
+
+> 不推荐使用 Sqlite 已计划移除
+
+```ts
+import { Sqlite } from 'yunzai'
 ```

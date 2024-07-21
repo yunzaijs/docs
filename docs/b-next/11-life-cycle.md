@@ -40,8 +40,8 @@ export default () => {
 ## mounted
 
 ```ts
-import { applicationOptions } from 'yunzai'
-const Data = []
+import { applicationOptions, useAppStorage } from 'yunzai'
+const Data = useAppStorage()
 export default () => {
   return applicationOptions({
     // 被执行时
@@ -58,8 +58,8 @@ export default () => {
 ## beforeMount
 
 ```ts
-import { applicationOptions } from 'yunzai'
-const Data = []
+import { applicationOptions, useAppStorage } from 'yunzai'
+const Data = useAppStorage()
 export default () => {
   return applicationOptions({
     // 被执行之前，也是被所有中间件执行之前
@@ -74,8 +74,8 @@ export default () => {
 ## response
 
 ```ts
-import { applicationOptions } from 'yunzai'
-const Data = []
+import { applicationOptions, useAppStorage } from 'yunzai'
+const Data = useAppStorage()
 export default () => {
   return applicationOptions({
     response() {
@@ -89,8 +89,8 @@ export default () => {
 ## afterResponse
 
 ```ts
-import { applicationOptions } from 'yunzai'
-const Data = []
+import { applicationOptions, useAppStorage } from 'yunzai'
+const Data = useAppStorage()
 export default () => {
   return applicationOptions({
     response() {
