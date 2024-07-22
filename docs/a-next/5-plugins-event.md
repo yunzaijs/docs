@@ -10,9 +10,7 @@ sidebar_position: 5
 
 :::
 
-## 消息
-
-- 观察者
+## 观察者
 
 ```ts
 import { Observer, Messages } from 'yunzai'
