@@ -56,7 +56,7 @@ Word.use(
 )
 ```
 
-## 定时
+## 记时器
 
 ```ts
 import { setBotInterVal, Messages, clearBotInterVal } from 'yunzai'
@@ -64,26 +64,40 @@ import { setBotInterVal, Messages, clearBotInterVal } from 'yunzai'
 let uids = []
 
 const ID = setBotInterVal(Bot => {
-  // 定时图送主动消息
   for (const uid of uids) {
     Bot.pickFriend(uid).sendMsg('消息嘎嘎')
   }
+  // 每分钟执行一次
 }, 60 * 1000)
 
 const Word = new Messages('message.private')
-
 Word.use(
   e => {
     clearBotInterVal(ID)
   },
-  [/^(#|\/)?取消订阅$/]
+  [/^(#|\/)?取消记时$/]
 )
 ```
 
-## 订阅
+## 定时任务
 
-> 即V3中的Task任务机制
+```ts
+import { setBotTask, Messages, clearBotTask } from 'yunzai'
 
-> Next 中，将使用订阅替代
+let uids = []
 
-> 待更新
+const ID = setBotTask(Bot => {
+  for (const uid of uids) {
+    Bot.pickFriend(uid).sendMsg('消息嘎嘎')
+  }
+  // 每天12点执行
+}, '0 12 * * *')
+
+const Word = new Messages('message.private')
+Word.use(
+  e => {
+    clearBotTask(ID)
+  },
+  [/^(#|\/)?取消任务$/]
+)
+```

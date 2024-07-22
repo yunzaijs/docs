@@ -25,11 +25,3 @@ import { Redis } from 'yunzai'
 ```ts
 yarn add ioRedis -W
 ```
-
-## Sqlite
-
-> 不推荐使用 Sqlite 已计划移除
-
-```ts
-import { Sqlite } from 'yunzai'
-```
