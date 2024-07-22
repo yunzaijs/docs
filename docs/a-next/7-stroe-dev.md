@@ -20,7 +20,7 @@ import { localStorage } from 'yunzai'
 import { Redis } from 'yunzai'
 ```
 
-> 更推荐具有高版本redis的ioRedis
+> 更推荐具有新接口的ioRedis
 
 ```ts
 yarn add ioRedis -W

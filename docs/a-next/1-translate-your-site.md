@@ -150,28 +150,12 @@ cd yunzaijs
 
 - 安装依赖
 
-<Tabs>
-  <TabItem value="pnpm" label="pnpm">
-
 ```sh
 # 国内镜像，已安装可忽视
 npm config set registry https://registry.npmmirror.com
 ```
 
-```sh
-# 已安装可忽视
-npm install pnpm -g
-# 加载
-pnpm install
-```
-
-  </TabItem>
-  <TabItem value="yarn" label="yarn">
-
-```sh
-# 国内镜像，已安装可忽视
-npm config set registry https://registry.npmmirror.com
-```
+> 不推荐npm、pnpm、cnpm等
 
 ```sh
 # yarn 不能使用2.x版本，它无法使用link
@@ -180,8 +164,14 @@ npm install yarn@1.12.1 -g
 yarn
 ```
 
-  </TabItem>
-</Tabs>
+<Tabs>
+  <TabItem value="正式环境" label="正式环境">
+
+- 编译
+
+```sh
+npm run build
+```
 
 - 启动
 
@@ -208,3 +198,21 @@ npm run kill
 ```
 
 > 更多内容，请阅读 [PM2](https://pm2.keymetrics.io/) 使用文档
+
+</TabItem>
+<TabItem value="测试环境" label="测试环境">
+
+- 启动
+
+```sh
+npm run test
+```
+
+- 重新登录
+
+```sh
+npm run test login
+```
+
+  </TabItem>
+</Tabs>

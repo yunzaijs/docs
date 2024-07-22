@@ -13,23 +13,20 @@ import TabItem from '@theme/TabItem';
 
 :::
 
-## 核心
-
-```ts
-import * as Core from 'yunzai'
-```
+## 消息
 
 <Tabs>
   <TabItem value="apple" label="函数应用" default>
 
 ```ts title="./message.ts"
 import { Messages } from 'yunzai'
-const message = new Messages({
-  event: 'message.group'
-})
-message.response(/^(#|\/)?你好/, async e => {
-  e.reply('你好')
-})
+const message = new Messages('message.group')
+message.use(
+  e => {
+    e.reply('你好')
+  },
+  [/^(#|\/)?你好/]
+)
 export default message
 ```
 
@@ -37,11 +34,10 @@ export default message
   <TabItem value="orange" label="类应用">
 
 ```ts title="./message.ts"
-import { Plugin } from 'yunzai'
-export default class App extends Plugin {
+import { Application } from 'yunzai'
+export default class App extends Application<'message.group'> {
   constructor() {
-    super()
-    this.priority = 700
+    super('message.group')
     this.rule = [
       {
         reg: /^(#|\/)?你好/,
@@ -49,7 +45,8 @@ export default class App extends Plugin {
       }
     ]
   }
-  async hello() {
+  //
+  hello() {
     this.e.reply('你好')
   }
 }
@@ -59,10 +56,6 @@ export default class App extends Plugin {
 </Tabs>
 
 ## 配置
-
-```ts
-import * as Config from 'yunzai'
-```
 
 配置模块主要分为`系统性常量`和`系统配置器`
 
@@ -82,12 +75,13 @@ import { ConfigController } from 'yunzai'
 
 配置器包含了配置文件内的所有参数.
 
-## 工具
+## 图片
 
-```ts
-import * as Utils from 'yunzai'
-```
+:::tip 注意
 
-该模块是与机器人运行无关的,但与config系统有关的.
+该模块设计已独立成库，
+任何版本都可以采用此设计进行开发
 
-主要辅助开发者更快的实现业务,而不再需要关注方法的实现
+[react-puppeteer](https://github.com/lemonade-lab/react-puppeteer)
+
+:::

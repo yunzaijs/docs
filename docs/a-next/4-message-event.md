@@ -6,7 +6,7 @@ sidebar_position: 4
 
 :::tip 提示
 
-该章节内容需要阅读ICQQ相关接口
+Yunzai 基于 Icqq的事件进行扩展，部分类型可能未进行补充，会有类型爆红
 
 :::
 
@@ -16,52 +16,62 @@ sidebar_position: 4
 
 ```ts
 import { Messages } from 'yunzai'
-const message = new Messages({
-  event: 'message.group'
-})
+const message = new Messages('message.group')
 ```
 
 - 回复
 
 ```ts
-message.response(/^(#|\/)?你好/, async e => {
-  e.reply('你好')
-})
+message.use(
+  e => {
+    e.reply('你好')
+  },
+  [/^(#|\/)?你好/]
+)
 ```
 
 - 图片
 
 ```ts
-message.response(/^(#|\/)?你好/, async e => {
-  const img: Buffer | null = null
-  e.reply(Segment.image(img))
-})
+import { Segment } from 'yunzai'
+message.use(
+  e => {
+    const img: Buffer | null = null
+    e.reply(Segment.image(img))
+  },
+  [/^(#|\/)?你好/]
+)
 ```
 
 - 复合
 
 ```ts
-message.response(/^(#|\/)?你好/, async e => {
-  const img: Buffer | null = null
-  e.reply(['这是一张图片', Segment.image(img)])
-})
+import { Segment } from 'yunzai'
+message.use(
+  e => {
+    const img: Buffer | null = null
+    e.reply(['这是一张图片', Segment.image(img)])
+  },
+  [/^(#|\/)?你好/]
+)
 ```
 
 ### 私聊
 
 ```ts
 import { Messages } from 'yunzai'
-const message = new Messages({
-  event: 'message.private'
-})
+const message = new Messages('message.private')
 ```
 
 - 回复
 
 ```ts
-message.response(/^(#|\/)?你好/, async e => {
-  e.reply('你好')
-})
+message.response(
+  e => {
+    e.reply('你好')
+  },
+  [/^(#|\/)?你好/]
+)
 ```
 
 ## 属性
@@ -118,3 +128,40 @@ export interface EventType {
 ```
 
 ### 私聊
+
+```ts
+export interface EventType {
+  /**
+   * 是否是主人
+   */
+  isMaster: boolean
+  /**
+   * 是否是群里
+   */
+  isGroup: boolean
+  /**
+   * 是私聊
+   */
+  isPrivate?: any
+  /**
+   * 是频道
+   */
+  isGuild?: any
+  /**
+   * 用户消息
+   */
+  msg: string
+  /**
+   * 用户编号
+   */
+  user_id: string
+  /**
+   * 用户名
+   */
+  user_name: string
+  /**
+   * 用户头像
+   */
+  user_avatar: string
+}
+```
