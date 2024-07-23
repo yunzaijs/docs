@@ -8,7 +8,7 @@ const config: Config = {
   // favicon: 'img/favicon.ico',
 
   // Set the production url of your site here
-  url: 'https://your-custom-domain.com', // 将此替换为你的自定义域名
+  url: 'https://yunzaijs.org', // 将此替换为你的自定义域名
   // Set the /<baseUrl>/ pathname under which your site is served
   // For custom domain, it should be '/'
   baseUrl: '/',
