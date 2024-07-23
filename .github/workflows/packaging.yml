@@ -39,9 +39,9 @@ jobs:
         run: |
           cd build/
           git init
-          git config --local user.email "916415899@qq.com"
-          git config --local user.name "ningmengchongshui"
+          git config --local user.email "nightoldcity@gmail.com"
+          git config --local user.name "oldcitynight"
           git add -A
           git commit -m "自动打包 - ${{ env.BEIJING_TIME }}"
-          git remote add github https://yunzai-org:${{ secrets.GH_TOKEN }}@github.com/yunzai-org/docs.git
+          git remote add github https://oldcitynight:${{ secrets.GITHUB_TOKEN }}@github.com/oldcitynight/docs.git
           git push github HEAD:docs -f
