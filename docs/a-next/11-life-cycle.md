@@ -32,6 +32,10 @@ export default () => {
       // 因为，每个应用都可以自定义自身的排列顺序
       // 可以对 每个app 进行排序。
       // 可以对app内的 rule 进行重新排序
+
+      // 注意：
+      // 所有初始化行为都应该在此处进行
+      // 请避免使用 await造成阻塞
     }
   })
 }
@@ -46,7 +50,7 @@ export default () => {
   return applicationOptions({
     // 被执行时
     mounted(e) {
-      // e 类似于  on(e){}
+      // e 类似于  Client.on(e){}
       // 你可以在此处做 类似于中间件的事
       // 最后，把自身的 数据 返回给机器人
       return Data

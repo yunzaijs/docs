@@ -15,7 +15,7 @@ sidebar_position: 10
 ```bash
 npm create yunzai@latest -y
 cd yunzai
-npm install yarn@1.2.1 -y
+npm install yarn@1.19.1 -y
 yarn
 ```
 
@@ -32,7 +32,7 @@ npm init -y
 - 安装开发框架
 
 ```bash
-npm install yarn@1.12.1 -y
+npm install yarn@1.19.1 -y
 yarn add react puppeteer react-puppeteer -W
 yarn add yunzai  -D
 ```

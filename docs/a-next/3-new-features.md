@@ -65,7 +65,7 @@ export default class App extends Application<'message.group'> {
 import { BOT_NAME } from 'yunzai'
 ```
 
-这是无法修改的,存在于内容,且运行后不变的
+这是无法修改的,且运行后是不变的
 
 - 系统配置器
 

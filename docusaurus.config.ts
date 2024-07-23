@@ -3,7 +3,7 @@ import type { Config } from '@docusaurus/types'
 import type * as Preset from '@docusaurus/preset-classic'
 
 const config: Config = {
-  title: 'Yunzai',
+  title: 'YunzaiJS',
   tagline: '基于ICQQ构建的机器人',
   // favicon: 'img/favicon.ico',
 
@@ -45,7 +45,7 @@ const config: Config = {
     // Replace with your project's social card
     image: 'img/docusaurus-social-card.jpg',
     navbar: {
-      title: 'Yunzai',
+      title: 'YunzaiJS',
       // logo: {
       //   alt: 'Miao-Yunzai Logo',
       //   src: 'img/logo.svg',
@@ -53,14 +53,29 @@ const config: Config = {
       items: [
         {
           position: 'left',
-          label: '教程',
+          label: 'Dev DOCS',
           type: 'docSidebar',
           sidebarId: 'tutorialSidebar'
         },
         {
+          position: 'left',
+          label: 'Edit DOCS',
+          href: 'https://github.com/yunzai-org/docs/blob/main/docs/intro.md'
+        },
+        {
+          position: 'right',
+          href: 'https://github.com/yunzai-org',
+          label: 'Team'
+        },
+        {
+          position: 'right',
+          href: 'https://github.com/yunzai-org/create-yunzai/blob/main/bin/template/README.md',
+          label: 'Template'
+        },
+        {
           position: 'right',
           href: 'https://github.com/yunzai-org/yunzaijs',
-          label: 'GitHub'
+          label: 'Yunzai Code'
         }
       ]
     },
@@ -103,10 +118,10 @@ const config: Config = {
         {
           title: '更多',
           items: [
-            // {
-            //   label: '团队',
-            //   to: '/team',
-            // },
+            {
+              label: 'TRSS-Yunzai V3',
+              href: 'https://github.com/TimeRainStarSky/Yunzai'
+            },
             {
               label: 'Miao-Yunzai V3',
               href: 'https://github.com/yoimiya-kokomi/Miao-Yunzai/tree/master'

@@ -84,7 +84,7 @@ import { setBotTask, Messages, clearBotTask } from 'yunzai'
 
 let uids = []
 
-const ID = setBotTask(Bot => {
+const Job = setBotTask(Bot => {
   for (const uid of uids) {
     Bot.pickFriend(uid).sendMsg('消息嘎嘎')
   }
@@ -94,7 +94,7 @@ const ID = setBotTask(Bot => {
 const Word = new Messages('message.private')
 Word.use(
   e => {
-    clearBotTask(ID)
+    clearBotTask(Job)
   },
   [/^(#|\/)?取消任务$/]
 )

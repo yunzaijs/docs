@@ -159,7 +159,7 @@ npm config set registry https://registry.npmmirror.com
 
 ```sh
 # yarn 不能使用2.x版本，它无法使用link
-npm install yarn@1.12.1 -g
+npm install yarn@1.19.1 -g
 # 加载
 yarn
 ```

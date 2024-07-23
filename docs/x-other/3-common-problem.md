@@ -4,6 +4,12 @@ sidebar_position: 3
 
 # 常见问题
 
+:::tip 提示
+
+Next 鼓励维护者提供更多的解决方案，修改文章请点击底部 Edit this page
+
+:::
+
 ## AllOS
 
 ### 无头浏览器
@@ -43,3 +49,7 @@ yum install pango.x86_64 libXcomposite.x86_64 libXcursor.x86_64 libXdamage.x86_6
 ```sh
 yum groupinstall fonts -y
 ```
+
+### 社区答案
+
+[打开 Issues](https://github.com/yunzai-org/yunzaijs/issues)
