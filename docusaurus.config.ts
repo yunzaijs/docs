@@ -1,6 +1,6 @@
-import { themes as prismThemes } from 'prism-react-renderer'
-import type { Config } from '@docusaurus/types'
-import type * as Preset from '@docusaurus/preset-classic'
+import { themes as prismThemes } from 'prism-react-renderer';
+import type { Config } from '@docusaurus/types';
+import type * as Preset from '@docusaurus/preset-classic';
 
 const config: Config = {
   title: 'YunzaiJS',
@@ -8,10 +8,10 @@ const config: Config = {
   // favicon: 'img/favicon.ico',
 
   // Set the production url of your site here
-  url: 'https://yunzai-org.github.io',
+  url: 'https://your-custom-domain.com', // 将此替换为你的自定义域名
   // Set the /<baseUrl>/ pathname under which your site is served
-  // For GitHub pages deployment, it is often '/<projectName>/'
-  baseUrl: '/docs/',
+  // For custom domain, it should be '/'
+  baseUrl: '/',
 
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
@@ -90,11 +90,11 @@ const config: Config = {
           items: [
             {
               label: '简介',
-              to: '/docs/docs/intro'
+              to: '/docs/intro'
             },
             {
               label: '插件',
-              to: '/docs/docs/category/plugins-shop'
+              to: '/docs/category/plugins-shop'
             }
           ]
         },
@@ -148,4 +148,4 @@ const config: Config = {
   // themes: ['@docusaurus/theme-live-codeblock'],
 }
 
-export default config
+export default config;
