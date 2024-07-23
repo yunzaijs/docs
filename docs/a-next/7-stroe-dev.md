@@ -4,9 +4,15 @@ sidebar_position: 7
 
 # 存储
 
+:::tip 提示
+
+提供对基本的数据存储接口
+
+:::
+
 ### localStorage
 
-用于代替浏览器环境下的localStorage永久存储方案
+> 用于代替浏览器环境下的localStorage永久存储方案
 
 ```ts
 import { localStorage } from 'yunzai'

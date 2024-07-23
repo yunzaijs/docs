@@ -4,6 +4,12 @@ sidebar_position: 9
 
 # 中间件
 
+:::tip 提示
+
+中间件是有别于大型应用的，是全局生效的，可扩展字段的脚本
+
+:::
+
 - 编写
 
 ```ts title="./middleware/message/star-rail.ts"
