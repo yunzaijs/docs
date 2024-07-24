@@ -12,11 +12,11 @@ sidebar_position: 5
 
 ## 观察者
 
+> 用于观察群或某个用户，进行重复性执行或校验的行为
+
 ```ts
 import { Observer, Messages } from 'yunzai'
-
 const Word = new Messages('message.private')
-
 Word.use(
   e => {
     // 创建
@@ -56,6 +56,8 @@ Word.use(
 
 ## 记时器
 
+> 即指定某一事件后执行的行为，基于原生的InterVal接口
+
 ```ts
 import { setBotInterVal, Messages, clearBotInterVal } from 'yunzai'
 
@@ -78,6 +80,8 @@ Word.use(
 ```
 
 ## 定时任务
+
+> 进行更复杂的时间行为，如指定每天某点进行
 
 ```ts
 import { setBotTask, Messages, clearBotTask } from 'yunzai'

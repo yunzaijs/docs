@@ -17,9 +17,8 @@ sidebar_position: 1
 - 增加记时器
 - 增加观察者
 - 简化函数式写法
-- 分离模块家yunzai-mys
-- 统一模块yunzai
-- 发布npm
+- 发布模块yunzai-mys
+- 发布模块yunzai
 
 ## 2024.7.11 [4.0.21]
 

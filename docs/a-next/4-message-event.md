@@ -14,14 +14,11 @@ Yunzai 基于 Icqq的事件进行扩展，部分类型可能未进行补充，�
 
 ### 群聊
 
-```ts
-import { Messages } from 'yunzai'
-const message = new Messages('message.group')
-```
-
 - 回复
 
 ```ts
+import { Messages } from 'yunzai'
+const message = new Messages('message.group')
 message.use(
   e => {
     e.reply('你好')
@@ -33,7 +30,8 @@ message.use(
 - 图片
 
 ```ts
-import { Segment } from 'yunzai'
+import { Messages, Segment } from 'yunzai'
+const message = new Messages('message.group')
 message.use(
   e => {
     const img: Buffer | null = null
@@ -46,7 +44,8 @@ message.use(
 - 复合
 
 ```ts
-import { Segment } from 'yunzai'
+import { Messages, Segment } from 'yunzai'
+const message = new Messages('message.group')
 message.use(
   e => {
     const img: Buffer | null = null
@@ -58,14 +57,11 @@ message.use(
 
 ### 私聊
 
-```ts
-import { Messages } from 'yunzai'
-const message = new Messages('message.private')
-```
-
 - 回复
 
 ```ts
+import { Messages } from 'yunzai'
+const message = new Messages('message.private')
 message.response(
   e => {
     e.reply('你好')
