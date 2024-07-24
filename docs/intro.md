@@ -10,17 +10,37 @@ Yunzai Next 即下一个Yunzai机器人，它是基于Icqq协议所构建的机�
 
 :::
 
+| Project         | Status                      | Description    |
+| --------------- | --------------------------- | -------------- |
+| [yunzai]        | [![yunzai-s]][yunzai-p]     | 机器人模块     |
+| [create-yunzai] | [![c-yunzai-s]][c-yunzai-p] | 模板创建脚手架 |
+
+[yunzai]: https://github.com/yunzai-org/yunzaijs
+[yunzai-s]: https://img.shields.io/npm/v/yunzai.svg
+[yunzai-p]: https://www.npmjs.com/package/yunzai
+[create-yunzai]: https://github.com/yunzai-org/create-yunzai
+[c-yunzai-s]: https://img.shields.io/npm/v/create-yunzai.svg
+[c-yunzai-p]: https://www.npmjs.com/package/create-yunzai
+
 ## 致谢
 
-| Nickname                                                      | Contribution         |
-| ------------------------------------------------------------- | -------------------- |
-| [TRSS-Yunzai](https://github.com/TimeRainStarSky/Yunzai)      | 时雨的Yunzai-Bot V3  |
-| [Yunzai v3.0](https://github.com/yoimiya-kokomi/Miao-Yunzai)  | 喵喵的Yunzai-Bot V3  |
-| [Yunzai v3.0](https://gitee.com/le-niao/Yunzai-Bot)           | 乐神的Yunzai-Bot V3  |
-| [GardenHamster](https://github.com/GardenHamster/GenshinPray) | 模拟抽卡背景素材来源 |
-| [西风驿站](https://bbs.mihoyo.com/ys/collection/839181)       | 角色攻略图来源       |
-| [米游社友人A](https://bbs.mihoyo.com/ys/collection/428421)    | 角色突破素材图来源   |
-| [icqq](https://github.com/icqqjs/icqq)                        | ICQQ                 |
+| Nickname           | Contribution         |
+| ------------------ | -------------------- |
+| [TRSS-Yunzai]      | 时雨的Yunzai-Bot V3  |
+| [Miao Yunzai v3.0] | 喵喵的Yunzai-Bot V3  |
+| [Yunzai v3.0]      | 乐神的Yunzai-Bot V3  |
+| [GardenHamster]    | 模拟抽卡背景素材来源 |
+| [西风驿站]         | 角色攻略图来源       |
+| [米游社友人A]      | 角色突破素材图来源   |
+| [icqq]             | ICQQ                 |
+
+[TRSS-Yunzai]: https://github.com/TimeRainStarSky/Yunzai
+[Miao Yunzai v3.0]: https://github.com/yoimiya-kokomi/Miao-Yunzai
+[Yunzai v3.0]: https://gitee.com/le-niao/Yunzai-Bot
+[GardenHamster]: https://github.com/GardenHamster/GenshinPray
+[西风驿站]: https://bbs.mihoyo.com/ys/collection/839181
+[米游社友人A]: https://bbs.mihoyo.com/ys/collection/428421
+[icqq]: https://github.com/icqqjs/icqq
 
 ## 友情链接
 
