@@ -10,60 +10,6 @@ sidebar_position: 13
 
 :::
 
-## V2升级为Next
-
-xiaoyao-cvs 是经典v2集成插件
-
-接下来以此为例，讲述如何从v2升级为Next
-
-```ts title="./index.js"
-import { Plugin } from 'yunzai'
-// v2 的插件集
-import * as application from './apps/index.js'
-// 扩展 fun(e,....) 的方法
-import { render } from './adapter/render.js'
-/**
- * V2转义成V3
- * @param rule V2指令对象
- * @param sourceObject v2插件文件对象
- * @returns calss
- */
-const assignPropertiesAndMethods = (rules, sourceObject) => {
-  // 制作一个 rule
-  const rule = Object.keys(rules).map(item => ({
-    // 其他参数
-    ...rules[item],
-    // 确保拥有func
-    fnc: item
-  }))
-  // 制作一个class
-  class APP extends Plugin {
-    // 初始化
-    constructor() {
-      // 继承
-      super()
-      // 绑定 rule
-      this.rule = rule
-      // 绑定func
-      for (const key in sourceObject) {
-        // 接纳函数
-        if (sourceObject[key] instanceof Function) {
-          // 以无this指向函数来确保可以改变this指向为class，并按规则扩展函数参数
-          this[key] = () => sourceObject[key].call(this, this.e, { render })
-        }
-      }
-    }
-  }
-  return APP
-}
-// 变成一个 class
-const xiaoyao = assignPropertiesAndMethods(application['rule'], application)
-// 把class 作为 apps的属性并导出
-export const apps = { xiaoyao }
-```
-
-## V3升级为Next
-
 ### 差异
 
 - 全局变量
@@ -207,4 +153,26 @@ import { Renderer } from 'yunzai'
 
 ```ts
 import { renderer } from 'yunzai'
+```
+
+### other
+
+- plugins/other/restart.js
+
+```ts
+import { Restart } from 'yz-system'
+```
+
+### genshin
+
+- model
+
+修改为 lib/model
+
+- model/mys && modle/db
+
+修改为 yunzai-mys
+
+```ts
+import {} from 'yunzai-mys'
 ```
