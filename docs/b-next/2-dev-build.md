@@ -235,7 +235,7 @@ export default [
       typescript({
         compilerOptions: {
           declaration: true,
-          declarationDir: 'lib/types'
+          declarationDir: 'lib'
         }
       }),
       // 开启代码压缩
@@ -280,12 +280,12 @@ npm login
   // 要上传的文件夹
   "files": ["public", "assets", "lib"],
   // 类型文件夹
-  "types": "lib/types",
+  "types": "lib",
   "exports": {
     // 默认导出
     ".": {
       "import": "./lib/index.js",
-      "types": "./lib/types/index.d.ts"
+      "types": "./lib/index.d.ts"
     }
   },
   // 关联yunzai
