@@ -8,10 +8,10 @@ const config: Config = {
   // favicon: 'img/favicon.ico',
 
   // Set the production url of your site here
-  url: 'https://yunzai-org.github.io',
+  url: 'https://yunzaijs.org',
   // Set the /<baseUrl>/ pathname under which your site is served
   // For GitHub pages deployment, it is often '/<projectName>/'
-  baseUrl: '/docs/',
+  baseUrl: '/',
 
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
@@ -90,11 +90,11 @@ const config: Config = {
           items: [
             {
               label: '简介',
-              to: '/docs/docs/intro'
+              to: '/docs/intro'
             },
             {
               label: '模块',
-              to: '/docs/docs/category/module-shop'
+              to: '/docs/category/module-shop'
             }
           ]
         },
