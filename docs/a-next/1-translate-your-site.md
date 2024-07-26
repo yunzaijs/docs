@@ -170,31 +170,31 @@ yarn
 - 编译
 
 ```sh
-npm run build
+yarn build
 ```
 
 - 启动
 
 ```sh
-npm run app
+yarn app
 ```
 
 - 重新登录
 
 ```sh
-npm run login
+yarn login
 ```
 
 - 进程托管
 
 ```sh
-npm run start
+yarn start
 ```
 
 - 杀死进程
 
 ```sh
-npm run kill
+yarn kill
 ```
 
 > 更多内容，请阅读 [PM2](https://pm2.keymetrics.io/) 使用文档
@@ -205,13 +205,13 @@ npm run kill
 - 启动
 
 ```sh
-npm run test
+yarn test
 ```
 
 - 重新登录
 
 ```sh
-npm run test login
+yarn test login
 ```
 
   </TabItem>
