@@ -2,11 +2,11 @@
 sidebar_position: 13
 ---
 
-# 兼容升级
+# 优化升级
 
 :::tip 提示
 
-如果插件需要升级到Next，该文档或许有所帮助。但推荐阅读前置文章，进行代码发布
+Next支持V3插件，但你可以阅读文档来改善代码
 
 :::
 
@@ -31,7 +31,8 @@ V3的命名是混乱的，毫无章法的
 
 - 调用
 
-```ts title="./message.ts"
+```js title="./message.js"
+import { Plugin } from 'yunzai'
 export default class App extends plugin {
   constructor(e) {
     // 废弃，不再通过super传参
@@ -57,7 +58,8 @@ export default class App extends plugin {
 }
 ```
 
-```ts title="./message.ts"
+```js title="./message.js"
+import { Plugin } from 'yunzai'
 export default class App extends plugin {
   constructor() {
     super()
@@ -82,7 +84,7 @@ export default class App extends plugin {
 }
 ```
 
-```ts title="./message.ts"
+```js title="./message.js"
 export default class App extends plugin {
   constructor() {
     super()
@@ -100,7 +102,7 @@ export default class App extends plugin {
 
 :::danger 警告
 
-lib文件夹已全部废弃。你需要从对应的模块中使用原功能。模块内部标注废弃的方法都计划在未来中移除。
+lib文件夹已全部废弃，Next中不再需要关注引用路径。你只需要从对应的模块中使用原功能。模块内部标注废弃的方法都计划在未来中移除。
 
 :::
 
@@ -113,16 +115,30 @@ import * as common from 'yunzai'
 import { sleep } from 'yunzai'
 ```
 
-- lib/puppeteer/puppeteer.js
-
-```ts
-import { puppeteer } from 'yunzai'
-```
-
 - lib/plugin/plugin.js
 
 ```ts
 import { Plugin as plugin } from 'yunzai'
+```
+
+- lib/config/config.js
+
+```ts
+import { ConfigController as cfg } from 'yunzai'
+```
+
+:::tip 注意
+
+所有V3中的puppeteer内容在Next中不再推荐使用，可阅读
+
+[react-puppeteer](https://github.com/lemonade-lab/react-puppeteer) 了解如何使用此库开发独立于机器人的应用
+
+:::
+
+- lib/puppeteer/puppeteer.js
+
+```ts
+import { puppeteer } from 'yunzai'
 ```
 
 - renderers/puppeteer/index.js
@@ -135,12 +151,6 @@ import { renderers } from 'yunzai'
 
 ```ts
 import { Renderers } from 'yunzai'
-```
-
-- lib/config/config.js
-
-```ts
-import { ConfigController as cfg } from 'yunzai'
 ```
 
 - lib/renderer/renderer.js

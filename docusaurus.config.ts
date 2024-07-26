@@ -93,8 +93,8 @@ const config: Config = {
               to: '/docs/docs/intro'
             },
             {
-              label: '插件',
-              to: '/docs/docs/category/plugins-shop'
+              label: '模块',
+              to: '/docs/docs/category/module-shop'
             }
           ]
         },

@@ -9,7 +9,7 @@ import TabItem from '@theme/TabItem';
 
 :::tip 使用者提示
 
-Next会保持对V3的支持，但不保留对V2的支持，因此，V3内的所有V2写法都将在新版中失效。
+Next用户可阅读此文档进行体验，请阅读下一章的后续教程
 
 :::
 

@@ -1,8 +1,8 @@
 ---
-sidebar_position: 10
+sidebar_position: 2
 ---
 
-# 开发应用
+# 开发
 
 :::tip 提示
 
@@ -265,7 +265,7 @@ export default [
 yarn build
 ```
 
-### 发布依赖
+### 发布
 
 - 登录
 

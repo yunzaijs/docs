@@ -1,8 +1,8 @@
 ---
-sidebar_position: 11
+sidebar_position: 3
 ---
 
-# 生命周期
+# 周期
 
 :::tip 提示
 

@@ -85,3 +85,11 @@ import { ConfigController } from 'yunzai'
 [react-puppeteer](https://github.com/lemonade-lab/react-puppeteer)
 
 :::
+
+## 其他
+
+:::tip 提示
+
+若有标注废弃的功能，都是即将在未来版本中移除的功能
+
+:::
