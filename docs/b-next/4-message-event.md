@@ -62,7 +62,7 @@ message.use(
 ```ts
 import { Messages } from 'yunzai'
 const message = new Messages('message.private')
-message.response(
+message.ues(
   e => {
     e.reply('你好')
   },

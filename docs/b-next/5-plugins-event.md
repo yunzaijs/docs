@@ -20,10 +20,10 @@ const Word = new Messages('message.private')
 Word.use(
   e => {
     // 创建
-    const O = new Observer('message.private')
+    const Obs = new Observer('message.private')
 
     // 推送 询问
-    O.use(
+    Obs.use(
       // e 事件  next 多个use控制  close 关闭所有use
       // 每次事件来临都出发 use ，仅当close执行时结束
       (e, next, close) => {

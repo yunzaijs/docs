@@ -10,15 +10,57 @@ Next 鼓励维护者提供更多的解决方案，修改文章请点击底部 Ed
 
 :::
 
+## 内存
+
+:::tip 使用者提示
+
+需要2G以上运行内存
+
+:::
+
+- 指定大小
+
+> 这里 4096 表示分配 4GB 的内存
+
+```sh
+node --max-old-space-size=4096 src/main.js
+```
+
+- 查看当前的内存限制
+
+```sh
+node -e "console.log(v8.getHeapStatistics().heap_size_limit / 1024 / 1024)"
+```
+
 ## AllOS
 
 ### 无头浏览器
 
-较进版本的`puppeteer`要求最低`Node.js V16.14.0`
+:::tip 使用者提示
+
+`puppeteer`要求最低Node版本为`Node.js V16.14.0`
+
+:::
 
 若发现相关异常，请检查是否Node版本是否符合预期
 
 若ARM架构寻找不到浏览器，请尝试使用命令行校验是否拥有浏览器，或配置浏览器地址
+
+- 未提示浏览器地址且截图没反应
+
+需要修改 `.puppeteerrc.cjs`
+
+```cjs
+const cfg = require('react-puppeteer/.puppeteerrc')
+
+// 输入浏览器绝对路径
+cfg.executablePath = ''
+
+/**
+ * @type {import("puppeteer").Configuration}
+ */
+module.exports = cfg
+```
 
 ### "CXXABI_1.3.8" not found
 
