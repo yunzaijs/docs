@@ -84,6 +84,9 @@ sudo ln -s libstdc++.so.6.0.29 libstdc++.so.6
 
 ```sh
 yum install pango.x86_64 libXcomposite.x86_64 libXcursor.x86_64 libXdamage.x86_64 libXext.x86_64 libXi.x86_64 libXtst.x86_64 cups-libs.x86_64 libXScrnSaver.x86_64 libXrandr.x86_64 GConf2.x86_64 alsa-lib.x86_64 atk.x86_64 gtk3.x86_64 -y
+yum install libdrm libgbm libxshmfence -y
+yum install nss -y
+yum update nss -y
 ```
 
 ### 乱码字体

@@ -114,29 +114,163 @@ npm -v
 ```
 
   </TabItem>
-  <TabItem value="3" label="Centos X86">
 
-> 必要环境 Chromium
+<TabItem value="3" label="Ubuntu/Debian">
 
-> 推荐环境 Node.js ~ 18.18.2 + Redis ~ 6.0.0
+> 示例系统 Ubuntu 24.04 LTS / Debian 12.0 X86 2H2G
 
-> 推荐使用NVM对Node.js进行版本管理
+- 确保apt包是最新的
+
+```sh
+sudo apt update
+sudo apt install wget -y
+sudo apt install curl -y
+```
+
+- 安装NVM
+
+```sh
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.0/install.sh | bash
+```
+
+- 添加NVM环境环境
+
+`~/.bashrc`
+
+```sh
+echo 'export NVM_DIR="$HOME/.nvm"' >> ~/.bashrc
+echo '[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"' >> ~/.bashrc
+source ~/.bashrc # 刷新环境
+nvm -v # 版本
+```
+
+- 安装 Node.js@18.20.3
+
+```bash
+# 安装
+nvm install 18.20.3
+# 使用
+nvm use 18.20.3
+# 校验版本
+node -v
+npm -v
+```
+
+- 安装git
+
+```sh
+apt install git
+```
+
+- 安装redis
+
+```sh
+apt install build-essential tcl -y
+# 进入目录包目录
+cd /usr/local
+# 下载
+wget  "http://download.redis.io/releases/redis-6.2.13.tar.gz"
+# 解压
+tar zxvf "redis-6.2.13.tar.gz"
+# 进入redis目录
+cd redis-6.2.13
+# 编译
+make
+make install
+# 启动
+./src/redis-server --daemonize yes
+```
+
+- 安装chromium
+
+```sh
+sudo apt install chromium-browser
+```
 
   </TabItem>
-  <TabItem value="4" label="Ubuntu X86">
 
-> 必要环境 Chromium
+  <TabItem value="4" label="Centos">
 
-> 推荐环境 Node.js ~ 18.18.2 + Redis ~ 6.0.0
+> 示例系统 Centos 7.9 X86 2H2G
 
-> 推荐使用NVM对Node.js进行版本管理
+- 确保yum包是最新的
 
-  </TabItem>
+```sh
+sudo yum update -y
+sudo yum install wget -y
+sudo yum install curl -y
+```
+
+- 安装NVM
+
+```sh
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.0/install.sh | bash
+```
+
+- 添加NVM环境环境
+
+`~/.bashrc`
+
+```sh
+echo 'export NVM_DIR="$HOME/.nvm"' >> ~/.bashrc
+echo '[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"' >> ~/.bashrc
+source ~/.bashrc # 刷新环境
+nvm -v # 版本
+```
+
+- 安装 Node.js@16.14.0
+
+> Centos8以下无法使用官方源的Node V18
+
+```bash
+# 安装
+nvm install 16.14.0
+# 使用
+nvm use 16.14.0
+# 校验版本
+node -v
+npm -v
+```
+
+- 安装git
+
+```sh
+yum install git
+```
+
+- 安装redis
+
+```sh
+# 进入目录包目录
+cd /usr/local
+# 下载
+wget  "http://download.redis.io/releases/redis-6.2.13.tar.gz"
+# 解压
+tar zxvf "redis-6.2.13.tar.gz"
+# 进入redis目录
+cd redis-6.2.13
+# 编译
+make
+make install
+# 启动
+./src/redis-server --daemonize yes
+```
+
+- 安装 Chromium
+
+```sh
+yum  install chromium -y
+```
+
+</TabItem>
+
 </Tabs>
 
 出现意外？阅读[常见问题](../x-other/3-common-problem.md)
 
 - 安装源码
+
+> 请在合适目录中执行，确保具有合理的权限
 
 ```sh
 git clone --depth=1 https://github.com/yunzai-org/yunzaijs.git
@@ -160,9 +294,26 @@ npm config set registry https://registry.npmmirror.com
 ```sh
 # yarn 不能使用2.x版本，它无法使用link
 npm install yarn@1.19.1 -g
-# 加载
+```
+
+<Tabs>
+  <TabItem value="16" label="node>=18" default>
+
+> 如果 node < 18 需要加参数 `--ignore-engines`
+
+```sh
 yarn
 ```
+
+  </TabItem>
+  <TabItem value="18" label="node<18" default>
+
+```sh
+yarn --ignore-engines
+```
+
+  </TabItem>
+</Tabs>
 
 <Tabs>
   <TabItem value="正式环境" label="正式环境">
