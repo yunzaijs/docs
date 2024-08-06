@@ -4,8 +4,8 @@ sidebar_position: 1
 
 # 功能
 
-| Project      | Status                          | Description |
-| ------------ | ------------------------------- | ----------- |
+| Project          | Status                                  | Description           |
+| ---------------- | --------------------------------------- | --------------------- |
 | [yz-yuki-plugin] | [![yz-yuki-plugin-s]][yz-yuki-plugin-p] | B站、微博动态订阅推送 |
 
 [yz-yuki-plugin]: https://github.com/snowtafir/yuki-plugin

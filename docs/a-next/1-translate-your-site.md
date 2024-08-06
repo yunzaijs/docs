@@ -9,7 +9,7 @@ import TabItem from '@theme/TabItem';
 
 :::tip 使用者提示
 
-Next用户可阅读此文档进行体验，开发者请阅读后续教程
+V3用户可阅读此文档进行体验，开发者请阅读后续教程
 
 :::
 
@@ -17,9 +17,26 @@ Next用户可阅读此文档进行体验，开发者请阅读后续教程
 
 > 请在合适目录中执行，确保具有合理的权限
 
+<Tabs>
+  <TabItem value="16" label="Gitee" default>
+
 ```sh
-git clone --depth=1 https://github.com/yunzai-org/yunzaijs.git
+git clone --depth=1 https://github.com/yoimiya-kokomi/Miao-Yunzai.git
+cd Miao-Yunzai
+git clone --depth=1 https://github.com/yoimiya-kokomi/miao-plugin.git ./plugins/miao-plugin/
 ```
+
+  </TabItem>
+  <TabItem value="18" label="Github" default>
+
+```sh
+git clone --depth=1 https://gitee.com/yoimiya-kokomi/Miao-Yunzai.git
+cd Miao-Yunzai
+git clone --depth=1 https://gitee.com/yoimiya-kokomi/miao-plugin.git ./plugins/miao-plugin/
+```
+
+  </TabItem>
+</Tabs>
 
 - 进入目录
 
@@ -37,7 +54,7 @@ npm config set registry https://registry.npmmirror.com
 > 不推荐npm、pnpm、cnpm等
 
 ```sh
-# yarn 不能使用2.x版本，它无法使用link
+# yarn 不能使用2.x版本
 npm install yarn@1.19.1 -g
 ```
 
@@ -60,15 +77,6 @@ yarn --ignore-engines
   </TabItem>
 </Tabs>
 
-<Tabs>
-  <TabItem value="正式环境" label="正式环境">
-
-- 编译
-
-```sh
-yarn build
-```
-
 - 启动
 
 ```sh
@@ -87,28 +95,4 @@ yarn login
 yarn start
 ```
 
-- 杀死进程
-
-```sh
-yarn kill
-```
-
 > 更多内容，请阅读 [PM2](https://pm2.keymetrics.io/) 使用文档
-
-</TabItem>
-<TabItem value="测试环境" label="测试环境">
-
-- 启动
-
-```sh
-yarn test
-```
-
-- 重新登录
-
-```sh
-yarn test login
-```
-
-  </TabItem>
-</Tabs>
