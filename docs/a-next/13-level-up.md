@@ -2,7 +2,7 @@
 sidebar_position: 13
 ---
 
-# 优化升级
+# 升级
 
 :::tip 提示
 
