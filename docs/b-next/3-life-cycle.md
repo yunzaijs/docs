@@ -79,8 +79,6 @@ export default () => {
     }
   })
 }
-
-export * from './apps.js'
 ```
 
 ## beforeMount
