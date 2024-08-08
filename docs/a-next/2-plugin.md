@@ -368,7 +368,9 @@ export class Word extends Plugin {
 
 :::tip 注意
 
-推荐使用全球最流程的框架，任何版本都可以采用此设计进行开发
+推荐使用全球最流行的React.js框架
+
+任何版本都可以采用此设计进行开发
 
 [react-puppeteer](https://github.com/lemonade-lab/react-puppeteer)
 
