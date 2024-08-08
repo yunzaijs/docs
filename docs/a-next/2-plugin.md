@@ -9,7 +9,7 @@ import TabItem from '@theme/TabItem';
 
 :::tip 使用者提示
 
-V3开发者可阅读此文档了解此处以Miao-Yunzai机制，以写出更具有兼容性的代码
+V3开发者可阅读此文档了解Miao-Yunzai机制，写出更具有兼容性的代码
 
 :::
 
