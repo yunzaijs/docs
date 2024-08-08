@@ -9,7 +9,7 @@ import TabItem from '@theme/TabItem';
 
 :::tip 使用者提示
 
-V3开发者可阅读此文档了解此处以Miao-Yunzai机制
+V3开发者可阅读此文档了解此处以Miao-Yunzai机制，以写出更具有兼容性的代码
 
 :::
 
@@ -60,7 +60,9 @@ node包配置
   // js模式的本地模块 等同 import { } from '#yunzai'
   "imports": {
     "#yunzai": "./lib/index.js",
+    // 使用 import { } from '#miao'
     "#miao": "./plugins/miao-plugin/components/index.js",
+    // 使用 import { } from '#miao.models'
     "#miao.models": "./plugins/miao-plugin/models/index.js"
   }
 }
@@ -96,7 +98,6 @@ class Word extends Plugin {
       }
     ]
   }
-
   async post() {
     this.e.reply('发送消息')
   }
@@ -142,15 +143,10 @@ export class Word extends Plugin {
 
 同时也是Miao引进且推荐使用的
 
-- #miao
-
-- #miao.models
-
 ### 不匹配的
 
 ```js
 import { Plugin } from '#yunzai'
-
 export class friend extends Plugin {
   constructor() {
     super()
@@ -172,7 +168,6 @@ export class friend extends Plugin {
 import { Bot } from '#yunzai'
 
 const user_id = 999999999
-
 Bot.pickUser(user_id).sendMsg('xxx')
 
 // 实际上，这是e.reply的内部执行的方法
@@ -200,10 +195,12 @@ export class Word extends Plugin {
 请使用原生方法
 
 ```js
+import { Bot } from '#yunzai'
 import schedule from 'node-schedule'
-//
-schedule.scheduleJob('',  async () {
-  //
+// 订阅消息
+schedule.scheduleJob('', () => {
+  const user_id = 999999999
+  Bot.pickUser(user_id).sendMsg('xxx')
 })
 ```
 
@@ -212,6 +209,7 @@ schedule.scheduleJob('',  async () {
 ```js
 import schedule from 'node-schedule'
 import { Word } from './apps.js'
+// new 了一堆方法
 schedule.scheduleJob('', new Word().start)
 ```
 
@@ -241,7 +239,6 @@ export class Word extends Plugin {
 
   async post() {
     this.e.reply('发送消息')
-
     return
   }
 }
@@ -436,15 +433,9 @@ const sleep = promisify(setTimeout)
 
 ```js
 import { relpyPrivate } from '#yunzai'
+
+// 看似简化了，其实会造成部分开发者不熟悉icqq接口
 relpyPrivate('xxx')
-
-const user_id = 999999999
-
-Bot.pickUser(user_id)
-  .sendMsg(msg)
-  .catch(err => {
-    logger.mark(err)
-  })
 ```
 
 其原型为
