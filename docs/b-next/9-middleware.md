@@ -10,7 +10,7 @@ sidebar_position: 9
 
 :::
 
-- 编写
+## 编写
 
 ```ts title="./middleware/message/star-rail.ts"
 import { middlewareOptions, useEvent } from 'yunzai'
@@ -61,7 +61,7 @@ export default (config?: options) => {
 }
 ```
 
-- 配置
+## 配置
 
 ```ts title="yunzai.config.js"
 import { defineConfig } from 'yunzai'
@@ -72,7 +72,9 @@ export default defineConfig({
 })
 ```
 
-> 有的可能会是更复杂的模块，以下为例子
+## 更复杂的状况
+
+- 公用中间件
 
 ```ts title="yunzai.config.js"
 import { defineConfig } from 'yunzai'
@@ -92,13 +94,9 @@ export default defineConfig({
 
 上面的修仙插件，还额外提供了中间件，提供给所有app要扩展xiuxian的模块
 
-虽然yz-xiuxian-ass可以直接调用yz-xiuxian模块进行
+一但开发者对xiuxian模块的扩展逐渐增加，有必要把重复的逻辑进行整理
 
-但一旦开发着对xiuxian模块的扩展逐渐增加，有必要把重复的逻辑进行整理
-
-不过此场景的出现仅仅只是假设未来可能会出现的情况
-
-> 有的模块，想要修改前置逻辑，来影响某一模块
+- 通过中间件修改
 
 ```ts title="yunzai.config.js"
 import { defineConfig } from 'yunzai'
@@ -115,9 +113,9 @@ export default defineConfig({
 
 有的开发可能会想要提供中间件，来影响xiuxian模块的数据
 
-当然这些都是可能会发现的事情
+- 模块接口
 
-我们更推荐，模块可以在需求出现时，开放更合理的接口为其他模块，比如
+我们更推荐，模块可以在需求出现时，开放更合理的接口给其他模块
 
 ```ts title="./apps.js"
 import { Messages } from 'yunzai'
