@@ -27,7 +27,7 @@ message.use(
   },
   [/^(#|\/)?你好/]
 )
-export default message
+export const Word = message.ok
 ```
 
   </TabItem>
@@ -35,7 +35,7 @@ export default message
 
 ```ts title="./message.ts"
 import { Application } from 'yunzai'
-export default class App extends Application<'message.group'> {
+export class Word extends Application<'message.group'> {
   constructor() {
     super('message.group')
     this.rule = [

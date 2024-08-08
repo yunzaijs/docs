@@ -16,8 +16,8 @@ sidebar_position: 5
 
 ```ts
 import { Observer, Messages } from 'yunzai'
-const Word = new Messages('message.private')
-Word.use(
+const message = new Messages('message.private')
+message.use(
   e => {
     // 创建
     const Obs = new Observer('message.private')
@@ -52,6 +52,7 @@ Word.use(
   },
   [/^(#|\/)?登录账号$/]
 )
+export const Word = message.ok
 ```
 
 ## 记时器
@@ -70,13 +71,14 @@ const ID = setBotInterVal(Bot => {
   // 每分钟执行一次
 }, 60 * 1000)
 
-const Word = new Messages('message.private')
-Word.use(
+const message = new Messages('message.private')
+message.use(
   e => {
     clearBotInterVal(ID)
   },
   [/^(#|\/)?取消记时$/]
 )
+export const Word = message.ok
 ```
 
 ## 定时任务
@@ -95,11 +97,13 @@ const Job = setBotTask(Bot => {
   // 每天12点执行
 }, '0 12 * * *')
 
-const Word = new Messages('message.private')
-Word.use(
+const message = new Messages('message.private')
+message.use(
   e => {
     clearBotTask(Job)
   },
   [/^(#|\/)?取消任务$/]
 )
+
+export const Word = message.ok
 ```

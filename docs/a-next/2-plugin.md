@@ -232,7 +232,9 @@ export class Word extends Plugin {
     this.rule = [
       {
         reg: /^#你好$/,
-        fnc: this.post.name
+        fnc: this.post.name,
+        // 默认为 all
+        permission: 'master'
       }
     ]
   }
@@ -284,9 +286,7 @@ export class Word extends Plugin {
     this.rule = [
       {
         reg: /^#你好$/,
-        fnc: this.post.name,
-        // 默认为 all
-        permission: 'master'
+        fnc: this.post.name
       }
     ]
   }
