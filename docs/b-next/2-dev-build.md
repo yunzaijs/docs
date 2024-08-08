@@ -145,19 +145,17 @@ export const Test = message.ok
 ```ts
 import { applicationOptions } from 'yunzai'
 import * as Apps from './apps.js'
-const Data = []
 export default () => {
   return applicationOptions({
     // 插件创建时
-    create() {
+    create() {},
+    // 被执行时
+    mounted() {
+      const Data = []
+      // useEvent
       for (const key in Apps) {
         Data.push(new Apps[key]())
       }
-    },
-    // 被执行时
-    mounted() {
-      // useEvent
-
       return Data
     }
   })
