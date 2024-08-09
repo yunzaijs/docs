@@ -25,6 +25,7 @@ message.use(
   },
   [/^(#|\/)?你好/]
 )
+export const Word = message.ok
 ```
 
 - 图片
@@ -39,6 +40,7 @@ message.use(
   },
   [/^(#|\/)?你好/]
 )
+export const Word = message.ok
 ```
 
 - 复合
@@ -53,6 +55,7 @@ message.use(
   },
   [/^(#|\/)?你好/]
 )
+export const Word = message.ok
 ```
 
 ### 私聊
@@ -68,6 +71,7 @@ message.ues(
   },
   [/^(#|\/)?你好/]
 )
+export const Word = message.ok
 ```
 
 ## 属性
