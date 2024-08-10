@@ -1,5 +1,5 @@
 ---
-sidebar_position: 5
+sidebar_position: 7
 ---
 
 # 机制
@@ -28,15 +28,15 @@ message.use(
       // 每次事件来临都出发 use ，仅当close执行时结束
       (e, next, close) => {
         if (e.msg == '/close') {
-          e.reply('取消输入')
+          e.reply('close password')
           close()
         }
 
         if (/^123456$/.test(e.msg)) {
-          e.reply('校验成功')
+          e.reply('ture password')
           close()
         } else {
-          e.reply('请输入密码')
+          e.reply('input password')
         }
 
         // 继续 如果 Observer use还有的话
@@ -48,9 +48,10 @@ message.use(
     )
 
     // 触发提示
-    e.reply('请输入密码')
+    e.reply('input password')
   },
-  [/^(#|\/)?登录账号$/]
+  // login #login /login
+  [/^(#|\/)?login$/]
 )
 export const Word = message.ok
 ```
@@ -62,11 +63,11 @@ export const Word = message.ok
 ```ts
 import { setBotInterVal, Messages, clearBotInterVal } from 'yunzai'
 
-let uids = []
+const Uids = []
 
 const ID = setBotInterVal(Bot => {
-  for (const uid of uids) {
-    Bot.pickFriend(uid).sendMsg('消息嘎嘎')
+  for (const user_id of Uids) {
+    Bot.pickFriend(user_id).sendMsg('hello interval')
   }
   // 每分钟执行一次
 }, 60 * 1000)
@@ -76,7 +77,8 @@ message.use(
   e => {
     clearBotInterVal(ID)
   },
-  [/^(#|\/)?取消记时$/]
+  // close #close /close
+  [/^(#|\/)?close$/]
 )
 export const Word = message.ok
 ```
@@ -88,11 +90,11 @@ export const Word = message.ok
 ```ts
 import { setBotTask, Messages, clearBotTask } from 'yunzai'
 
-let uids = []
+const Uids = []
 
 const Job = setBotTask(Bot => {
-  for (const uid of uids) {
-    Bot.pickFriend(uid).sendMsg('消息嘎嘎')
+  for (const user_id of Uids) {
+    Bot.pickFriend(user_id).sendMsg('hello task')
   }
   // 每天12点执行
 }, '0 12 * * *')
@@ -102,7 +104,8 @@ message.use(
   e => {
     clearBotTask(Job)
   },
-  [/^(#|\/)?取消任务$/]
+  // close #close /close
+  [/^(#|\/)?close$/]
 )
 
 export const Word = message.ok

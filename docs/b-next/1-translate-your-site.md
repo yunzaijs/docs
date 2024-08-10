@@ -9,7 +9,7 @@ import TabItem from '@theme/TabItem';
 
 :::tip 使用者提示
 
-Next用户可阅读此文档进行体验，开发者请阅读后续教程
+学习如何安装Yunzai机器人
 
 :::
 
@@ -55,59 +55,6 @@ yarn
 
 ```sh
 yarn --ignore-engines
-```
-
-  </TabItem>
-</Tabs>
-
-<Tabs>
-  <TabItem value="正式环境" label="正式环境">
-
-- 编译
-
-```sh
-yarn build
-```
-
-- 启动
-
-```sh
-yarn app
-```
-
-- 重新登录
-
-```sh
-yarn login
-```
-
-- 进程托管
-
-```sh
-yarn start
-```
-
-- 杀死进程
-
-```sh
-yarn kill
-```
-
-> 更多内容，请阅读 [PM2](https://pm2.keymetrics.io/) 使用文档
-
-</TabItem>
-<TabItem value="测试环境" label="测试环境">
-
-- 启动
-
-```sh
-yarn test
-```
-
-- 重新登录
-
-```sh
-yarn test login
 ```
 
   </TabItem>

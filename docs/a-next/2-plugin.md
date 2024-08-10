@@ -93,13 +93,14 @@ class Word extends Plugin {
     // 匹配
     this.rule = [
       {
-        reg: /^#你好$/,
+        // #hello
+        reg: /^#hello$/,
         fnc: this.post.name
       }
     ]
   }
   async post() {
-    this.e.reply('发送消息')
+    this.e.reply('hello world')
   }
 }
 export const apps = { Word }
@@ -120,14 +121,15 @@ export class Word extends Plugin {
     // 匹配
     this.rule = [
       {
-        reg: /^#你好$/,
+        // #hello
+        reg: /^#hello$/,
         fnc: this.post.name
       }
     ]
   }
 
   async post() {
-    this.e.reply('发送消息')
+    this.e.reply('hello world')
   }
 }
 ```
@@ -135,7 +137,7 @@ export class Word extends Plugin {
   </TabItem>
 </Tabs>
 
-启动机器人后，在聊天窗口发送`#你好`可触发效果
+启动机器人后，在聊天窗口发送`#hello`可触发效果
 
 - #yunzai
 
@@ -182,14 +184,26 @@ import { Plugin } from '#yunzai'
 export class Word extends Plugin {
   constructor() {
     super()
-
-    this.task = {}
+    //
+    this.task = {
+      cron: '',
+      fnc: this.start.name
+    }
   }
 
   async start() {
     //
   }
 }
+```
+
+这样也是不推荐的
+
+```js
+import schedule from 'node-schedule'
+import { Word } from './apps.js'
+// new 了一堆方法
+schedule.scheduleJob('', new Word().start)
 ```
 
 请使用原生方法
@@ -200,17 +214,8 @@ import schedule from 'node-schedule'
 // 订阅消息
 schedule.scheduleJob('', () => {
   const user_id = 999999999
-  Bot.pickUser(user_id).sendMsg('xxx')
+  Bot.pickUser(user_id).sendMsg('hello word')
 })
-```
-
-这样也是不推荐的
-
-```js
-import schedule from 'node-schedule'
-import { Word } from './apps.js'
-// new 了一堆方法
-schedule.scheduleJob('', new Word().start)
 ```
 
 ### 数据库
@@ -231,7 +236,8 @@ export class Word extends Plugin {
     // 匹配
     this.rule = [
       {
-        reg: /^#你好$/,
+        // #hello
+        reg: /^#hello$/,
         fnc: this.post.name,
         // 默认为 all
         permission: 'master'
@@ -240,7 +246,7 @@ export class Word extends Plugin {
   }
 
   async post() {
-    this.e.reply('发送消息')
+    this.e.reply('hello word')
     return
   }
 }
@@ -258,7 +264,8 @@ export class Word extends Plugin {
     // 匹配
     this.rule = [
       {
-        reg: /^#你好$/,
+        // #hello
+        reg: /^#hello$/,
         fnc: this.post.name
         //
       }
@@ -268,7 +275,7 @@ export class Word extends Plugin {
   }
 
   async post() {
-    this.e.reply('发送消息')
+    this.e.reply('hello word')
   }
 }
 ```
@@ -285,23 +292,23 @@ export class Word extends Plugin {
     // 匹配
     this.rule = [
       {
-        reg: /^#你好$/,
+        // #hello
+        reg: /^#hello$/,
         fnc: this.post.name
       }
     ]
   }
 
   async post() {
-    this.e.reply('请输入密码')
+    this.e.reply('input password')
     // 脱离Plugin机制，重复执行start函数
-    this.setContext('start')
+    this.setContext('vPassword')
   }
 
-  async start() {
-    this.e.reply(`你的密码为${this.e.msg}`)
-
+  async vPassword() {
+    this.e.reply(`your password is ${this.e.msg}`)
     // 结束
-    this.finish('start')
+    this.finish('vPassword')
   }
 }
 ```
@@ -318,14 +325,15 @@ export class Word extends Plugin {
     // 匹配
     this.rule = [
       {
-        reg: /^#你好$/,
+        // #hello
+        reg: /^#hello$/,
         fnc: this.post.name
       }
     ]
   }
 
   async post() {
-    this.e.reply('发送消息')
+    this.e.reply('hello word')
 
     // 将持续匹配后续指令
     return false
@@ -346,7 +354,8 @@ export class Word extends Plugin {
     // 匹配
     this.rule = [
       {
-        reg: /^#你好$/,
+        // #hello
+        reg: /^#hello$/,
         fnc: this.post.name
       }
     ]
@@ -393,14 +402,16 @@ export class Word extends Plugin {
     // 匹配
     this.rule = [
       {
-        reg: /^#你好$/,
+        // #hello
+        reg: /^#hello$/,
         fnc: this.post.name
       }
     ]
   }
 
   async post() {
-    makeForwardMsg(this.e, ['发送消息'], '这是一条被转发的消息的备注')
+    const Message = await makeForwardMsg(this.e, ['hello', 'word'], 'this is makeForwardMsg')
+    this.e.reply(Message)
     return
   }
 }
