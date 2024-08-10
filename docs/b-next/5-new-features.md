@@ -1,5 +1,5 @@
 ---
-sidebar_position: 3
+sidebar_position: 5
 ---
 
 # 模块
@@ -23,9 +23,10 @@ import { Messages } from 'yunzai'
 const message = new Messages('message.group')
 message.use(
   e => {
-    e.reply('你好')
+    e.reply('hello word')
   },
-  [/^(#|\/)?你好/]
+  // hello #hello /hello
+  [/^(#|\/)?hello/]
 )
 export const Word = message.ok
 ```
@@ -40,14 +41,15 @@ export class Word extends Application<'message.group'> {
     super('message.group')
     this.rule = [
       {
-        reg: /^(#|\/)?你好/,
+        // hello #hello /hello
+        reg: /^(#|\/)?hello/,
         fnc: this.hello.name
       }
     ]
   }
   //
   hello() {
-    this.e.reply('你好')
+    this.e.reply('hello word')
   }
 }
 ```

@@ -1,5 +1,5 @@
 ---
-sidebar_position: 2
+sidebar_position: 3
 ---
 
 # 开发
@@ -12,14 +12,44 @@ sidebar_position: 2
 
 ## 安装模板
 
+- 创建
+
 ```bash
 npm create yunzai@latest -y
-cd yunzai
+cd yunzaib # 进入
+```
+
+- 包管理
+
+```bash
 npm install yarn@1.19.1 -y
+```
+
+- 安装依赖
+
+```bash
 yarn
 ```
 
+- 启动机器人
+
+```bash
+yarn app
+```
+
+指令合集
+
+```bash
+npm create yunzai@latest -y
+cd yunzaib
+npm install yarn@1.19.1 -y
+yarn
+yarn app
+```
+
 ## 重新开始
+
+也可以从头到尾的自行搭建开发环境
 
 ### 运行
 
@@ -34,7 +64,7 @@ npm init -y
 ```bash
 npm install yarn@1.19.1 -y
 yarn add react puppeteer react-puppeteer -W
-yarn add yunzai  -D
+yarn add yunzai@latest  -D
 ```
 
 - 安装ts环境
@@ -71,13 +101,13 @@ yarn add typescript -D
 
 ```ts
 import { applicationOptions, useAppStorage } from 'yunzai'
-const Data = useAppStorage()
 export default () => {
   return applicationOptions({
     // 插件创建时
     create() {},
     // 被执行时
     mounted() {
+      const Data = useAppStorage()
       return Data
     }
   })
@@ -133,11 +163,11 @@ import { Messages } from 'yunzai'
 const message = new Messages('message.group')
 message.use(
   e => {
-    e.reply('你好')
+    e.reply('hello word')
   },
-  [/^(#|\/)?你好/]
+  [/^(#|\/)?hello word/]
 )
-export const Test = message.ok
+export const Word = message.ok
 ```
 
 > src/index.ts
