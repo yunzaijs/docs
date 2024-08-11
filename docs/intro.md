@@ -14,6 +14,7 @@ Yunzai Next 基于Icqq协议所构建的机器人开发框架，可以通过开�
 | --------------- | --------------------------- | -------------- |
 | [yunzai]        | [![yunzai-s]][yunzai-p]     | 机器人模块     |
 | [create-yunzai] | [![c-yunzai-s]][c-yunzai-p] | 模板创建脚手架 |
+| [yunzai-gui]    | [![c-gui-s]][c-gui-p]       | 用户可视化面板 |
 
 [yunzai]: https://github.com/yunzai-org/yunzaijs
 [yunzai-s]: https://img.shields.io/npm/v/yunzai.svg
@@ -21,6 +22,9 @@ Yunzai Next 基于Icqq协议所构建的机器人开发框架，可以通过开�
 [create-yunzai]: https://github.com/yunzai-org/create-yunzai
 [c-yunzai-s]: https://img.shields.io/npm/v/create-yunzai.svg
 [c-yunzai-p]: https://www.npmjs.com/package/create-yunzai
+[yunzai-gui]: https://github.com/yunzai-org/yunzai-gui
+[c-gui-s]: https://img.shields.io/npm/v/yunzai-gui.svg
+[c-gui-p]: https://www.npmjs.com/package/yunzai-gui
 
 ## 致谢
 
