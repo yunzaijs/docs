@@ -18,13 +18,13 @@ import TabItem from '@theme/TabItem';
 > 请在合适目录中执行，确保具有合理的权限
 
 ```sh
-git clone --depth=1 https://github.com/yunzai-org/yunzaijs.git
+git clone --depth=1 https://github.com/yunzai-org/yunzai-next.git
 ```
 
 - 进入目录
 
 ```sh
-cd yunzaijs
+cd yunzai-next
 ```
 
 - 安装依赖

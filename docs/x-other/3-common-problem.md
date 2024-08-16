@@ -14,19 +14,19 @@ Next 鼓励维护者提供更多的解决方案，修改文章请点击底部 Ed
 
 :::tip 使用者提示
 
-需要2G以上运行内存
+V8 引擎会根据系统的可用内存和其他因素自动调整堆内存的大小。在32位系统上，V8 引擎默认的堆内存限制通常在 700MB 到 1.4GB 之间。在64位系统上，V8 引擎的默认堆内存限制会更高一些，通常在 1.4GB 到 1.8GB 之间。
 
 :::
 
 - 指定大小
 
-> 这里 4096 表示分配 4GB 的内存
+> 这里 4096 表示分配 4GB 的堆内存
 
 ```sh
 node --max-old-space-size=4096 src/main.js
 ```
 
-- 查看当前的内存限制
+- 查看当前的堆内存限制
 
 ```sh
 node -e "console.log(v8.getHeapStatistics().heap_size_limit / 1024 / 1024)"
@@ -97,4 +97,4 @@ yum groupinstall fonts -y
 
 ### 社区答案
 
-[打开 Issues](https://github.com/yunzai-org/yunzaijs/issues)
+[打开 Issues](https://github.com/yunzai-org/yunzai-next/issues)

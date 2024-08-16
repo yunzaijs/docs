@@ -13,5 +13,3 @@ Next 已对Mys模块做了隔离和统一管理，虽然在用户侧是默认安
 ```ts
 import { UserDB, MysUserDB, UserGameDB, sequelize } from 'yunzai-mys'
 ```
-
-> 待补充

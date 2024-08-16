@@ -191,7 +191,7 @@ sudo apt install chromium-browser
 
   <TabItem value="4" label="Centos">
 
-> 示例系统 Centos 7.9 X86 2H2G
+> 示例系统 Centos 8.2 X86 2H2G
 
 - 确保yum包是最新的
 
@@ -218,15 +218,17 @@ source ~/.bashrc # 刷新环境
 nvm -v # 版本
 ```
 
-- 安装 Node.js@16.14.0
+- 安装 Node.js@18.20.3
 
 > Centos8以下无法使用官方源的Node V18
 
+> 请改用 16.14.0
+
 ```bash
 # 安装
-nvm install 16.14.0
+nvm install 18.20.3
 # 使用
-nvm use 16.14.0
+nvm use 18.20.3
 # 校验版本
 node -v
 npm -v
