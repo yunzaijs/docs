@@ -97,4 +97,4 @@ yum groupinstall fonts -y
 
 ### 社区答案
 
-[打开 Issues](https://github.com/yunzai-org/yunzaijs/issues)
+[打开 Issues](https://github.com/yunzai-org/yunzai-next/issues)

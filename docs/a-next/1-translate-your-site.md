@@ -41,7 +41,7 @@ git clone --depth=1 https://gitee.com/yoimiya-kokomi/miao-plugin.git ./plugins/m
 - 进入目录
 
 ```sh
-cd yunzaijs
+cd yunzai-next
 ```
 
 - 安装依赖

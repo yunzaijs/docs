@@ -3,7 +3,7 @@ import type { Config } from '@docusaurus/types'
 import type * as Preset from '@docusaurus/preset-classic'
 
 const config: Config = {
-  title: 'YunzaiJS',
+  title: 'Yunzai Next',
   tagline: '基于ICQQ构建的机器人',
   // favicon: 'img/favicon.ico',
 
@@ -45,7 +45,7 @@ const config: Config = {
     // Replace with your project's social card
     image: 'img/docusaurus-social-card.jpg',
     navbar: {
-      title: 'YunzaiJS',
+      title: 'Yunzai Next',
       // logo: {
       //   alt: 'Miao-Yunzai Logo',
       //   src: 'img/logo.svg',
@@ -74,7 +74,7 @@ const config: Config = {
         },
         {
           position: 'right',
-          href: 'https://github.com/yunzai-org/yunzaijs',
+          href: 'https://github.com/yunzai-org/yunzai-next',
           label: 'Yunzai Code'
         }
       ]

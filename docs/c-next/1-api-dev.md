@@ -17,5 +17,3 @@ import { BaseModel, DailyCache, MysUser, MysUtil, NoteUser } from 'yunzai-mys'
 ```ts
 import { ApiTool, GSCfg, MysApi, MysInfo } from 'yunzai-mys'
 ```
-
-> 待补充
