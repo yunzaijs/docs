@@ -19,6 +19,13 @@ npm create yunzai@latest -y
 cd yunzaib # 进入
 ```
 
+超时连接可尝试使用镜像
+
+```sh
+npm create --registry=https://registry.npmmirror.com yunzai@latest -y
+cd yunzaib
+```
+
 - 包管理
 
 ```bash
@@ -34,16 +41,6 @@ yarn
 - 启动机器人
 
 ```bash
-yarn app
-```
-
-指令合集
-
-```bash
-npm create yunzai@latest -y
-cd yunzaib
-npm install yarn@1.19.1 -y
-yarn
 yarn app
 ```
 
