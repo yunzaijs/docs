@@ -12,6 +12,8 @@ sidebar_position: 3
 
 :::
 
+> [入门 教学 (bilibili)](https://www.bilibili.com/video/BV1fBpUeDEE3)
+
 - 创建
 
 ```bash
@@ -48,6 +50,12 @@ yarn app
 
 [点击注册 npm 账户](https://www.npmjs.com/)
 
+- 编译
+
+```bash
+yarn build
+```
+
 - 登录
 
 ```sh
@@ -81,6 +89,14 @@ npm login
 ```
 
 - publish
+
+先打包至本地，确认文件信息
+
+```bash
+npm pack
+```
+
+确认无误后上传
 
 ```bash
 npm publish
