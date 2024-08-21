@@ -21,20 +21,20 @@ V3用户可阅读此文档进行体验，开发者请阅读后续教程
   <TabItem value="16" label="Gitee" default>
 
 ```bash
-# Miao-Yunzai
-git clone --depth=1 https://github.com/yoimiya-kokomi/Miao-Yunzai.git
+git clone --depth=1 https://gitee.com/yoimiya-kokomi/Miao-Yunzai.git
 cd Miao-Yunzai
-# miao-plugin
-git clone --depth=1 https://github.com/yoimiya-kokomi/miao-plugin.git ./plugins/miao-plugin/
+git clone --depth=1 https://gitee.com/yoimiya-kokomi/miao-plugin.git ./plugins/miao-plugin/
 ```
 
   </TabItem>
   <TabItem value="18" label="Github" default>
 
 ```bash
-git clone --depth=1 https://gitee.com/yoimiya-kokomi/Miao-Yunzai.git
+# Miao-Yunzai
+git clone --depth=1 https://github.com/yoimiya-kokomi/Miao-Yunzai.git
 cd Miao-Yunzai
-git clone --depth=1 https://gitee.com/yoimiya-kokomi/miao-plugin.git ./plugins/miao-plugin/
+# miao-plugin
+git clone --depth=1 https://github.com/yoimiya-kokomi/miao-plugin.git ./plugins/miao-plugin/
 ```
 
   </TabItem>
