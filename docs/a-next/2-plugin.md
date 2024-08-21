@@ -9,7 +9,7 @@ import TabItem from '@theme/TabItem';
 
 :::tip 使用者提示
 
-V3开发者可阅读此文档了解Miao-Yunzai机制，写出更具有兼容性的代码
+V3开发者可阅读此文档了解Yunzai和Miao-Yunzai机制，写出更合理的代码
 
 :::
 
@@ -59,6 +59,7 @@ node包配置
   "devDependencies": {},
   // js模式的本地模块 等同 import { } from '#yunzai'
   "imports": {
+    // 使用 import { } from '#yunzai'
     "#yunzai": "./lib/index.js",
     // 使用 import { } from '#miao'
     "#miao": "./plugins/miao-plugin/components/index.js",
@@ -375,15 +376,9 @@ export class Word extends Plugin {
 }
 ```
 
-:::tip 注意
+截图的写法各不相同，同时截图功能并不依赖于机器人，因此模块已被标注废弃
 
-推荐使用全球最流行的React.js框架
-
-任何版本都可以采用此设计进行开发
-
-[react-puppeteer](https://github.com/lemonade-lab/react-puppeteer)
-
-:::
+你可以在自己的应用中配置puppeteer的版本和写法，避免不同的Yunzai环境异常环境
 
 ### 工具类
 

@@ -21,31 +21,31 @@ import TabItem from '@theme/TabItem';
 - 编译
 
 ```sh
-yarn build
+yarn run build
 ```
 
 - 启动
 
 ```sh
-yarn app
+yarn run app
 ```
 
 - 重新登录
 
 ```sh
-yarn login
+yarn run login
 ```
 
 - 进程托管
 
 ```sh
-yarn start
+yarn run start
 ```
 
 - 杀死进程
 
 ```sh
-yarn kill
+yarn run kill
 ```
 
 > 更多内容，请阅读 [PM2](https://pm2.keymetrics.io/) 使用文档
@@ -56,13 +56,13 @@ yarn kill
 - 启动
 
 ```sh
-yarn test
+yarn run test
 ```
 
 - 重新登录
 
 ```sh
-yarn test login
+yarn run test login
 ```
 
   </TabItem>

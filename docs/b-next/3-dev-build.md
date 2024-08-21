@@ -12,11 +12,20 @@ sidebar_position: 3
 
 :::
 
+> [入门 教学 (bilibili)](https://www.bilibili.com/video/BV1fBpUeDEE3)
+
 - 创建
 
 ```bash
 npm create yunzai@latest -y
 cd yunzaib # 进入
+```
+
+超时连接可尝试使用镜像
+
+```sh
+npm create --registry=https://registry.npmmirror.com yunzai@latest -y
+cd yunzaib
 ```
 
 - 包管理
@@ -28,28 +37,24 @@ npm install yarn@1.19.1 -y
 - 安装依赖
 
 ```bash
-yarn
+yarn run
 ```
 
 - 启动机器人
 
 ```bash
-yarn app
-```
-
-指令合集
-
-```bash
-npm create yunzai@latest -y
-cd yunzaib
-npm install yarn@1.19.1 -y
-yarn
-yarn app
+yarn run app
 ```
 
 ### 发布
 
 [点击注册 npm 账户](https://www.npmjs.com/)
+
+- 编译
+
+```bash
+yarn run build
+```
 
 - 登录
 
@@ -84,6 +89,14 @@ npm login
 ```
 
 - publish
+
+先打包至本地，确认文件信息
+
+```bash
+npm pack
+```
+
+确认无误后上传
 
 ```bash
 npm publish
