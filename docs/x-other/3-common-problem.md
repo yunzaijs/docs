@@ -95,6 +95,14 @@ yum update nss -y
 yum groupinstall fonts -y
 ```
 
+## Ubuntu/Debian
+
+### 乱码字体
+
+```sh
+apt install -y --force-yes --no-install-recommends fonts-wqy-microhei
+```
+
 ### 社区答案
 
 [打开 Issues](https://github.com/yunzai-org/yunzai-next/issues)
