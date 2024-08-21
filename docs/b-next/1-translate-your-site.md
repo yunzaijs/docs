@@ -55,14 +55,14 @@ npm install yarn@1.19.1 -g
 > 如果 node < 18 需要加参数 `--ignore-engines`
 
 ```sh
-yarn
+yarn install
 ```
 
   </TabItem>
   <TabItem value="18" label="node<18" default>
 
 ```sh
-yarn --ignore-engines
+yarn install --ignore-engines
 ```
 
   </TabItem>

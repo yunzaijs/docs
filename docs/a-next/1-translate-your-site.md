@@ -60,14 +60,14 @@ npm install yarn@1.19.1 -g
 > 如果 node < 18 需要加参数 `--ignore-engines`
 
 ```bash
-yarn
+yarn install
 ```
 
   </TabItem>
   <TabItem value="18" label="node<18" default>
 
 ```sh
-yarn --ignore-engines
+yarn install --ignore-engines
 ```
 
   </TabItem>
@@ -76,19 +76,19 @@ yarn --ignore-engines
 - 启动
 
 ```sh
-yarn app
+yarn run app
 ```
 
 - 重新登录
 
 ```sh
-yarn login
+yarn run login
 ```
 
 - 进程托管
 
 ```sh
-yarn start
+yarn run start
 ```
 
 > 更多内容，请阅读 [PM2](https://pm2.keymetrics.io/) 使用文档

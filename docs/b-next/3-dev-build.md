@@ -37,13 +37,13 @@ npm install yarn@1.19.1 -y
 - 安装依赖
 
 ```bash
-yarn
+yarn run
 ```
 
 - 启动机器人
 
 ```bash
-yarn app
+yarn run app
 ```
 
 ### 发布
@@ -53,7 +53,7 @@ yarn app
 - 编译
 
 ```bash
-yarn build
+yarn run build
 ```
 
 - 登录
