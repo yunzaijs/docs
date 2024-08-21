@@ -17,14 +17,22 @@ import TabItem from '@theme/TabItem';
 
 > 请在合适目录中执行，确保具有合理的权限
 
+[阅读 yunzai-next 源码](https://github.com/yunzai-org/yunzai-next)
+
 ```sh
 git clone --depth=1 https://github.com/yunzai-org/yunzai-next.git
+cd yunzai-next
 ```
 
-- 进入目录
+> 不需要开发插件的用户
+
+> 可使用纯js纯配置纯模块纯享版，大小百K
+
+[阅读 yunzai-bot 源码](https://github.com/yunzai-org/yunzai-bot)
 
 ```sh
-cd yunzai-next
+git clone --depth=1 https://github.com/yunzai-org/yunzai-bot.git
+cd yunzai-bot
 ```
 
 - 安装依赖

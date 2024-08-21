@@ -20,16 +20,18 @@ V3用户可阅读此文档进行体验，开发者请阅读后续教程
 <Tabs>
   <TabItem value="16" label="Gitee" default>
 
-```sh
+```bash
+# Miao-Yunzai
 git clone --depth=1 https://github.com/yoimiya-kokomi/Miao-Yunzai.git
 cd Miao-Yunzai
+# miao-plugin
 git clone --depth=1 https://github.com/yoimiya-kokomi/miao-plugin.git ./plugins/miao-plugin/
 ```
 
   </TabItem>
   <TabItem value="18" label="Github" default>
 
-```sh
+```bash
 git clone --depth=1 https://gitee.com/yoimiya-kokomi/Miao-Yunzai.git
 cd Miao-Yunzai
 git clone --depth=1 https://gitee.com/yoimiya-kokomi/miao-plugin.git ./plugins/miao-plugin/
@@ -38,22 +40,16 @@ git clone --depth=1 https://gitee.com/yoimiya-kokomi/miao-plugin.git ./plugins/m
   </TabItem>
 </Tabs>
 
-- 进入目录
-
-```sh
-cd yunzai-next
-```
-
 - 安装依赖
 
-```sh
+```bash
 # 国内镜像，已安装可忽视
 npm config set registry https://registry.npmmirror.com
 ```
 
 > 不推荐npm、pnpm、cnpm等
 
-```sh
+```bash
 # yarn 不能使用2.x版本
 npm install yarn@1.19.1 -g
 ```
@@ -63,7 +59,7 @@ npm install yarn@1.19.1 -g
 
 > 如果 node < 18 需要加参数 `--ignore-engines`
 
-```sh
+```bash
 yarn
 ```
 
