@@ -98,6 +98,10 @@ export default class App extends plugin {
 }
 ```
 
+- ESM重载
+
+Next中已删除此功能
+
 ### lib目录
 
 :::danger 警告

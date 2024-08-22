@@ -81,12 +81,20 @@ yarn run test login
 
 ```ts title="yunzai.config.js"
 import { defineConfig } from 'yunzai'
-import runtime from 'yz-mw-runtime' // runtime中间件
-import starRail from 'yz-mw-star-rail' // 星铁中间件
+export default defineConfig({
+  applications: ['yz-system'], // 所有模块应用
+  middlewares: ['yz-mw-runtime', 'yz-mw-star-rail'] // 所有中间件
+})
+```
+
+也可以既字符串有传入模块
+
+```ts title="yunzai.config.js"
+import { defineConfig } from 'yunzai'
 import system from 'yz-system' // 系统模块
 export default defineConfig({
   applications: [system()], // 所有模块应用
-  middlewares: [runtime(), starRail()] // 所有中间件
+  middlewares: ['yz-mw-runtime', 'yz-mw-star-rail'] // 所有中间件
 })
 ```
 
@@ -100,9 +108,8 @@ yarn add yz-xiuxian -W
 
 ```ts title="yunzai.config.js"
 import { defineConfig } from 'yunzai'
-import xiuxian from 'yz-xiuxian' // 增加这一行
 export default defineConfig({
-  applications: [xiuxian()] // 修改这一行
+  applications: ['yz-xiuxian'] // 修改这一行
 })
 ```
 
@@ -110,17 +117,13 @@ export default defineConfig({
 
 ```ts title="yunzai.config.js"
 import { defineConfig } from 'yunzai'
-import runtime from 'yz-mw-runtime'
-import starRail from 'yz-mw-star-rail'
-import system from 'yz-system'
-import xiuxian from 'yz-xiuxian' // 增加这一行
 export default defineConfig({
-  applications: [system()，xiuxian()], // 修改这一行
-  middlewares: [runtime(), starRail()]
+  applications: ['yz-system', 'yz-xiuxian'], // 所有模块应用
+  middlewares: ['yz-mw-runtime', 'yz-mw-star-rail'] // 所有中间件
 })
 ```
 
-可以理解为，V3的自动档，Next是手动挡
+可以理解为，V3是自动档，Next是手动挡
 
 - V3
 
