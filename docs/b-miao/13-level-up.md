@@ -186,3 +186,27 @@ import { Restart } from 'yz-system'
 ```ts
 import {} from 'yunzai-mys'
 ```
+
+### miao-plugin
+
+Next仅保留了`#yunzai`本地模块
+
+请注意自身是否依赖于喵喵插件和Miao-Yunzai本地模块，
+
+并在说明文件中特别强调，这对用户来说至关重要
+
+- package.json
+
+```json
+{
+  // js模式的本地模块 等同 import { } from '#yunzai'
+  "imports": {
+    // 使用 import { } from '#yunzai'
+    "#yunzai": "./lib/index.js",
+    // 使用 import { } from '#miao'
+    "#miao": "./plugins/miao-plugin/components/index.js",
+    // 使用 import { } from '#miao.models'
+    "#miao.models": "./plugins/miao-plugin/models/index.js"
+  }
+}
+```

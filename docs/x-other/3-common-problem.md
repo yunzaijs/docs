@@ -10,6 +10,28 @@ Next 鼓励维护者提供更多的解决方案，修改文章请点击底部 Ed
 
 :::
 
+## Github
+
+如果时常上不了github.com，在windows中常见的解决方案是修改hosts
+
+管理员身份打开CMD
+
+- 切换目录
+
+```sh
+cd C:\Windows\System32\drivers\etc
+```
+
+- 追加内容
+
+使用解析github.com后的ip替换`0.0.0.1`即可
+
+解析工具请使用搜索引擎进行查询
+
+```sh
+echo "0.0.0.1 github.com" >> hosts
+```
+
 ## 内存
 
 :::tip 使用者提示

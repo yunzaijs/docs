@@ -9,7 +9,7 @@ import TabItem from '@theme/TabItem';
 
 :::tip 使用者提示
 
-V3开发者可阅读此文档了解Yunzai和Miao-Yunzai机制，写出更合理的代码
+V3开发者可阅读此文档了解Yunzai机制，写出更合理的代码
 
 :::
 
@@ -19,7 +19,9 @@ V3开发者可阅读此文档了解Yunzai和Miao-Yunzai机制，写出更合理�
 
 原始的配置文件，启动后会复制一份至config/config/\*.yaml
 
-`yaml` 机器人常用的配置文件格式
+`yaml` Yunzai机器人常用的配置文件格式
+
+[点击了解 Yaml](https://juejin.cn/post/7389406751546212363?searchId=202408221121559490198C88B1EF576F23)
 
 - lib
 
@@ -35,14 +37,14 @@ V3开发者可阅读此文档了解Yunzai和Miao-Yunzai机制，写出更合理�
 
 - package.json
 
-node包配置
+[如果对node不太了解，可点击阅读了解 package.json](https://juejin.cn/post/7145001740696289317?searchId=20240822112607D68A9DDE8B88F25627C3)
 
 ```json
 {
   // 包名
-  "name": "miao-yunzai",
+  "name": "yunzai",
   // 版本
-  "version": "3.1.3",
+  "version": "3.0.0",
   // 入口文件
   "main": "app.js",
   // module 是node新标准
@@ -56,16 +58,7 @@ node包配置
     "yaml": "^2.4.1"
   },
   // 开发时依赖，当对于npm包来说的
-  "devDependencies": {},
-  // js模式的本地模块 等同 import { } from '#yunzai'
-  "imports": {
-    // 使用 import { } from '#yunzai'
-    "#yunzai": "./lib/index.js",
-    // 使用 import { } from '#miao'
-    "#miao": "./plugins/miao-plugin/components/index.js",
-    // 使用 import { } from '#miao.models'
-    "#miao.models": "./plugins/miao-plugin/models/index.js"
-  }
+  "devDependencies": {}
 }
 ```
 
@@ -142,9 +135,7 @@ export class Word extends Plugin {
 
 - #yunzai
 
-这是新增，统一的接口，你可以本地模块中找到所有被yunzai暴露在外的接口
-
-同时也是Miao引进且推荐使用的
+这在是Miao和Next才新增了都本地化接口，在此文章中使用仅仅只为来方便编写文档
 
 ### 不匹配的
 
