@@ -42,7 +42,11 @@ cd yunzai-bot
 npm config set registry https://registry.npmmirror.com
 ```
 
-> 不推荐npm、pnpm、cnpm等
+> 不推荐pnpm和cnpm
+
+> 不推荐pnpm和cnpm
+
+> 不推荐pnpm和cnpm
 
 ```sh
 # yarn 不能使用2.x版本，它无法使用link

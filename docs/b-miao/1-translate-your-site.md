@@ -9,7 +9,7 @@ import TabItem from '@theme/TabItem';
 
 :::tip 使用者提示
 
-V3用户可阅读此文档进行体验，开发者请阅读后续教程
+V3用户可阅读此文档体验Miao-Yunzai，开发者请阅读后续教程
 
 :::
 
@@ -47,7 +47,11 @@ git clone --depth=1 https://github.com/yoimiya-kokomi/miao-plugin.git ./plugins/
 npm config set registry https://registry.npmmirror.com
 ```
 
-> 不推荐npm、pnpm、cnpm等
+> 不推荐pnpm和cnpm
+
+> 不推荐pnpm和cnpm
+
+> 不推荐pnpm和cnpm
 
 ```bash
 # yarn 不能使用2.x版本
