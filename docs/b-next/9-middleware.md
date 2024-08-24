@@ -12,51 +12,41 @@ sidebar_position: 9
 
 ## 编写
 
-```ts title="./middleware/message/star-rail.ts"
+```ts title="yunzai-mys/middleware.js"
 import { middlewareOptions, useEvent } from 'yunzai'
-// 常量
 const srReg = /^#?(\*|星铁|星轨|穹轨|星穹|崩铁|星穹铁道|崩坏星穹铁道|铁道)+/
-
-const onEvent = event => {
-  // 要使用一个复杂类型的 event 需要 使用 useEvent
-  useEvent(
-    e => {
-      Object.defineProperty(e, 'isSr', {
-        get: () => e.game === 'sr',
-        set: v => (e.game = v ? 'sr' : 'gs')
-      })
-      Object.defineProperty(e, 'isGs', {
-        get: () => e.game === 'gs',
-        set: v => (e.game = v ? 'gs' : 'sr')
-      })
-      if (srReg.test(e.msg)) {
-        // 设置为星铁
-        e.game = 'sr'
-      }
-      // 发现星铁消息
-      if (srReg.test(e.msg)) {
-        // 重置消息 -- 这是喵喵插件内 正确的匹配规则 即可  #星铁绑定uid
-        e.msg = e.msg.replace(srReg, '#星铁')
-      }
-    }, // 输入事件 并选择 执行的类型
-    [event, 'message.group', 'message.private']
-  )
-  //
-}
-
-// 用户可个性化的配置
+const zzzReg = /^#?(%|zzz|绝区零|ZZZ)+/
 type options = { name: string }
-
-//
 export default (config?: options) => {
   // 返回中间件
   return middlewareOptions({
     // 类型
     typing: 'message',
-    // 插件名
-    name: config?.name ?? 'StarRail',
-    // on
-    on: onEvent
+    // 间件名
+    name: config?.name ?? 'mys',
+    // 处理事件
+    on: event => {
+      useEvent(
+        e => {
+          //
+          if (srReg.test(e.msg)) {
+            // 设置为星铁
+            e.game = 'sr'
+          } else if (zzzReg.test(e.msg)) {
+            e.game = 'zzz'
+          }
+          //
+          if (srReg.test(e.msg)) {
+            // 重置消息 -- 转为喵喵插件的消息格式
+            e.msg = e.msg.replace(srReg, '#星铁')
+          } else if (zzzReg.test(e.msg)) {
+            // 重置消息 -- 转为ZZZ插件的消息格式
+            e.msg = e.msg.replace(srReg, '#绝区零')
+          }
+        },
+        [event, 'message.group', 'message.private']
+      )
+    }
   })
 }
 ```
@@ -65,10 +55,10 @@ export default (config?: options) => {
 
 ```ts title="yunzai.config.js"
 import { defineConfig } from 'yunzai'
-import starRail from 'yz-mw-star-rail'
+import MYS from 'yunzai-mys/mw'
 export default defineConfig({
   // 中间件
-  middlewares: [starRail()]
+  middlewares: [MYS()]
 })
 ```
 

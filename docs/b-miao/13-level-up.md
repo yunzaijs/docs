@@ -133,7 +133,7 @@ import { ConfigController as cfg } from 'yunzai'
 
 :::tip 注意
 
-所有V3中的puppeteer内容在Next中不再推荐使用，可阅读
+3中puppeteer内容在Next中不再推荐使用，可阅读
 
 [react-puppeteer](https://github.com/lemonade-lab/react-puppeteer) 了解如何使用此库开发独立于机器人的应用
 
