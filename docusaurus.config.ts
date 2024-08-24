@@ -4,7 +4,7 @@ import type * as Preset from '@docusaurus/preset-classic'
 
 const config: Config = {
   title: 'Yunzai Next',
-  tagline: '基于ICQQ构建的机器人',
+  tagline: '可个性化的机器人框架',
   // favicon: 'img/favicon.ico',
 
   // Set the production url of your site here

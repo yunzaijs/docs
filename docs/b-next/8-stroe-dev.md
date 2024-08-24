@@ -35,14 +35,14 @@ console.log(Data) // hello word
 
 ### Redis
 
-> Redis长期保留，但会改成被动连接
+> Redis长期保留
 
 ```ts
 import { Redis } from 'yunzai'
 ```
 
-> 更推荐具有新接口的ioRedis
+> 更推荐高新版本的的ioRedis
 
 ```ts
-yarn add ioRedis -W
+yarn add ioredis -W
 ```

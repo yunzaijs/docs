@@ -33,7 +33,7 @@ yarn run app
 - 重新登录
 
 ```sh
-yarn run login
+yarn run app --relogin
 ```
 
 - 进程托管
@@ -56,13 +56,13 @@ yarn run kill
 - 启动
 
 ```sh
-yarn run test
+yarn run test-app
 ```
 
 - 重新登录
 
 ```sh
-yarn run test login
+yarn run test-app --relogin
 ```
 
   </TabItem>
@@ -72,7 +72,7 @@ yarn run test login
 
 :::tip 提示
 
-可对Yunzai进行化扩展的配置文件，
+可对Yunzai进行扩展的配置文件，
 通过安装模块增强机器人体验
 
 :::
@@ -83,7 +83,7 @@ yarn run test login
 import { defineConfig } from 'yunzai'
 export default defineConfig({
   applications: ['yz-system'], // 所有模块应用
-  middlewares: ['yz-mw-runtime', 'yz-mw-star-rail'] // 所有中间件
+  middlewares: ['yz-mw-runtime', 'yunzai-mys/mw'] // 所有中间件
 })
 ```
 
@@ -94,7 +94,7 @@ import { defineConfig } from 'yunzai'
 import system from 'yz-system' // 系统模块
 export default defineConfig({
   applications: [system()], // 所有模块应用
-  middlewares: ['yz-mw-runtime', 'yz-mw-star-rail'] // 所有中间件
+  middlewares: ['yz-mw-runtime', 'yunzai-mys/mw'] // 所有中间件
 })
 ```
 
@@ -119,7 +119,7 @@ export default defineConfig({
 import { defineConfig } from 'yunzai'
 export default defineConfig({
   applications: ['yz-system', 'yz-xiuxian'], // 所有模块应用
-  middlewares: ['yz-mw-runtime', 'yz-mw-star-rail'] // 所有中间件
+  middlewares: ['yz-mw-runtime', 'yunzai-mys/mw'] // 所有中间件
 })
 ```
 
