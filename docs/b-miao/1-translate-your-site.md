@@ -30,10 +30,8 @@ git clone --depth=1 https://gitee.com/yoimiya-kokomi/miao-plugin.git ./plugins/m
   <TabItem value="18" label="Github" default>
 
 ```bash
-# Miao-Yunzai
 git clone --depth=1 https://github.com/yoimiya-kokomi/Miao-Yunzai.git
 cd Miao-Yunzai
-# miao-plugin
 git clone --depth=1 https://github.com/yoimiya-kokomi/miao-plugin.git ./plugins/miao-plugin/
 ```
 
