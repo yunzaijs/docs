@@ -6,24 +6,23 @@ sidebar_position: 9
 
 :::tip 提示
 
-中间件是有别于大型应用的，是全局生效的
+中间件是有别于大型应用的，是全局生效的中间处理函数
 
 :::
 
 ## 编写
 
-```ts title="yunzai-mys/middleware.js"
+```ts title="yunzai-mys/message.js"
 import { middlewareOptions, useEvent } from 'yunzai'
 const srReg = /^#?(\*|星铁|星轨|穹轨|星穹|崩铁|星穹铁道|崩坏星穹铁道|铁道)+/
 const zzzReg = /^#?(%|zzz|绝区零|ZZZ)+/
-type options = { name: string }
-export default (config?: options) => {
+export default () => {
   // 返回中间件
   return middlewareOptions({
     // 类型
     typing: 'message',
     // 间件名
-    name: config?.name ?? 'mys',
+    name: 'mys-message',
     // 处理事件
     on: event => {
       useEvent(
@@ -55,70 +54,26 @@ export default (config?: options) => {
 
 ```ts title="yunzai.config.js"
 import { defineConfig } from 'yunzai'
-import MYS from 'yunzai-mys/mw'
 export default defineConfig({
-  // 中间件
-  middlewares: [MYS()]
+  middlewares: ['yunzai-mys/mw']
 })
 ```
 
-## 更复杂的状况
+## 使用
 
-- 公用中间件
-
-```ts title="yunzai.config.js"
-import { defineConfig } from 'yunzai'
-// xiuxian中间件
-import xiuxian, { mw as mwXiuxian } from 'yz-xiuxian'
-// xiuxian宗门玩法扩展
-import xiuxianAss from 'yz-xiuxian-ass'
-// xiuxian家园玩法扩展
-import xiuxianHome from 'yz-xiuxian-home'
-//
-export default defineConfig({
-  applications: [xiuxian(), xiuxianAss(), xiuxianHome()],
-  // xiuxian中间件
-  middlewares: [mwXiuxian()]
-})
-```
-
-上面的修仙插件，还额外提供了中间件，提供给所有app要扩展xiuxian的模块
-
-一但开发者对xiuxian模块的扩展逐渐增加，有必要把重复的逻辑进行整理
-
-- 通过中间件修改
-
-```ts title="yunzai.config.js"
-import { defineConfig } from 'yunzai'
-// xiuxian中间件
-import xiuxian from 'yz-xiuxian'
-// xiuxian宗门玩法扩展
-import xiuxianAss, { mw as mwXiuxianAss } from 'yz-xiuxian-ass2'
-export default defineConfig({
-  applications: [xiuxian(), xiuxianAss()],
-  // ass中间件
-  middlewares: [mwXiuxianAss()]
-})
-```
-
-有的开发可能会想要提供中间件，来影响xiuxian模块的数据
-
-- 模块接口
-
-我们更推荐，模块可以在需求出现时，开放更合理的接口给其他模块
-
-```ts title="./apps.js"
+```ts
 import { Messages } from 'yunzai'
-import { API } from 'xiuxian'
 const message = new Messages('message.group')
 message.use(
   e => {
-    e.reply('你好')
-    // API 此时 yz-xiuxian-ass 依赖了 xiuxian。
-    // 而xiuxian也提供了丰富的接口
-    // 从而更便捷的且自由的扩展功能
+    // 默认 gs
+    console.log('game', e.game)
+    // 发送 * 变成了 #星铁
+    // 发送 % 变成了 #绝区零
+    console.log('msg', e.msg)
   },
-  [/^(#|\/)?你好/]
+  // hello #hello /hello
+  [/^#绝区零信息/]
 )
 export const Word = message.ok
 ```
