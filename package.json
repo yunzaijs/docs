@@ -19,6 +19,7 @@
   "dependencies": {
     "@docusaurus/core": "3.4.0",
     "@docusaurus/preset-classic": "3.4.0",
+    "@easyops-cn/docusaurus-search-local": "^0.44.5",
     "@mdx-js/react": "^3.0.0",
     "clsx": "^2.0.0",
     "prism-react-renderer": "^2.3.0",
@@ -29,9 +30,9 @@
     "@docusaurus/module-type-aliases": "3.4.0",
     "@docusaurus/tsconfig": "3.4.0",
     "@docusaurus/types": "3.4.0",
-    "typescript": "~5.2.2",
     "husky": "^9.0.11",
-    "prettier": "^3.0.3"
+    "prettier": "^3.0.3",
+    "typescript": "~5.2.2"
   },
   "browserslist": {
     "production": [
