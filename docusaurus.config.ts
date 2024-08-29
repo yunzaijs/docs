@@ -143,9 +143,29 @@ const config: Config = {
       theme: prismThemes.github,
       darkTheme: prismThemes.dracula
     }
-  } satisfies Preset.ThemeConfig
+  } satisfies Preset.ThemeConfig,
 
   // themes: ['@docusaurus/theme-live-codeblock'],
+  themes: [
+    // ... Your other themes.
+    [
+      require.resolve('@easyops-cn/docusaurus-search-local'),
+      /** @type {import("@easyops-cn/docusaurus-search-local").PluginOptions} */
+      {
+        // ... Your options.
+        indexDocs: true,
+        indexBlog: false,
+        indexPages: true,
+        // `hashed` is recommended as long-term-cache of index file is possible.
+        hashed: true,
+        // For Docs using Chinese, The `language` is recommended to set to:
+        // ```
+        language: ['en', 'zh'],
+        searchResultLimits: 10,
+        searchResultContextMaxLength: 50
+      }
+    ]
+  ]
 }
 
 export default config
