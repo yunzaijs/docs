@@ -13,22 +13,9 @@ import TabItem from '@theme/TabItem';
 
 :::
 
-- 安装源码
-
-> 请在合适目录中执行，确保具有合理的权限
-
-[阅读 yunzai-next 源码](https://github.com/yunzai-org/yunzai-next)
-
-```sh
-git clone --depth=1 https://github.com/yunzai-org/yunzai-next.git
-cd yunzai-next
-```
-
-> 不需要开发插件的用户
-
-> 可使用纯js纯配置纯模块纯享版，大小百K
-
-[阅读 yunzai-bot 源码](https://github.com/yunzai-org/yunzai-bot)
+- 安装代码
+  
+[点击了解 yunzai-bot 仓库](https://github.com/yunzai-org/yunzai-bot)
 
 ```sh
 git clone --depth=1 https://github.com/yunzai-org/yunzai-bot.git
@@ -41,10 +28,6 @@ cd yunzai-bot
 # 国内镜像，已安装可忽视
 npm config set registry https://registry.npmmirror.com
 ```
-
-> 不推荐pnpm和cnpm
-
-> 不推荐pnpm和cnpm
 
 > 不推荐pnpm和cnpm
 
