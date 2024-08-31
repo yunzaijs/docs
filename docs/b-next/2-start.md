@@ -15,15 +15,6 @@ import TabItem from '@theme/TabItem';
 
 ## 运行
 
-<Tabs>
-  <TabItem value="正式环境" label="正式环境">
-
-- 编译
-
-```sh
-yarn run build
-```
-
 - 启动
 
 ```sh
@@ -50,24 +41,6 @@ yarn run kill
 
 > 更多内容，请阅读 [PM2](https://pm2.keymetrics.io/) 使用文档
 
-</TabItem>
-<TabItem value="测试环境" label="测试环境">
-
-- 启动
-
-```sh
-yarn run test-app
-```
-
-- 重新登录
-
-```sh
-yarn run test-app --relogin
-```
-
-  </TabItem>
-</Tabs>
-
 ## 配置
 
 :::tip 提示
@@ -79,23 +52,23 @@ yarn run test-app --relogin
 
 下面是用户侧配置源码内容
 
+> 不推荐未掌握js便修改此文件
+
 ```ts title="yunzai.config.js"
 import { defineConfig } from 'yunzai'
 export default defineConfig({
   applications: ['yz-system'], // 所有模块应用
-  middlewares: ['yz-mw-runtime', 'yunzai-mys/mw'] // 所有中间件
+  middlewares: ['yunzai-mys/runtime', 'yunzai-mys/mw'] // 所有中间件
 })
 ```
 
-也可以既字符串有传入模块
+使用json配置表示为
 
-```ts title="yunzai.config.js"
-import { defineConfig } from 'yunzai'
-import system from 'yz-system' // 系统模块
-export default defineConfig({
-  applications: [system()], // 所有模块应用
-  middlewares: ['yz-mw-runtime', 'yunzai-mys/mw'] // 所有中间件
-})
+```json title="yunzai.config.json"
+{
+ "applications":["yz-system"],
+ "middlewares":["yunzai-mys/runtime", "yunzai-mys/mw"]
+}
 ```
 
 > 中间件即全部app都会生效的中间处理模块
@@ -106,21 +79,12 @@ export default defineConfig({
 yarn add yz-xiuxian -W
 ```
 
-```ts title="yunzai.config.js"
-import { defineConfig } from 'yunzai'
-export default defineConfig({
-  applications: ['yz-xiuxian'] // 修改这一行
-})
-```
+创建yunzai.config.json文件并写入以下内容
 
-完整的配置如下
-
-```ts title="yunzai.config.js"
-import { defineConfig } from 'yunzai'
-export default defineConfig({
-  applications: ['yz-system', 'yz-xiuxian'], // 所有模块应用
-  middlewares: ['yz-mw-runtime', 'yunzai-mys/mw'] // 所有中间件
-})
+```json title="yunzai.config.json"
+{
+ "applications":["yz-xiuxian"]
+}
 ```
 
 可以理解为，V3是自动档，Next是手动挡
@@ -146,7 +110,7 @@ yarn add yz-xiuxian@1.0.0 -W
 yarn add yz-xiuxian@latest
 ```
 
-一般情况下，并不需要去修改yunzai.config.js文件
+一般情况下，并不需要去修改yunzai.config.json文件
 
 除非你对该模块进行了删除
 
@@ -154,7 +118,7 @@ yarn add yz-xiuxian@latest
 yarn remove yz-xiuxian
 ```
 
-那就必须修改yunzai.config.js确保不会再加载该模块
+那就必须修改yunzai.config.json确保不会再加载该模块
 
 在安装的那一刻yarn就已经为你管理好所需要的模块
 
