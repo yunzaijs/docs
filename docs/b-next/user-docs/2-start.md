@@ -13,7 +13,7 @@ import TabItem from '@theme/TabItem';
 
 :::
 
-## 运行
+## 一、运行
 
 - 启动
 
@@ -41,18 +41,38 @@ yarn run kill
 
 > 更多内容，请阅读 [PM2](https://pm2.keymetrics.io/) 使用文档
 
-## 配置
+## 二 、拓展模块的安装及配置
 
-:::tip 提示
+[拓展模块库](/docs/docs/category/module-shop)
 
-可对Yunzai进行扩展的配置文件，
-通过安装模块增强机器人体验
+:::tip Yunzai-Next 支持模块化拓展功能
+
+可对Yunzai进行安装扩展模块并配置，
+丰富机器人功能、增强机器人体验
 
 :::
 
-下面是用户侧配置源码内容
+模块配置文件字段说明：
 
-> 不推荐未掌握js便修改此文件
+- `applications`：应用列表，所有启用的模块应用在此字段处配置（可以浅理解为`插件`）
+- `middlewares`：中间件列表，所有启用的中间件模块在此字段处配置 （特殊处理模块）
+
+:::caution 中间件处理模块会对全部`applications`生效
+:::
+
+用户侧配置文件详解：
+
+### 应用及中间件配置
+
+最新版本支持 js 和 json 格式的模块配置文件，推荐使用json格式的配置文件，选择其中一个即可：
+
+1. **yunzai.config.js**：
+
+配置文件路径： `yunzai-bot/yunzai.config.js`
+
+不推荐未掌握js便修改此文件，
+
+请注意如果使用了此配置文件，在`移除`模块时需要修改此文件删除对应模块的配置
 
 ```ts title="yunzai.config.js"
 import { defineConfig } from 'yunzai'
@@ -62,30 +82,40 @@ export default defineConfig({
 })
 ```
 
-使用json配置表示为
+2. **yunzai.config.json**：
+
+配置文件路径： `yunzai-bot/yunzai.config.json`
+
+使用json格式的配置文件需要`手动创建`，
+
+请注意`移除`模块时需要修改此文件删除对应模块的配置
 
 ```json title="yunzai.config.json"
 {
- "applications":["yz-system"],
- "middlewares":["yunzai-mys/runtime", "yunzai-mys/mw"]
+  "applications": ["yz-system"],
+  "middlewares": ["yunzai-mys/runtime", "yunzai-mys/mw"]
 }
 ```
 
-> 中间件即全部app都会生效的中间处理模块
+### 安装及配置演示
 
-- 安装示例
+如下为 `修仙` 模块（插件）的安装及配置演示：
+
+1. 安装 `yz-xiuxian` 模块
 
 ```sh
 yarn add yz-xiuxian -W
 ```
 
-创建yunzai.config.json文件并写入以下内容
+2. 创建yunzai.config.json文件并写入以下内容
 
 ```json title="yunzai.config.json"
 {
- "applications":["yz-xiuxian"]
+  "applications": ["yz-xiuxian"]
 }
 ```
+
+3. 其他讲解
 
 可以理解为，V3是自动档，Next是手动挡
 

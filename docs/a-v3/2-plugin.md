@@ -2,7 +2,7 @@
 sidebar_position: 2
 ---
 
-# 开发
+# 开发文档
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
