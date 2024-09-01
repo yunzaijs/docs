@@ -13,6 +13,8 @@ V3用户可阅读此文档体验Miao-Yunzai，开发者请阅读后续教程
 
 :::
 
+[V3 插件库](https://github.com/yhArcadia/Yunzai-Bot-plugins-index)
+
 - 安装源码
 
 > 请在合适目录中执行，确保具有合理的权限

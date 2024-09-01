@@ -2,33 +2,33 @@
 sidebar_position: 2
 ---
 
-# 环境
+# 环境准备
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-:::tip 使用者提示
+:::warning 注意事项
 
-需要准备所需环境才能使用机器人
+安装机器人之前，请准备好如下所需环境
 
 :::
 
 <Tabs>
   <TabItem value="q" label="Windows" default>
   
-推荐系统 Windows10 | Windows11
+推荐系统 `Windows10` | `Windows11`
 
-> 其他windows版本请安装 [Google Chrome](https://www.google.cn/intl/zh-CN/chrome/) / [Edge](https://www.microsoft.com/zh-cn/edge)
+1. 安装浏览器： 非推荐系统请自行安装 [Google Chrome](https://www.google.cn/intl/zh-CN/chrome/) / [Edge](https://www.microsoft.com/zh-cn/edge)
 
-必要数据库 [Redis-x64-5.0.14.1.msi](https://github.com/tporadowski/redis/releases)
+2. 安装数据库： [Redis-x64-5.0.14.1.msi](https://github.com/tporadowski/redis/releases)
 
-必要环境 [Node.js@18.20.3](https://nodejs.org/zh-cn)
+3. 安装 Node.js： [Node.js@18.20.3](https://nodejs.org/zh-cn)
 
 > 推荐使用[nvm-setup.exe](https://github.com/coreybutler/nvm-windows/releases)对Node.js进行版本切换
 
 > Node.js 版本必须大于16.14.0且双数版本
 
-必要工具 [Git Download for Windows](https://git-scm.com/)
+4. 安装 Git： [Git Download for Windows](https://git-scm.com/)
 
 > git必须全部点击默认next，其他地址可能会造成git损坏
 
@@ -39,13 +39,13 @@ import TabItem from '@theme/TabItem';
 
 > 非最新的系统不保证其成功性
 
-必要工具 Git 一般 MacOS 自带
+1. 必要工具 Git 一般 MacOS 自带
 
 ```bash
 git --version # 校验git版本，未安装会提示下载常用工具包
 ```
 
-必要数据库 [Redis-7.4.2](https://redis.io/downloads/)
+2. 安装数据库 [Redis-7.4.2](https://redis.io/downloads/)
 
 > 需要进行编译，请自行翻阅相关文章
 
@@ -71,7 +71,7 @@ echo 'export PATH="/opt/homebrew/bin:$PATH"' >> ~/.zshrc
 source ~/.bash_profile && source ~/.zshrc
 ```
 
-必要工具 npm
+3. 安装工具 npm
 
 ```bash
 # 安装
@@ -101,7 +101,7 @@ echo '[ -s "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm" ] && \. "/opt/homeb
 source ~/.bash_profile && source ~/.zshrc
 ```
 
-必要环境 Node.js@18.20.3
+4. 安装环境 Node.js@18.20.3
 
 ```bash
 # 安装
