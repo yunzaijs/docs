@@ -9,7 +9,7 @@ import TabItem from '@theme/TabItem';
 
 :::tip 使用者提示
 
-运行并控制机器人，开发者可阅读后续教程
+运行并控制机器人
 
 :::
 
