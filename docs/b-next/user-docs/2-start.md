@@ -153,3 +153,51 @@ yarn remove yz-xiuxian
 在安装的那一刻yarn就已经为你管理好所需要的模块
 
 除非开发者没有记得在发布模块时，配置好关联的其他依赖
+
+## 三 、Yunzai-V3 插件的安装
+
+仅 [YZ-NEXT-PE](https://github.com/yunzai-org/yunzai-bot) 配置了 `V3` 插件的兼容。安装请看[上一章节](/docs/docs/b-next/user-docs/translate-your-site)。
+
+### 克隆插件
+
+进入插件库，找到需要的且能使用的插件，按照插件的说明仅仅克隆下载插件：[Yunzai-Bot V3 插件仓库](https://github.com/yhArcadia/Yunzai-Bot-plugins-index)
+
+### 安装依赖
+
+进入插件目录，执行 `yarn` 命令安装依赖即可。无需使用对应插件说明的 `pnpm install` 或 `pnpm i` 命令。
+
+### 其他
+
+如需使用 genshin插件 和 miao-plugin，可暂时使用以下方式安装：
+
+yunzai-bot根目录执行：
+
+```sh title="genshin"
+git clone --depth=1 https://gitee.com/TimeRainStarSky/Yunzai-genshin.git ./plugins/genshin/
+```
+
+```sh title="miao-plugin"
+git clone --depth=1 https://gitee.com/yoimiya-kokomi/miao-plugin.git ./plugins/miao-plugin/
+```
+
+```sh title="安装依赖"
+yarn
+```
+
+修改`yunzai-bot/package.json`文件，找到如下部分内容：
+
+```json title="yunzai-bot/package.json"
+  "imports": {
+    "#yunzai": "./lib/index.js"
+  }
+```
+
+将其修改为即可：
+
+```json title="yunzai-bot/package.json"
+  "imports": {
+    "#yunzai": "./lib/index.js",
+    "#miao": "./plugins/miao-plugin/components/index.js",
+    "#miao.models": "./plugins/miao-plugin/models/index.js"
+  }
+```

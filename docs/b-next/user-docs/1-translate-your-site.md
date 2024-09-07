@@ -7,19 +7,19 @@ sidebar_position: 1
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-:::tip 使用者提示
+:::tip YZ-NEXT-PE
 
-学习如何安装Yunzai机器人
+普通用户推荐使用 YZ-NEXT-PE，其配置了对 Yunzai-V3 插件的兼容，适合绝大多数用户使用。
 
 :::
 
 ### 克隆代码
 
-```sh
+```sh title="YZ-NEXT-PE"
 git clone --depth=1 https://github.com/yunzai-org/yunzai-bot.git
 ```
 
-仓库地址：[yunzai-bot](https://github.com/yunzai-org/yunzai-bot)
+仓库地址：[YZ-NEXT-PE](https://github.com/yunzai-org/yunzai-bot)
 
 ### 安装依赖
 
