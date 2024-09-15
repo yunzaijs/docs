@@ -29,6 +29,7 @@
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
 }
 
+/* serch input navbar */
 @media (max-width: 1183px) {
   .navbar__item {
     padding: 0.15em;
