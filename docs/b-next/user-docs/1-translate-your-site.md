@@ -37,9 +37,9 @@ npm config set registry https://registry.npmmirror.com
 
 > 如已配置镜像，请可忽视
 
-3. 安装yarn包管理器，`yarn 不能使用2.x版本，它无法使用link`
+3. 安装[Yarn - JavaScript 软件包管理器](https://www.yarnpkg.cn/)，`yarn 不能使用2.x版本，它无法使用link`
 
-```sh
+```sh title="安装命令"
 npm install yarn@1.19.1 -g
 ```
 

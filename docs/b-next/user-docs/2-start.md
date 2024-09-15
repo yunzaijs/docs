@@ -117,42 +117,39 @@ yarn add yz-xiuxian -W
 
 3. 其他讲解
 
-可以理解为，V3是自动档，Next是手动挡
+> 可以理解为，V3是自动档，Next是手动挡
 
-- V3
+- Yunzai-V3
 
-V3的逻辑是去plugins目录便利所有js文件或子目录下的index.js文件
+1. V3的逻辑是遍历plugins目录下所有js文件或子目录下的index.js文件，通过加载入口文件，将插件注册到机器人中。
 
-借助git对代码进行管理
+2. 通过git工具对代码进行管理
 
-此时，需要继续进行依赖安装，同时确保该插件有标注依赖，否则无法正常进行后续操作
+3. 需要手动进行依赖安装，同时确保该插件的`package.json`文件中有标注依赖，若依赖缺失，则需要手动添加缺失的依赖（可根据终端的报错日志提示进行安装），否则无法正常进行后续操作。
 
-- Next
+- Yunzai-Next
 
-当前版本，使用了node模块化设计，通过依赖对模块进行版本管理
+1. 使用了node模块化设计，通过默认的 包管理器`yarn` 对模块进行版本管理
 
-可以随时用指令切换任意稳定的版本
+2. 可以随时通过指令切换任意稳定版本
 
-```sh
+```sh title="版本切换示例"
 # 最初版
 yarn add yz-xiuxian@1.0.0 -W
 # 最新版
 yarn add yz-xiuxian@latest
+# 指定版本x.x.x
+yarn add yz-xiuxian@x.x.x -W
 ```
 
-一般情况下，并不需要去修改yunzai.config.json文件
+3. 一般情况下，无需修改yunzai.config.json文件。
 
-除非你对该模块进行了删除
+> 除非对该模块进行了删除，那就必须修改 `yunzai-bot/yunzai.config.json` 确保不再加载该模块，
+> 在模块安装的那一刻 [Yarn - JavaScript 软件包管理器](https://www.yarnpkg.cn/) 就已经接管并自动管理该模块和它的依赖，除非开发者发布模块时，关联的其他依赖配置不全，才需要手动添加。
 
-```sh
+```sh title="删除yu-xiuxian模块示例"
 yarn remove yz-xiuxian
 ```
-
-那就必须修改yunzai.config.json确保不会再加载该模块
-
-在安装的那一刻yarn就已经为你管理好所需要的模块
-
-除非开发者没有记得在发布模块时，配置好关联的其他依赖
 
 ## 三 、Yunzai-V3 插件的安装
 
@@ -164,7 +161,7 @@ yarn remove yz-xiuxian
 
 ### 安装依赖
 
-进入插件目录，执行 `yarn` 命令安装依赖即可。无需使用对应插件说明的 `pnpm install` 或 `pnpm i` 命令。
+进入`yunzai-bot/`目录，执行 `yarn` 命令安装依赖即可。无需使用对应插件说明的 `pnpm install` 或 `pnpm i` 命令。
 
 ### 其他
 
