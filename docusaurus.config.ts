@@ -53,29 +53,29 @@ const config: Config = {
       items: [
         {
           position: 'left',
-          label: 'Dev DOCS',
+          label: '文档',
           type: 'docSidebar',
           sidebarId: 'tutorialSidebar'
         },
         {
           position: 'left',
-          label: 'Edit DOCS',
+          label: '编辑',
           href: 'https://github.com/yunzai-org/docs/blob/main/docs/intro.md'
         },
         {
           position: 'right',
           href: 'https://github.com/yunzai-org',
-          label: 'Team'
+          label: '团队'
         },
         {
           position: 'right',
           href: 'https://github.com/yunzai-org/create-yunzai/blob/main/bin/template/README.md',
-          label: 'Template'
+          label: '模板'
         },
         {
           position: 'right',
           href: 'https://github.com/yunzai-org/yunzai-next',
-          label: 'Yunzai Code'
+          label: '源码'
         }
       ]
     },
