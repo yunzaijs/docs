@@ -31,7 +31,7 @@ export interface EventType {
 ### 回复
 
 ```ts
-import { Messages } from 'yunzai'
+import { Messages } from 'yunzaijs'
 const message = new Messages('message.group')
 message.use(
   e => {
@@ -46,7 +46,7 @@ export const Word = message.ok
 ### 图片
 
 ```ts
-import { Messages, Segment } from 'yunzai'
+import { Messages, Segment } from 'yunzaijs'
 const message = new Messages('message.group')
 message.use(
   e => {
@@ -62,7 +62,7 @@ export const Word = message.ok
 #######复合
 
 ```ts
-import { Messages, Segment } from 'yunzai'
+import { Messages, Segment } from 'yunzaijs'
 const message = new Messages('message.group')
 message.use(
   e => {
@@ -78,7 +78,7 @@ export const Word = message.ok
 ### 转发
 
 ```ts
-import { Messages, Segment, makeForwardMsg } from 'yunzai'
+import { Messages, Segment, makeForwardMsg } from 'yunzaijs'
 const message = new Messages('message.group')
 message.use(
   async e => {
@@ -94,7 +94,7 @@ export const Word = message.ok
 ### 转私聊
 
 ```ts
-import { Messages, Bot } from 'yunzai'
+import { Messages, Bot } from 'yunzaijs'
 const message = new Messages('message.group')
 message.ues(
   e => {
@@ -131,7 +131,7 @@ export interface EventType {
 ### 回复
 
 ```ts
-import { Messages } from 'yunzai'
+import { Messages } from 'yunzaijs'
 const message = new Messages('message.private')
 message.ues(
   e => {
@@ -146,7 +146,7 @@ export const Word = message.ok
 ### 复合
 
 ```ts
-import { Messages, Segment } from 'yunzai'
+import { Messages, Segment } from 'yunzaijs'
 const message = new Messages('message.private')
 message.use(
   e => {

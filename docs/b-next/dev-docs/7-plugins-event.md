@@ -15,7 +15,7 @@ sidebar_position: 7
 > 用于观察群或某个用户，进行重复性执行或校验的行为
 
 ```ts
-import { Observer, Messages } from 'yunzai'
+import { Observer, Messages } from 'yunzaijs'
 const message = new Messages('message.private')
 message.use(
   e => {
@@ -61,7 +61,7 @@ export const Word = message.ok
 > 即指定某一事件后执行的行为，基于原生的InterVal接口
 
 ```ts
-import { setBotInterVal, Messages, clearBotInterVal } from 'yunzai'
+import { setBotInterVal, Messages, clearBotInterVal } from 'yunzaijs'
 
 const Uids = []
 
@@ -88,7 +88,7 @@ export const Word = message.ok
 > 进行更复杂的时间行为，如指定每天某点进行
 
 ```ts
-import { setBotTask, Messages, clearBotTask } from 'yunzai'
+import { setBotTask, Messages, clearBotTask } from 'yunzaijs'
 
 const Uids = []
 

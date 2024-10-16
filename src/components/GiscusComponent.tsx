@@ -5,12 +5,12 @@ export default function GiscusComponent() {
   const { colorMode } = useColorMode()
   return (
     <Giscus
-      repo="yunzai-org/docs"
+      repo="yunzaijs/docs"
       repoId="R_kgDOMHTm2A"
       category="General"
       categoryId="DIC_kwDOMHTm2M4CjMGM"
       mapping="url"
-      term="Welcome to Yunzai Next!"
+      term="Welcome to YunzaiJS!"
       strict="0"
       reactionsEnabled="1"
       emitMetadata="1"

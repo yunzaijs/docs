@@ -15,7 +15,7 @@ sidebar_position: 8
 > 用于代替浏览器环境下的localStorage永久存储方案
 
 ```ts
-import { localStorage } from 'yunzai'
+import { localStorage } from 'yunzaijs'
 ```
 
 - 设置
@@ -38,7 +38,7 @@ console.log(Data) // hello word
 > Redis长期保留
 
 ```ts
-import { Redis } from 'yunzai'
+import { Redis } from 'yunzaijs'
 ```
 
 > 更推荐高新版本的的ioRedis

@@ -45,9 +45,9 @@ yarn run kill
 
 [拓展模块库](/docs/docs/category/module-shop)
 
-:::tip Yunzai-Next 支持模块化拓展功能
+:::tip YunzaiJS 支持模块化拓展功能
 
-可对Yunzai进行安装扩展模块并配置，
+可对YunzaiJS进行安装扩展模块并配置，
 丰富机器人功能、增强机器人体验
 
 :::
@@ -68,23 +68,23 @@ yarn run kill
 
 1. **yunzai.config.js**：
 
-配置文件路径： `yunzai-bot/yunzai.config.js`
+配置文件路径： `bot/yunzai.config.js`
 
 不推荐未掌握js便修改此文件，
 
 请注意如果使用了此配置文件，在`移除`模块时需要修改此文件删除对应模块的配置
 
 ```ts title="yunzai.config.js"
-import { defineConfig } from 'yunzai'
+import { defineConfig } from 'yunzaijs'
 export default defineConfig({
-  applications: ['yz-system'], // 所有模块应用
-  middlewares: ['yunzai-mys/runtime', 'yunzai-mys/mw'] // 所有中间件
+  applications: ['@yunzaijs/system'], // 所有模块应用
+  middlewares: ['@yunzaijs/mys/runtime', '@yunzaijs/mw'] // 所有中间件
 })
 ```
 
 2. **yunzai.config.json**：
 
-配置文件路径： `yunzai-bot/yunzai.config.json`
+配置文件路径： `bot/yunzai.config.json`
 
 使用json格式的配置文件需要`手动创建`，
 
@@ -92,8 +92,8 @@ export default defineConfig({
 
 ```json title="yunzai.config.json"
 {
-  "applications": ["yz-system"],
-  "middlewares": ["yunzai-mys/runtime", "yunzai-mys/mw"]
+  "applications": ["@yunzaijs/system"],
+  "middlewares": ["@yunzaijs/mys/runtime", "@yunzaijs/mys/mw"]
 }
 ```
 
@@ -127,7 +127,7 @@ yarn add yz-xiuxian -W
 
 3. 需要手动进行依赖安装，同时确保该插件的`package.json`文件中有标注依赖，若依赖缺失，则需要手动添加缺失的依赖（可根据终端的报错日志提示进行安装），否则无法正常进行后续操作。
 
-- Yunzai-Next
+- YunzaiJS
 
 1. 使用了node模块化设计，通过默认的 包管理器`yarn` 对模块进行版本管理
 
@@ -153,7 +153,7 @@ yarn remove yz-xiuxian
 
 ## 三 、Yunzai-V3 插件的安装
 
-仅 [YZ-NEXT-PE](https://github.com/yunzai-org/yunzai-bot) 配置了 `V3` 插件的兼容。安装请看[上一章节](/docs/docs/b-next/user-docs/translate-your-site)。
+仅 [BOT PE](https://github.com/yunzaijs/yunzai-bot) 配置了 `V3` 插件的兼容。安装请看[上一章节](/docs/docs/b-next/user-docs/translate-your-site)。
 
 ### 克隆插件
 
@@ -161,13 +161,13 @@ yarn remove yz-xiuxian
 
 ### 安装依赖
 
-进入`yunzai-bot/`目录，执行 `yarn` 命令安装依赖即可。无需使用对应插件说明的 `pnpm install` 或 `pnpm i` 命令。
+进入`bot`目录，执行 `yarn` 命令安装依赖即可。无需使用对应插件说明的 `pnpm install` 或 `pnpm i` 命令。
 
 ### 其他
 
 如需使用 genshin插件 和 miao-plugin，可暂时使用以下方式安装：
 
-yunzai-bot根目录执行：
+bot根目录执行：
 
 ```sh title="genshin"
 git clone --depth=1 https://gitee.com/TimeRainStarSky/Yunzai-genshin.git ./plugins/genshin/

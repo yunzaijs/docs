@@ -19,7 +19,7 @@ import TabItem from '@theme/TabItem';
   <TabItem value="apple" label="函数应用" default>
 
 ```ts title="./message.ts"
-import { Messages } from 'yunzai'
+import { Messages } from 'yunzaijs'
 const message = new Messages('message.group')
 message.use(
   e => {
@@ -35,7 +35,7 @@ export const Word = message.ok
   <TabItem value="orange" label="类应用">
 
 ```ts title="./message.ts"
-import { Application } from 'yunzai'
+import { Application } from 'yunzaijs'
 export class Word extends Application<'message.group'> {
   constructor() {
     super('message.group')
@@ -64,7 +64,7 @@ export class Word extends Application<'message.group'> {
 - 系统性常量
 
 ```ts
-import { BOT_NAME } from 'yunzai'
+import { BOT_NAME } from 'yunzaijs'
 ```
 
 这是无法修改的,且运行后是不变的
@@ -72,7 +72,7 @@ import { BOT_NAME } from 'yunzai'
 - 系统配置器
 
 ```ts
-import { ConfigController } from 'yunzai'
+import { ConfigController } from 'yunzaijs'
 ```
 
 配置器包含了配置文件内的所有参数.

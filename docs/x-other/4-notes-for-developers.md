@@ -48,7 +48,7 @@ function getDataById(T: string) {}
 const ENV_TEST = 'dev'
 
 // 局域常量
-const MyName = 'yunzai'
+const MyName = 'yunzaijs'
 
 // 可修改变量
 let values = ''
@@ -69,9 +69,9 @@ const Obj = {}
 ## 模块风格
 
 ```ts
-import {} from 'yunzai-mys'
+import {} from '@yunzaijs/mys'
 ```
 
 ```ts
-import {} from '@yunzai/mys'
+import {} from 'yz-xiuxian'
 ```

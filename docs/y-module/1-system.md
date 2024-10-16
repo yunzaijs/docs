@@ -4,10 +4,10 @@ sidebar_position: 1
 
 # 系统
 
-| Project     | Status                        | Description |
-| ----------- | ----------------------------- | ----------- |
-| [yz-system] | [![yz-system-s]][yz-system-p] | 系统管理    |
+| Project            | Status                                      | Description |
+| ------------------ | ------------------------------------------- | ----------- |
+| [@yunzaijs/system] | [![@yunzaijs/system-s]][@yunzaijs/system-p] | 系统管理    |
 
-[yz-system]: https://github.com/yunzai-org/system
-[yz-system-s]: https://img.shields.io/npm/v/yz-system.svg
-[yz-system-p]: https://www.npmjs.com/package/yz-system
+[@yunzaijs/system]: https://github.com/yunzaijs/packages/system
+[@yunzaijs/system-s]: https://img.shields.io/npm/v/@yunzaijs/system.svg
+[@yunzaijs/system-p]: https://www.npmjs.com/package/@yunzaijs/system

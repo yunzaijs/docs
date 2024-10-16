@@ -61,7 +61,7 @@ sidebar_position: 1
 - 增加记时器
 - 增加观察者
 - 简化函数式写法
-- 发布模块yunzai-mys
+- 发布模块@yunzaijs/mys
 - 发布模块yunzai
 
 ## 2024.07.11 [4.0.21]

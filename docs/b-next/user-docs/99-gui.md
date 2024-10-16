@@ -6,7 +6,7 @@ sidebar_position: 99
 
 :::tip 提示
 
-用户可视化操作面板
+用户可视化操作面板, 实验状态
 
 :::
 
@@ -23,9 +23,9 @@ npm config set registry https://registry.npmmirror.com
 
 ```sh
 # 默认端口3000
-npx yunzai-gui@latest
+npx @yunzaijs/gui@latest
 # 自定义端口
-npx yunzai-gui@latest start -p 9370
+npx @yunzaijs/gui@latest start -p 9370
 ```
 
 访问 `http://localhost:3000/`
@@ -62,6 +62,6 @@ npx yunzai-gui@latest start -p 9370
 
 :::tip 提示
 
-[点击 了解更多](https://github.com/yunzai-org/yunzai-gui)
+[点击 了解更多](https://github.com/yunzaijs/yunzai-gui)
 
 :::

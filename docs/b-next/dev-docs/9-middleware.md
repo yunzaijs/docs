@@ -12,8 +12,8 @@ sidebar_position: 9
 
 ## 编写
 
-```ts title="yunzai-mys/message.js"
-import { middlewareOptions, useEvent } from 'yunzai'
+```ts title="@yunzaijs/mys/message.js"
+import { middlewareOptions, useEvent } from 'yunzaijs'
 const srReg = /^#?(\*|星铁|星轨|穹轨|星穹|崩铁|星穹铁道|崩坏星穹铁道|铁道)+/
 const zzzReg = /^#?(%|zzz|绝区零|ZZZ)+/
 export default () => {
@@ -53,16 +53,16 @@ export default () => {
 ## 配置
 
 ```ts title="yunzai.config.js"
-import { defineConfig } from 'yunzai'
+import { defineConfig } from 'yunzaijs'
 export default defineConfig({
-  middlewares: ['yunzai-mys/mw']
+  middlewares: ['@yunzaijs/mys/mw']
 })
 ```
 
 ## 使用
 
 ```ts
-import { Messages } from 'yunzai'
+import { Messages } from 'yunzaijs'
 const message = new Messages('message.group')
 message.use(
   e => {

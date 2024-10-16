@@ -13,7 +13,7 @@ sidebar_position: 4
 ## create
 
 ```ts
-import { applicationOptions, useAppStorage } from 'yunzai'
+import { applicationOptions, useAppStorage } from 'yunzaijs'
 export default () => {
   return applicationOptions({
     // 插件创建时
@@ -28,7 +28,7 @@ export default () => {
 ## mounted
 
 ```ts
-import { Application, applicationOptions, useEvent } from 'yunzai'
+import { Application, applicationOptions, useEvent } from 'yunzaijs'
 import * as Apps from './apps.js'
 export default () => {
   // 预先存储
@@ -84,7 +84,7 @@ export default () => {
 ## beforeMount
 
 ```ts
-import { applicationOptions, useAppStorage } from 'yunzai'
+import { applicationOptions, useAppStorage } from 'yunzaijs'
 export default () => {
   return applicationOptions({
     // 被执行之前，也是被所有中间件执行之前
@@ -99,7 +99,7 @@ export default () => {
 ## response
 
 ```ts
-import { applicationOptions, useAppStorage } from 'yunzai'
+import { applicationOptions, useAppStorage } from 'yunzaijs'
 export default () => {
   return applicationOptions({
     response() {
@@ -113,7 +113,7 @@ export default () => {
 ## afterResponse
 
 ```ts
-import { applicationOptions, useAppStorage } from 'yunzai'
+import { applicationOptions, useAppStorage } from 'yunzaijs'
 export default () => {
   return applicationOptions({
     response() {

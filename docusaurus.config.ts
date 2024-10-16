@@ -3,19 +3,19 @@ import type { Config } from '@docusaurus/types'
 import type * as Preset from '@docusaurus/preset-classic'
 
 const config: Config = {
-  title: 'Yunzai Next',
-  tagline: '可模块化的机器人框架',
+  title: 'YunzaiJS',
+  tagline: '一款插件生态丰富的原神机器人廉开发框架',
   // favicon: 'img/favicon.ico',
 
   // Set the production url of your site here
-  url: 'https://yunzai-org.github.io',
+  url: 'https://yunzaijs.github.io',
   // Set the /<baseUrl>/ pathname under which your site is served
   // For GitHub pages deployment, it is often '/<projectName>/'
   baseUrl: '/docs/',
 
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
-  organizationName: 'yunzai-org', // Usually your GitHub org/user name.
+  organizationName: 'yunzaijs', // Usually your GitHub org/user name.
   projectName: 'docs', // Usually your repo name.
 
   onBrokenLinks: 'throw',
@@ -32,7 +32,7 @@ const config: Config = {
       {
         docs: {
           sidebarPath: './sidebars.ts',
-          editUrl: 'https://github.com/yunzai-org/docs/tree/main/'
+          editUrl: 'https://github.com/yunzaijs/docs/tree/main/'
         },
         theme: {
           customCss: './src/css/custom.css'
@@ -45,7 +45,7 @@ const config: Config = {
     // Replace with your project's social card
     image: 'img/docusaurus-social-card.jpg',
     navbar: {
-      title: 'Yunzai Next',
+      title: 'YunzaiJS',
       // logo: {
       //   alt: 'Miao-Yunzai Logo',
       //   src: 'img/logo.svg',
@@ -60,16 +60,16 @@ const config: Config = {
         {
           position: 'left',
           label: '编辑',
-          href: 'https://github.com/yunzai-org/docs/blob/main/docs/intro.md'
+          href: 'https://github.com/yunzaijs/docs/blob/main/docs/intro.md'
         },
         {
           position: 'right',
-          href: 'https://github.com/yunzai-org/create-yunzai/blob/main/bin/template/README.md',
+          href: 'https://github.com/yunzaijs/packages/create-yunzaijs/blob/main/bin/template/README.md',
           label: '模板'
         },
         {
           position: 'right',
-          href: 'https://github.com/yunzai-org/yunzai-next',
+          href: 'https://github.com/yunzaijs/core',
           label: '源码'
         }
       ]

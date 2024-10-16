@@ -104,4 +104,4 @@ npm publish
 
 ### 源码
 
-[create-yunzai](https://github.com/yunzai-org/create-yunzai/tree/main/bin/template)
+[create-yunzai](https://github.com/yunzaijs/create-yunzai/tree/main/bin/template)

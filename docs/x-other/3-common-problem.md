@@ -127,4 +127,4 @@ apt install -y --force-yes --no-install-recommends fonts-wqy-microhei
 
 ### 社区答案
 
-[打开 Issues](https://github.com/yunzai-org/yunzai-next/issues)
+[打开 Issues](https://github.com/yunzaijs/yunzai-next/issues)
