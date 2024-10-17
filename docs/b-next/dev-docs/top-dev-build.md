@@ -1,10 +1,10 @@
 ---
-sidebar_position: 3
+sidebar_position: 1
 ---
 
 # 开发流程
 
-## 安装
+## 安装开发模版
 
 :::tip 提示
 
@@ -17,14 +17,14 @@ sidebar_position: 3
 - 创建
 
 ```bash
-npm create yunzai@latest -y
+npm create yunzaijs@latest -y
 cd yunzaib # 进入
 ```
 
 超时连接可尝试使用镜像
 
 ```sh
-npm create --registry=https://registry.npmmirror.com yunzai@latest -y
+npm create --registry=https://registry.npmmirror.com yunzaijs@latest -y
 cd yunzaib
 ```
 
@@ -46,7 +46,11 @@ yarn run
 yarn run app
 ```
 
-### 发布
+### 开发应用
+
+- 编写代码，开发你的应用
+
+### 发布到npm
 
 [点击注册 npm 账户](https://www.npmjs.com/)
 

@@ -16,7 +16,7 @@ import TabItem from '@theme/TabItem';
 ### 克隆代码
 
 ```sh title="BOT PE"
-git clone --depth=1 https://github.com/yunzaijs/bot.git
+git clone --depth=1 https://github.com/yunzaijs/bot.git ./yunzai-bot
 ```
 
 仓库地址：[BOT PE](https://github.com/yunzaijs/bot)

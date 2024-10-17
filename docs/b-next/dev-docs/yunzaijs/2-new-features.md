@@ -1,5 +1,5 @@
 ---
-sidebar_position: 5
+sidebar_position: 2
 ---
 
 # 模块
@@ -79,14 +79,15 @@ import { ConfigController } from 'yunzaijs'
 
 ## 图片
 
-:::tip 注意
+:::tip jsxp
 
-该模块设计已独立成库，
-任何版本都可以采用此设计进行开发
+[jsxp](https://github.com/lemonade-lab/lvyjs/tree/main/packages/jsxp) 是一个可以在 tsx 环境中,使用 puppeteer 对 React （tsx） 组件进行截图的库
 
-[react-puppeteer](https://github.com/lemonade-lab/react-puppeteer)
+YunzaiJS 默认统一使用 `jsxp 库` 调用 puppeteer 对 React 组件进行生成截图
 
 :::
+
+更多使用详细，请查看：[开发工具](/docs/docs/b-next/dev-docs/advance/dev-tools) 部分的文档
 
 ## 其他
 
