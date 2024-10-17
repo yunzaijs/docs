@@ -77,18 +77,6 @@ import { ConfigController } from 'yunzaijs'
 
 配置器包含了配置文件内的所有参数.
 
-## 图片
-
-:::tip jsxp
-
-[jsxp](https://github.com/lemonade-lab/lvyjs/tree/main/packages/jsxp) 是一个可以在 tsx 环境中,使用 puppeteer 对 React （tsx） 组件进行截图的库
-
-YunzaiJS 默认统一使用 `jsxp 库` 调用 puppeteer 对 React 组件进行生成截图
-
-:::
-
-更多使用详细，请查看：[开发工具](/docs/docs/b-next/dev-docs/advance/dev-tools) 部分的文档
-
 ## 其他
 
 :::tip 提示

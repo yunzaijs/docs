@@ -16,15 +16,15 @@ sidebar_position: 99
 
 > 若当前目前没有机器人，会进入安装项目步骤
 
-```sh
-# 设置镜像（海外环境或已设置可忽略）
+```sh title="置镜像（海外环境或已设置可忽略）"
 npm config set registry https://registry.npmmirror.com
 ```
 
-```sh
-# 默认端口3000
+```sh title="默认端口3000"
 npx @yunzaijs/gui@latest
-# 自定义端口
+```
+
+```sh title="修改端口"
 npx @yunzaijs/gui@latest start -p 9370
 ```
 
@@ -36,11 +36,7 @@ npx @yunzaijs/gui@latest start -p 9370
 
 - 修改
 
-`yunzai-gui.json`
-
-> 复制时注意删除注释语句
-
-```json
+```json title="yunzai-gui.json"
 {
   // 服务器配置
   "server": {

@@ -2,9 +2,9 @@
 sidebar_position: 1
 ---
 
-# 开发流程
+# 开始
 
-## 安装开发模版
+## 模版
 
 :::tip 提示
 
@@ -28,84 +28,18 @@ npm create --registry=https://registry.npmmirror.com yunzaijs@latest -y
 cd yunzaib
 ```
 
-- 包管理
-
-```bash
+```bash title="包管理"
 npm install yarn@1.19.1 -y
 ```
 
-- 安装依赖
-
-```bash
-yarn run
+```bash title="安装依赖"
+yarn install
 ```
 
-- 启动机器人
-
-```bash
+```bash title="启动机器人"
 yarn run app
 ```
 
-### 开发应用
+## 源码
 
-- 编写代码，开发你的应用
-
-### 发布到npm
-
-[点击注册 npm 账户](https://www.npmjs.com/)
-
-- 编译
-
-```bash
-yarn run build
-```
-
-- 登录
-
-```sh
-npm login
-```
-
-- package.json
-
-```json
-{
-  // 要上传的文件夹
-  "files": ["public", "assets", "lib"],
-  // 类型文件夹
-  "types": "lib",
-  // 到导出配置
-  "exports": {
-    // 默认导出
-    ".": {
-      "import": "./lib/index.js",
-      "types": "./lib/index.d.ts"
-    }
-  },
-  // 关联yunzai
-  "keywords": ["yunzai"],
-  // 上传配置
-  "publishConfig": {
-    // publish地址为官方 npm
-    "registry": "https://registry.npmjs.org"
-  }
-}
-```
-
-- publish
-
-先打包至本地，确认文件信息
-
-```bash
-npm pack
-```
-
-确认无误后上传
-
-```bash
-npm publish
-```
-
-### 源码
-
-[create-yunzai](https://github.com/yunzaijs/create-yunzai/tree/main/bin/template)
+[create-yunzai](https://github.com/yunzaijs/core/tree/main/packages/create-yunzaijs/bin/template)

@@ -4,7 +4,7 @@ import type * as Preset from '@docusaurus/preset-classic'
 
 const config: Config = {
   title: 'YunzaiJS',
-  tagline: '一款插件生态丰富的原神机器人廉开发框架',
+  tagline: 'QQ群机器人开发框架',
   // favicon: 'img/favicon.ico',
 
   // Set the production url of your site here

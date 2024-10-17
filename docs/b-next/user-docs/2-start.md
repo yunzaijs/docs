@@ -15,27 +15,19 @@ import TabItem from '@theme/TabItem';
 
 ## 一、运行
 
-- 启动
-
-```sh
+```sh title="启动"
 yarn run app
 ```
 
-- 重新登录
-
-```sh
+```sh title="重新登录"
 yarn run app --relogin
 ```
 
-- 进程托管
-
-```sh
+```sh title="进程托管"
 yarn run start
 ```
 
-- 杀死进程
-
-```sh
+```sh title="杀死进程"
 yarn run kill
 ```
 
@@ -170,7 +162,7 @@ yarn remove yz-xiuxian
 bot根目录执行：
 
 ```sh title="genshin"
-git clone --depth=1 https://gitee.com/TimeRainStarSky/Yunzai-genshin.git ./plugins/genshin/
+git clone --depth=1 -b next https://gitee.com/TimeRainStarSky/Yunzai-genshin.git ./plugins/genshin/
 ```
 
 ```sh title="miao-plugin"
