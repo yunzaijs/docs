@@ -4,11 +4,53 @@ sidebar_position: 3
 
 # npm
 
+## `./.npmrc`
+
+:::tip .npmrc
+
+`./.npmrc` 为npm的配置文件
+
+用于配置 npm 的行为和选项，它可以设置镜像源、代理等配置。
+
+更多配置请参考 [官方文档](https://docs.npmjs.com/cli/v10/configuring-npm/npmrc), [中文文档](https://npm.nodejs.cn/cli/v10/configuring-npm/npmrc)
+
+:::
+
 ```env title=".npmrc"
-/*
+# 以下是一些示例配置，请勿照搬，请根据实际情况进行配置
+
+# 为项目单独设置镜像
+registry=https://registry.npmmirror.com
+# 不生成lock
+package-lock=false
+```
+
+## `./.npmignore`
+
+:::tip .npmignore
+
+`.npmignore`： 是一种黑名单机制。
+
+用于指定在执行 npm publish 时，哪些文件和文件夹应该被排除在外。
+
+这是特定用于包发布的文件，主要用来管理项目中哪些文件应当包含在最终发布的 npm 包中。
+
+:::
+
+```env title=".npmignore"
+# 忽略文件或文件夹，请根据需要请自行配置，示例：
+
+# 默认会自动排除的文件或文件夹，无需重复配置：
+# node_modules .git .hg .svn .npmrc .gitignore .npmignore 等
+
+# 首先排除所有文件或文件夹
+/**
+# 然后 ! 开头 逐一添加需要发布的文件或文件夹取消忽略，按照实际情况设置
 !/lib
 !/public
 ```
+
+## 配置 `package.json`
 
 > 配置项、依赖包请根据实际需要进行调整
 
@@ -53,6 +95,9 @@ sidebar_position: 3
     "typescript": "^5.4.5",
     "yunzaijs": "^1.0.0-rc.4"
   },
+  //"files"，用于发布npm包时，指定发布的文件或文件夹。建议优先使用 .npmignore 进行配置。
+  //优先级：package.json 的 "files" 字段 > .npmignore 文件> .gitignore 文件
+  "files": ["example"],
   "types": "lib",
   "exports": {
     ".": {
@@ -82,7 +127,9 @@ npm login
 
 - publish
 
-```bash title="先打包至本地，确认文件信息"
+  > 先打包至本地，确认文件信息，确保您的 .npmignore 或 files 配置有效无误后，再发布至 npm。
+
+```bash title="打包至本地"
 npm pack
 ```
 

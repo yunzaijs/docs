@@ -99,6 +99,7 @@ export default defineConfig({
     {
       name: 'lvy-view-app',
       useApp: () => {
+        // 启动jsxp本地调试
         if (process.argv.includes('--view')) useJSXP()
       }
     }
