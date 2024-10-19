@@ -163,9 +163,17 @@ export default defineConfig({
 
 ## 打包
 
-> 需完成上文的配置
-
 > 默认对 `./src` 目录打包并输出到 `./lib` 目录
+
+```json title="./package.json"
+{
+  "scripts": {
+    "build": "lvy build" //编译打包
+  }
+}
+```
+
+> 需完成上文的配置，更多package.json的配置阅读 [npm章节](./dev-npm)
 
 ```sh title="编译打包"
 yarn run build
