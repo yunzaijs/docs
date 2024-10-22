@@ -20,7 +20,7 @@ YunzaiJS 默认统一使用 lvyjs 进行开发
 | ------- | --------------------- | ------------ |
 | [lvyjs] | [![lvyjs-s]][lvyjs-p] | 打包开发工具 |
 
-[lvyjs]: https://github.com/lemonade-lab/alemonjs/tree/main/packages/lvyjs
+[lvyjs]: https://github.com/lvyjs/core
 [lvyjs-s]: https://img.shields.io/npm/v/lvyjs.svg
 [lvyjs-p]: https://www.npmjs.com/package/lvyjs
 
