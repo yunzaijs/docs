@@ -8,7 +8,7 @@
 
 > 如果文档中发现错误，或提交文档修改，或丰富本站文档，可点击编辑按钮
 
-[阅读文档 https://yunzaijs.github.io/docs/](https://yunzaijs.github.io/docs/)
+[阅读文档 https://yunzaijs.com](https://yunzaijs.com)
 
 ## 注意
 

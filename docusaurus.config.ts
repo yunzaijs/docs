@@ -108,8 +108,8 @@ const config: Config = {
               href: 'https://github.com/yhArcadia/Yunzai-Bot-plugins-index'
             },
             {
-              label: 'Icqq Agreement',
-              href: 'https://github.com/icqqjs/icqq'
+              label: 'Icqq DOCS',
+              href: 'https://icqq.pages.dev/'
             }
           ]
         },
