@@ -12,6 +12,6 @@ sidebar_position: 1
 [yz-yuki-plugin]: https://github.com/snowtafir/yuki-plugin
 [yz-yuki-plugin-s]: https://img.shields.io/npm/v/yz-yuki-plugin.svg
 [yz-yuki-plugin-p]: https://www.npmjs.com/package/yz-yuki-plugin
-[yz-kuromc-plugin]: https://github.com/loneyclown/kuromc-plugin
-[yz-kuromc-plugin-s]: https://img.shields.io/npm/v/yz-kuromc.svg
-[yz-kuromc-plugin-p]: https://www.npmjs.com/package/yz-kuromc
+[yz-kuromc]: https://github.com/loneyclown/kuromc-plugin
+[yz-kuromc-s]: https://img.shields.io/npm/v/yz-kuromc.svg
+[yz-kuromc-p]: https://www.npmjs.com/package/yz-kuromc

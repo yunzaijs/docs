@@ -69,9 +69,10 @@ const Obj = {}
 ## 模块风格
 
 ```ts
-import yzMYS from '@yunzaijs/mys'
+import YSMYS from '@yunzaijs/mys'
 ```
 
 ```ts
-import yzxiuxian from 'yz-xiuxian'
+import YZXiuxian from 'yz-xiuxian'
+import YunzaiJSFarm from 'yunzaijs-fram'
 ```
