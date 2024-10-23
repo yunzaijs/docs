@@ -2,6 +2,9 @@ import { themes as prismThemes } from 'prism-react-renderer'
 import type { Config } from '@docusaurus/types'
 import type * as Preset from '@docusaurus/preset-classic'
 
+const number = '津ICP备2023004480号'
+const link = `<a class="footer__link-item navbar__item" href="https://beian.miit.gov.cn/" target="_blank">${number}</a>`
+
 const config: Config = {
   title: 'YunzaiJS',
   tagline: 'QQ群机器人开发框架',
@@ -132,7 +135,7 @@ const config: Config = {
           ]
         }
       ],
-      copyright: `Copyright © ${new Date().getFullYear()} Yunzai.`
+      copyright: `Copyright © ${new Date().getFullYear()} YunzaiJS ${link}`
     },
     prism: {
       theme: prismThemes.github,
