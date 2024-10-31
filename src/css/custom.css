@@ -1,0 +1,43 @@
+/**
+ * Any CSS included here will be global. The classic template
+ * bundles Infima by default. Infima is a CSS framework designed to
+ * work well for content-centric websites.
+ */
+
+/* You can override the default Infima variables here. */
+:root {
+  --ifm-color-primary: #3a8eeb; /* 天蓝色 */
+  --ifm-color-primary-dark: #3383d6;
+  --ifm-color-primary-darker: #2e76c2;
+  --ifm-color-primary-darkest: #2a66a6;
+  --ifm-color-primary-light: #4da2f5;
+  --ifm-color-primary-lighter: #56a6f8;
+  --ifm-color-primary-lightest: #75b3f9;
+  --ifm-code-font-size: 95%;
+  --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
+}
+
+/* For readability concerns, you should choose a lighter palette in dark mode. */
+[data-theme='dark'] {
+  --ifm-color-primary: #22a1e4; /* 深一些的天蓝色 */
+  --ifm-color-primary-dark: #1e95d1;
+  --ifm-color-primary-darker: #1a88be;
+  --ifm-color-primary-darkest: #1676a5;
+  --ifm-color-primary-light: #2bc3e5;
+  --ifm-color-primary-lighter: #4cc2ed;
+  --ifm-color-primary-lightest: #7cd3ef;
+  --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
+}
+
+/* serch input navbar */
+@media (max-width: 1183px) {
+  .navbar__item {
+    padding: 0.15em;
+  }
+}
+
+@media (max-width: 1063px) {
+  .navbar__search-input {
+    width: 10em;
+  }
+}

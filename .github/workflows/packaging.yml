@@ -1,0 +1,67 @@
+name: Package on Push
+
+on:
+  push:
+    branches:
+      - main
+    tags:
+      - 'v*.*.*'
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Configure SSH
+        run: |
+          mkdir -p ~/.ssh
+          echo "${{ secrets.SSH_PRIVATE_KEY }}" > ~/.ssh/id_rsa
+          chmod 600 ~/.ssh/id_rsa
+          echo "StrictHostKeyChecking no" >> ~/.ssh/config
+          echo "UserKnownHostsFile=/dev/null" >> ~/.ssh/config
+
+      - name: Test SSH connection
+        run: |
+          ssh -o BatchMode=yes -o StrictHostKeyChecking=no ${{ secrets.SSH_SERVER_USER }}@${{ secrets.SSH_SERVER_IP }} "echo 'SSH connection successful!'"
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: '18'
+
+      - name: Set system time and environment variables
+        run: |
+          echo "BEIJING_TIME=$(TZ=Asia/Shanghai date +'%Y-%m-%d %H:%M:%S')" >> $GITHUB_ENV
+
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Install dependencies
+        run: |
+          rm -rf .npmrc
+          npm install yarn@1.12.1 -g
+          yarn install --ignore-engines
+
+      - name: Build dependencies
+        run: |
+          yarn build
+
+      - name: Install rsync
+        run: |
+          sudo apt-get update 
+          sudo apt-get install -y rsync
+
+      - name: Deploy to server
+        run: |
+          rsync -avz --delete ./build/ ${{ secrets.SSH_SERVER_USER }}@${{ secrets.SSH_SERVER_IP }}:${{ secrets.SSH_SERVER_REMOTE_PATH }}
+
+      - name: Push docs to GitHub
+        run: |
+          cd ./build
+          git init
+          git config --local user.email "ningmengchongshui@gmail.com"
+          git config --local user.name "ningmengchongshui"
+          git add -A
+          git commit -m "自动打包 - ${{ env.BEIJING_TIME }}"
+          git remote add github https://${{ secrets.GH_NAME }}:${{ secrets.GH_TOKEN }}@github.com/${{ secrets.GH_NAME }}/${{ secrets.GH_WAREHOUSE_NAME }}.git
+          git push github HEAD:docs -f
