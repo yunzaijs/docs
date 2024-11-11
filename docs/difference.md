@@ -1,20 +1,16 @@
 ---
-sidebar_position: 1
+sidebar_position: 99
 ---
 
 # 更新记录
 
-| Project           | Status                          | Description    |
-| ----------------- | ------------------------------- | -------------- |
-| [yunzaijs]        | [![yunzaijs-s]][yunzaijs-p]     | 机器人模块     |
-| [create-yunzaijs] | [![c-yunzaijs-s]][c-yunzaijs-p] | 模板创建脚手架 |
+| Project    | Status                      | Description |
+| ---------- | --------------------------- | ----------- |
+| [yunzaijs] | [![yunzaijs-s]][yunzaijs-p] | 机器人模块  |
 
 [yunzaijs]: https://github.com/yunzaijs/core
 [yunzaijs-s]: https://img.shields.io/npm/v/yunzaijs.svg
 [yunzaijs-p]: https://www.npmjs.com/package/yunzaijs
-[create-yunzaijs]: https://github.com/yunzaijs/packages/create-yunzaijs
-[c-yunzaijs-s]: https://img.shields.io/npm/v/create-yunzaijs.svg
-[c-yunzaijs-p]: https://www.npmjs.com/package/create-yunzaijs
 
 > 所有异常版本将不记录在内
 

@@ -145,7 +145,7 @@ yarn remove yz-xiuxian
 
 ## 三 、Yunzai-V3 插件的安装
 
-仅 [BOT PE](https://github.com/yunzaijs/yunzai-bot) 配置了 `V3` 插件的兼容。安装请看[上一章节](/docs/docs/b-next/user-docs/translate-your-site)。
+仅 [BOT PE](https://github.com/yunzaijs/yunzai-bot) 配置了 `V3` 插件的兼容。
 
 ### 克隆插件
 

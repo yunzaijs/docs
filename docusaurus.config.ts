@@ -67,8 +67,8 @@ const config: Config = {
         },
         {
           position: 'right',
-          href: 'https://github.com/yunzaijs/packages/create-yunzaijs/blob/main/bin/template/README.md',
-          label: '模板'
+          href: 'https://vlyjs.dev/',
+          label: '环境'
         },
         {
           position: 'right',
