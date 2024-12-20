@@ -60,6 +60,7 @@ const config: Config = {
           type: 'docSidebar',
           sidebarId: 'tutorialSidebar'
         },
+        { to: 'blog', label: '新闻', position: 'left' }, // or position: 'right'
         {
           position: 'left',
           label: '编辑',
@@ -67,7 +68,7 @@ const config: Config = {
         },
         {
           position: 'right',
-          href: 'https://vlyjs.dev/',
+          href: 'https://lvyjs.dev/',
           label: '环境'
         },
         {
@@ -163,6 +164,16 @@ const config: Config = {
         searchResultContextMaxLength: 50
       }
     ]
+  ],
+  plugins: [
+    // [
+    //   '@docusaurus/plugin-content-blog',
+    //   {
+    //     id: 'second-blog',
+    //     routeBasePath: 'my-version',
+    //     path: './version',
+    //   },
+    // ],
   ]
 }
 
