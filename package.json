@@ -1,5 +1,5 @@
 {
-  "name": "my-website",
+  "name": "yunzaijs-website",
   "version": "0.0.0",
   "private": true,
   "scripts": {
@@ -17,8 +17,8 @@
     "prepare": "husky"
   },
   "dependencies": {
-    "@docusaurus/core": "^3.5.2",
-    "@docusaurus/plugin-content-blog": "^3.5.2",
+    "@docusaurus/core": "3.5.2",
+    "@docusaurus/plugin-content-blog": "3.5.2",
     "@docusaurus/preset-classic": "3.5.2",
     "@easyops-cn/docusaurus-search-local": "^0.44.5",
     "@mdx-js/react": "^3.0.1",
