@@ -155,38 +155,36 @@ yarn remove yz-xiuxian
 
 进入`bot`目录，执行 `yarn` 命令安装依赖即可。无需使用对应插件说明的 `pnpm install` 或 `pnpm i` 命令。
 
-### 其他
+### 喵喵插件和genshin插件的支持
 
-如需使用 genshin插件 和 miao-plugin，可暂时使用以下方式安装：
+> 当前仅有喵崽环境支持几乎所有的米游类插件
+
+> 需要此环境的bot务必执行补丁脚本并安装原神和喵喵插件
+
+如需使用 genshin插件 和 miao-plugin，可使用以下方式安装：
 
 bot根目录执行：
 
-```sh title="genshin"
-git clone --depth=1 -b next https://gitee.com/TimeRainStarSky/Yunzai-genshin.git ./plugins/genshin/
+- 执行补丁
+
+```sh
+node lib/miao-yunzai.js
 ```
 
-```sh title="miao-plugin"
+- 安装喵喵插件
+
+```sh
 git clone --depth=1 https://gitee.com/yoimiya-kokomi/miao-plugin.git ./plugins/miao-plugin/
 ```
 
-```sh title="安装依赖"
-yarn
+- 安装原神插件
+
+```sh
+git clone --depth=1 -b next https://github.com/yunzaijs/genshin.git ./plugins/genshin/
 ```
 
-修改`yunzai-bot/package.json`文件，找到如下部分内容：
+- 如果不需要使用，可执行去除环境命令
 
-```json title="yunzai-bot/package.json"
-  "imports": {
-    "#yunzai": "./lib/index.js"
-  }
-```
-
-将其修改为即可：
-
-```json title="yunzai-bot/package.json"
-  "imports": {
-    "#yunzai": "./lib/index.js",
-    "#miao": "./plugins/miao-plugin/components/index.js",
-    "#miao.models": "./plugins/miao-plugin/models/index.js"
-  }
+```sh
+node lib/miao-yunzai.js --delete
 ```
