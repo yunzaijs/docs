@@ -14,18 +14,18 @@ https://qsign.chahuyun.cn/?key=miraibbs
 
 https://qsign-guide.trpgbot.com/
 
-> key值为0852369
+> key值为0852369↓
+1:#QQ签名https://api.yunzaibot.cn/?key=0852369&ver=9.1.35
 
-1:#QQ签名http://110.40.45.169:7890/?key=0852369&ber=9.0.90
+2:#QQ签名https://api.furinaa.net/?key=0852369&ver=9.1.35
 
-2:#QQ签名https://api.furinaa.net/?key=0852369&ver=9.1.30(或者其他)
+3:#QQ签名https://api4.furinaa.net/?key=0852369&ver=9.1.35
 
-3:#QQ签名https://api.yunzaibot.cn/?key=0852369&ver=9.1.30（或者其他版本）
+4:#QQ签名https://api2.fufuidc.cn/?key=0852369&ver=9.1.35
 
-4:#QQ签名https://api3.furinaa.net/?key=0852369&ver=9.1.30（或者其他版本）
+5:#QQ签名https://api.fufuidc.cn/?key=0852369&ver=9.1.35
 
-5:#QQ签名https://api4.furinaa.net/?key=0852369&ver=9.1.30（或者其他版本）
+ps:以上签名(1.2.3.4.5.)均已支持最高版本签名(9.0.56-9.1.60目前最高)可自行填写ver=(你想要的版本号)高版本版本:→9.1.30-9.1.35-9.1.50-9.1.60
 
-> 2.3.4.5这三个已支持（9.0.56-9.1.35版本）
 
-> 需知:无白名单流量限制.1有时会用不了,请勿到处传播由于1服务器算法不行可能有时会无法使用造成的不便请谅解！
+> 需知:请勿到处传播.可能有时会无法使用造成的不便请谅解！
