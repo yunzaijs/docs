@@ -6,9 +6,7 @@ sidebar_position: 0
 
 :::tip 提示
 
-[更多详细推荐前往环境生态查看对应内容](/docs/docs/intro)
-
-[如果未进行环境部署，请进行环境准备工作](/docs/docs/environment)
+yunzaijs 已全面采用lvyjs作为开发构建工具，如果你对 nodejs不熟悉，可阅读[https://lvyjs.dev/](https://lvyjs.dev/)
 
 :::
 

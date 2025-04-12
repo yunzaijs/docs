@@ -60,7 +60,7 @@ const config: Config = {
           type: 'docSidebar',
           sidebarId: 'tutorialSidebar'
         },
-        { to: 'blog', label: '新闻', position: 'left' }, // or position: 'right'
+        { to: 'blog', label: '动态', position: 'left' }, // or position: 'right'
         {
           position: 'left',
           label: '编辑',
