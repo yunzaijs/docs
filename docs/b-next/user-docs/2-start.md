@@ -174,13 +174,21 @@ node lib/miao-yunzai.js
 - 安装喵喵插件
 
 ```sh
+git clone --depth=1 https://github.com/yoimiya-kokomi/miao-plugin.git ./plugins/miao-plugin/
+```
+```sh
+# or
 git clone --depth=1 https://gitee.com/yoimiya-kokomi/miao-plugin.git ./plugins/miao-plugin/
 ```
 
 - 安装原神插件
 
 ```sh
-git clone --depth=1 -b next https://github.com/yunzaijs/genshin.git ./plugins/genshin/
+git clone --depth=1 -b deploy https://github.com/yunzaijs/genshin.git ./plugins/genshin/
+```
+```sh
+# or
+git clone --depth=1 -b deploy https://gitee.com/yunzaijs/genshin.git ./plugins/genshin/
 ```
 
 - 如果不需要使用，可执行去除环境命令
