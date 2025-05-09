@@ -176,6 +176,7 @@ node lib/miao-yunzai.js
 ```sh
 git clone --depth=1 https://github.com/yoimiya-kokomi/miao-plugin.git ./plugins/miao-plugin/
 ```
+
 ```sh
 # or
 git clone --depth=1 https://gitee.com/yoimiya-kokomi/miao-plugin.git ./plugins/miao-plugin/
@@ -186,6 +187,7 @@ git clone --depth=1 https://gitee.com/yoimiya-kokomi/miao-plugin.git ./plugins/m
 ```sh
 git clone --depth=1 -b deploy https://github.com/yunzaijs/genshin.git ./plugins/genshin/
 ```
+
 ```sh
 # or
 git clone --depth=1 -b deploy https://gitee.com/yunzaijs/genshin.git ./plugins/genshin/

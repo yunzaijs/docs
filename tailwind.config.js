@@ -1,13 +1,5 @@
-// import tailwindcss from 'tailwindcss/plugin'
-import { createRequire } from 'module'
-const require = createRequire(import.meta.url)
-const preline = require('preline/plugin')
 const config = {
-  content: [
-    './src/**/*.{js,ts,jsx,tsx,mdx}',
-    // js
-    './node_modules/preline/preline.js'
-  ],
+  content: ['./src/**/*.{js,ts,jsx,tsx,mdx}'],
   darkMode: 'class',
   theme: {
     extend: {
@@ -62,6 +54,8 @@ const config = {
       }
     }
   },
-  plugins: [preline]
+  corePlugins: {
+    preflight: false // 禁用全局样式重置
+  }
 }
 export default config
