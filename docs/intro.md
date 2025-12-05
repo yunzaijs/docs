@@ -14,7 +14,7 @@ YunzaiJS 机器人开发框架，可以通过开发模块化应用和集成丰�
 
 1. YunzaiJS ：
 
-- 当前仅默认内置支持ICQQ协议，其他方式的协议适配器可通过插件方式进行支持（如果能用）
+- 目前推荐您使用onebotv11协议（框架推荐napcat），icqq时代均已过时
 
 - 更多最新资讯动态，请关注 [YunzaiJS 动态](https://yunzaijs.com/docs/blog/)
 
@@ -30,7 +30,7 @@ YunzaiJS 机器人开发框架，可以通过开发模块化应用和集成丰�
 | [GardenHamster]    | 模拟抽卡背景素材来源 |
 | [西风驿站]         | 角色攻略图来源       |
 | [米游社友人A]      | 角色突破素材图来源   |
-| [icqq]             | ICQQ                 |
+| [icqq（已不再支持）]             | ICQQ                 |
 
 [TRSS-Yunzai]: https://github.com/TimeRainStarSky/Yunzai
 [Miao Yunzai v3.0]: https://github.com/yoimiya-kokomi/Miao-Yunzai
