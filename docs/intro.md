@@ -38,4 +38,3 @@ YunzaiJS 机器人开发框架，可以通过开发模块化应用和集成丰�
 [GardenHamster]: https://github.com/GardenHamster/GenshinPray
 [西风驿站]: https://bbs.mihoyo.com/ys/collection/839181
 [米游社友人A]: https://bbs.mihoyo.com/ys/collection/428421
-[icqq]: https://icqq.pages.dev/
